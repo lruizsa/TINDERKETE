@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import './style.css';
 import logo from './logo.png';  // Cambia la ruta para importar desde src/
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
+  const navigate = useNavigate();
   // Estado para manejar los campos del formulario
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -59,11 +62,9 @@ function Login() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block mb-3">Login</button>
-
             <div className="form-group d-flex align-items-center justify-content-center">
               <p className="mb-0">Konturik ez?</p>
-              <button type="button" className="btn btn-link ml-2">Erregistratu</button>
+              <button type="button" className="btn btn-link ml-2" onClick={() => navigate('/register')}> Erregistratu </button>
             </div>
           </form>
         </div>

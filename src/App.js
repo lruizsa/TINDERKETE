@@ -1,15 +1,16 @@
-import './App.css';
-import Login from './login';  // Aquí asegúrate de que la ruta del archivo Login.js esté correcta (si está en una carpeta, por ejemplo, './components/login')
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './login';
+import Register from './erregistratu';
 
 function App() {
   return (
-    <div className="App">
-      {/* Renderiza el componente Login */}
-      <Login />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App; 
-/* Kaixo */
-
+export default App;
