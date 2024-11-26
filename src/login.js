@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import './style.css';
-import logo from './logo.png';  // Cambia la ruta para importar desde src/
+import logo from './logo.png'; // Cambia la ruta para importar desde src/
 import { useNavigate } from 'react-router-dom';
-
 
 function Login() {
   const navigate = useNavigate();
@@ -20,13 +19,13 @@ function Login() {
   return (
     <>
       <header></header> {/* Si deseas usar un header vacío con fondo verde */}
-      
+
       {/* Contenedor para el login y el logo */}
       <div className="login-wrapper">
         {/* Logo encima del formulario */}
         <div className="logo-container d-flex justify-content-center mb-4">
-          <img 
-            src={logo}  /* Usando la imagen importada */
+          <img
+            src={logo} /* Usando la imagen importada */
             alt="Logo"
             className="logo"
           />
@@ -62,9 +61,23 @@ function Login() {
               />
             </div>
 
-            <div className="form-group d-flex align-items-center justify-content-center">
+            {/* Botón de Login */}
+            <div className="form-group text-center">
+              <button type="submit" className="btn btn-primary btn-block">
+                Login
+              </button>
+            </div>
+
+            {/* Enlace para registrarse */}
+            <div className="form-group d-flex align-items-center justify-content-center mt-3">
               <p className="mb-0">Konturik ez?</p>
-              <button type="button" className="btn btn-link ml-2" onClick={() => navigate('/register')}> Erregistratu </button>
+              <button
+                type="button"
+                className="btn btn-link ml-2"
+                onClick={() => navigate('/register')}
+              >
+                Erregistratu
+              </button>
             </div>
           </form>
         </div>
