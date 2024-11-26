@@ -87,3 +87,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Azken proiektua non zabalduko den eta zer elementu beharko diren definitzea.
   Adibideak: Tour turistikoa, Musika-bandak, Landareen ureztatze kudeatzailea, Escape room, Paketeria armairuak, Instagram argazkiak
 >>>>>>> 86aff1c8a4ca231181618c745b08b35df9da0866
+
+
+
+
+
+
+
+
+React:
+Leire: NavFooter, txapelketak, produktuak, Menu
+Oihan: Erreserbak, partidoak, profila, txata,
+Iñigo: Gutaz, mapa
