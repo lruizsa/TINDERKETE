@@ -2,22 +2,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './login';
 import Register from './erregistratu';
 import ErreserbakForm from './erreserbakForm';
-
-import TestPage from './TestPage'; // Importamos la página de prueba
+import TestPage from './TestPage'; 
+import Txapelketak from './txapelketak'; // Importamos el componente Txapelketak
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Ruta para el login */}
         <Route path="/" element={<Login />} />
-
-        {/* Ruta para el registro */}
         <Route path="/register" element={<Register />} />
         <Route path="/erreserbak" element={<ErreserbakForm />} />
-
-        {/* Ruta para la página de prueba */}
         <Route path="/test" element={<TestPage />} />
+        <Route path="/txapelketak" element={<Txapelketak />} /> {/* Nueva ruta */}
       </Routes>
     </Router>
   );
