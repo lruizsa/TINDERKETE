@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import logo from './logo.png';  // Cambia la ruta según la ubicación de tu logo
+import logo from '../images/logo.png';  // Cambia la ruta según la ubicación de tu logo
 import { useNavigate } from 'react-router-dom';
 
 function Register() {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from './logo.png'; 
-import agi from './agi.png'; 
-import tinder from './Tinder-Emblem.png'; 
-import logoImage from './1361728.png'; 
+import logo from '../images/logo.png'; 
+import agi from '../images/agi.png'; 
+import tinder from '../images/Tinder-Emblem.png'; 
+import logoImage from '../images/1361728.png'; 
 import './navar.css';
 
 function Navbar() {

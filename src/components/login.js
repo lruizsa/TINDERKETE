@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import './style.css';
-import logo from './logo.png'; // Cambia la ruta para importar desde src/
+import logo from '../images/logo.png'; // Cambia la ruta para importar desde src/
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
