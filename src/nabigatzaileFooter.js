@@ -4,8 +4,8 @@ import './style.css';
 import logo from './logo.png'; 
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
-  const navigate = useNavigate();
+function navFooter() {
+  /*const navigate = useNavigate();
   // Estado para manejar los campos del formulario
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Email: ${email}, Password: ${password}`);
-  };
+  };*/
 
   return (
     <>
