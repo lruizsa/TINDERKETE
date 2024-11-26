@@ -34,49 +34,46 @@ function Erreserbak() {
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label>Kirol mota</label>
-                  <input 
-                    type="text" 
-                    value={sportType} 
-                    onChange={(e) => setSportType(e.target.value)} 
-                    placeholder="Sartu kirol mota" 
-                    className="form-control"
-                  />
+                  <select value={sportType} onChange={(e) => setSportType(e.target.value)} className="form-control">
+                    <option value="frontoia">Frontoia</option>
+                    <option value="trinkete">Trinkete</option>
+                  </select>
                 </div>
                 <div className="form-group">
                   <label>Jokalari kopurua</label>
-                  <input 
-                    type="number" 
-                    value={playerCount} 
-                    onChange={(e) => setPlayerCount(e.target.value)} 
-                    placeholder="Number of players" 
+                  <input
+                    type="number"
+                    value={playerCount}
+                    onChange={(e) => setPlayerCount(e.target.value)}
+                    placeholder="Jokalari kopura sartu"
                     className="form-control"
                   />
                 </div>
                 <div className="form-group">
-                  <label>Lekua</label>
-                  <input 
-                    type="text" 
-                    value={location} 
-                    onChange={(e) => setLocation(e.target.value)} 
-                    placeholder="Location" 
+                  <label>Lokalekua</label>
+                  <input
+                    type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    placeholder="Lokalekua idatzi"
                     className="form-control"
                   />
                 </div>
                 <div className="form-group">
                   <label>Ordua</label>
-                  <input 
-                    type="time" 
-                    value={time} 
-                    onChange={(e) => setTime(e.target.value)} 
+                  <input
+                    type="time"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
                     className="form-control"
                   />
                 </div>
                 <div className="form-group">
                   <label>
-                    <input 
-                      type="checkbox" 
-                      checked={isPublic} 
-                      onChange={() => setIsPublic(!isPublic)} 
+                    <input
+                      type="checkbox"
+                      checked={isPublic}
+                      onChange={() => setIsPublic(!isPublic)}
                     />
                     Publikoa egin
                   </label>
