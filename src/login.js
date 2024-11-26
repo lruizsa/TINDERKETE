@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import './style.css';
-import logo from './logo.png'; 
+import logo from './logo.png'; // Cambia la ruta para importar desde src/
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -18,7 +18,7 @@ function Login() {
 
   return (
     <>
-      
+      <header></header>
       {/* Contenedor para el login y el logo */}
       <div className="login-wrapper">
         {/* Logo encima del formulario */}
