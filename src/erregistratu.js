@@ -23,6 +23,8 @@ function Register() {
 
   return (
     <>
+
+      <header></header>
             
       {/* Contenedor del registro y el logo */}
       <div className="register-wrapper">

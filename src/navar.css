@@ -1,0 +1,40 @@
+/* Estilo para la navbar */
+.navbar {
+    background-color: rgb(70, 114, 26); /* Color de fondo */
+    height: 100px; /* Ajustar altura del navbar (de arriba a abajo) */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: center; /* Centrar los elementos verticalmente */
+}
+
+/* Aseguramos que los elementos dentro del contenedor estén alineados en fila */
+.navbar .container {
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    align-items: center; /* Asegura que el logo y texto estén alineados verticalmente */
+    width: 100%;
+}
+
+/*TODO: LOGOA ZENTRATU*/
+/* Estilo para el logo */
+.navbar .logo {
+    height: 60px;  /* Ajusta el tamaño del logo */
+    width: auto;   /* Mantiene la relación de aspecto */
+    margin-right: 10px;  /* Añade un pequeño margen entre el logo y el texto */
+}
+
+/* Asegura que el texto 'Tinderkete' esté alineado */
+.navbar .navbar-title {
+    font-size: 24px;
+    color: white;
+}
+
+/* Estilo de los enlaces */
+.navbar .nav-link {
+    font-size: 18px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: black; /* Cambiar color del texto cuando pasa el ratón */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente cuando se hace hover */
+    border-radius: 5px; /* Bordes redondeados para el fondo */
+}  
