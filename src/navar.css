@@ -48,26 +48,26 @@
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Inicialmente oculta */
+    right: -300px; 
     width: 300px;
     height: 100%;
     background-color: #333;
     overflow-x: hidden;
     transition: right 0.3s ease;
     padding-top: 20px;
-    z-index: 1000; /* Asegura que la barra lateral esté encima de otros elementos */
+    z-index: 1000; 
 }
   
 .sidebar.open {
-    right: 0; /* Muestra la barra lateral */
+    right: 0;
 }
   
 .sidebar-content {
-    display: flex;                /* Activar Flexbox */
-    flex-direction: column;       /* Alinear los elementos en una columna */
-    justify-content: center;      /* Centrar los elementos verticalmente */
-    align-items: center;          /* Centrar los elementos horizontalmente */
-    height: 100%;                 /* Asegura que ocupe toda la altura disponible */
+    display: flex;               
+    flex-direction: column;      
+    justify-content: center;    
+    align-items: center;         
+    height: 100%;                 
 }
   
 .sidebar a {
@@ -79,7 +79,7 @@
 }
   
 .sidebar a:hover {
-    background-color: #555;
+    background-color: rgb(70, 114, 26);
 }
 .sidebar p {
    color:white;
@@ -87,24 +87,20 @@
   
 /* Estilo del emoticono de perfil */
 .profile-logo {
-    width: 40px; /* Tamaño del emoticono */
+    width: 40px; 
     cursor: pointer;
 }
 
-/*.sidebar{
-    background-color: rgb(114, 145, 59); 
-}*/
-
 .agi {
-    border-radius: 50%; /* Redondea la imagen en forma de círculo */
+    border-radius: 50%;
     height: 150px;  
     width: auto;   
-    object-fit: cover; /* Mantiene la proporción de la imagen */
+    object-fit: cover; 
 }
 
 .tinder {
-    border-radius: 50%; /* Redondea la imagen en forma de círculo */
+    border-radius: 50%; 
     height: 200px;  
     width: auto;   
-    object-fit: cover; /* Mantiene la proporción de la imagen */
+    object-fit: cover; 
 }
