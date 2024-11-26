@@ -19,8 +19,8 @@ header {
 }
 
 .logo {
-    height: 300px; 
-    width: 500px;
+    height: 80px; 
+    width: 80px;
     margin-bottom: -150px; 
 }
 
@@ -29,3 +29,10 @@ header {
     text-align: center;
 }
 
+.register-wrapper{
+    margin-top: 70px;
+}
+
+.login-wrapper{
+    margin-top: 70px;
+}

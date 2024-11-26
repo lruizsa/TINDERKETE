@@ -1,25 +1,17 @@
 /* Estilo para la navbar */
 .navbar {
-    background-color: rgb(70, 114, 26); /* Color de fondo */
-    height: 100px; /* Ajustar altura del navbar (de arriba a abajo) */
-    display: flex; /* Usar flexbox para alinear los elementos */
-    align-items: center; /* Centrar los elementos verticalmente */
+    background-color: rgb(70, 114, 26); 
+    height: 100px; 
+    display: flex; 
+    align-items: center; 
 }
 
 /* Aseguramos que los elementos dentro del contenedor estén alineados en fila */
 .navbar .container {
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del contenedor */
-    align-items: center; /* Asegura que el logo y texto estén alineados verticalmente */
+    justify-content: center; 
+    align-items: center; 
     width: 100%;
-}
-
-/*TODO: LOGOA ZENTRATU*/
-/* Estilo para el logo */
-.navbar .logo {
-    height: 60px;  /* Ajusta el tamaño del logo */
-    width: auto;   /* Mantiene la relación de aspecto */
-    margin-right: 10px;  /* Añade un pequeño margen entre el logo y el texto */
 }
 
 /* Asegura que el texto 'Tinderkete' esté alineado */
@@ -34,7 +26,85 @@
 }
 
 .navbar-nav .nav-link:hover {
-    color: black; /* Cambiar color del texto cuando pasa el ratón */
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente cuando se hace hover */
-    border-radius: 5px; /* Bordes redondeados para el fondo */
+    color: black; 
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px; 
 }  
+
+/* Estilo para la imagen de perfil */
+.navbar .profile-logo {
+    height: 40px;  
+    width: auto;   
+    margin-left: 20px; 
+}
+
+.navbar .logoa {
+    height: 65px;  
+    width: auto;   
+    margin-right: 20px; 
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente oculta */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: right 0.3s ease;
+    padding-top: 20px;
+    z-index: 1000; /* Asegura que la barra lateral esté encima de otros elementos */
+}
+  
+.sidebar.open {
+    right: 0; /* Muestra la barra lateral */
+}
+  
+.sidebar-content {
+    display: flex;                /* Activar Flexbox */
+    flex-direction: column;       /* Alinear los elementos en una columna */
+    justify-content: center;      /* Centrar los elementos verticalmente */
+    align-items: center;          /* Centrar los elementos horizontalmente */
+    height: 100%;                 /* Asegura que ocupe toda la altura disponible */
+}
+  
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+  
+.sidebar a:hover {
+    background-color: #555;
+}
+.sidebar p {
+   color:white;
+}
+  
+/* Estilo del emoticono de perfil */
+.profile-logo {
+    width: 40px; /* Tamaño del emoticono */
+    cursor: pointer;
+}
+
+/*.sidebar{
+    background-color: rgb(114, 145, 59); 
+}*/
+
+.agi {
+    border-radius: 50%; /* Redondea la imagen en forma de círculo */
+    height: 150px;  
+    width: auto;   
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.tinder {
+    border-radius: 50%; /* Redondea la imagen en forma de círculo */
+    height: 200px;  
+    width: auto;   
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
