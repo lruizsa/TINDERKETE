@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './login';
+import Login from './Login';
 import Register from './Erregistratu';
 import ErreserbakForm from './ErreserbakForm';
 import TestPage from './TestPage'; 
 import Txapelketak from './Txapelketak'; 
 import Produktuak from './Produktuak';
 import Hasiera from './hasiera';
+import PartidoakCard from './PartidoakCard'; 
+
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path="/txapelketak" element={<Txapelketak />} /> 
         <Route path="/produktuak" element={<Produktuak />} /> 
         <Route path="/hasiera" element={<Hasiera />} />
+        <Route path="/partidoakCard" element={<PartidoakCard />} /> 
+
       </Routes>
     </Router>
   );
