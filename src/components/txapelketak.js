@@ -6,11 +6,13 @@ import zestoaFrontoiaImg from "../images/zestoafrontoia.jpg";
 import agi from '../images/agi.png'; 
 import p1 from '../images/pertsona1.jpg'; 
 import p2 from '../images/pertsona2.jpg'; 
-
-
+import Nav from './Navbar.js'; 
+import Footer from './Footer.js';
+import './txapelketak.css';
 
 
 const Txapelketak = () => {
+  
   // Lista de eventos
   const events = [
     {
@@ -62,15 +64,24 @@ const Txapelketak = () => {
   ];
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Txapelketak</h1>
-      <div className="row g-4">
-        {events.map((event, index) => (
-          <div className="col-md-6 col-lg-4" key={index}>
-            <EventCard {...event} />
-          </div>
-        ))}
+    <div>
+      {/* Renderiza el Navbar */}
+      <Nav />
+
+      {/* Contenido principal */}
+      <div className="container mt-5">
+        <h1 className="text-center mb-4">Txapelketak</h1>
+        <div className="row g-4">
+          {events.map((event, index) => (
+            <div className="col-md-6 col-lg-4" key={index}>
+              <EventCard {...event} />
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Renderiza el Footer */}
+      <Footer />
     </div>
   );
 };

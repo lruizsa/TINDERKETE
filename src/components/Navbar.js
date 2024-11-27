@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Importa Link y useLocation
 import logo from '../images/logo.png'; 
 import agi from '../images/agi.png'; 
 import tinder from '../images/Tinder-Emblem.png'; 
@@ -6,12 +7,17 @@ import logoImage from '../images/1361728.png';
 import './navar.css';
 
 function Navbar() {
-  // Estado para manejar la visibilidad de la barra lateral
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation(); // Obtiene la ubicación actual
+
+  // Función para aplicar la clase 'active' si estamos en la ruta deseada
+  const getActiveClass = (path) => {
+    return location.pathname === path ? 'active' : ''; // Aplica 'active' si el path coincide
+  };
 
   // Función para alternar la visibilidad de la barra lateral
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen); // Cambia el valor del estado
+    setSidebarOpen(!sidebarOpen); // Cambia el estado de la barra lateral
   };
 
   return (
@@ -21,26 +27,26 @@ function Navbar() {
         <div className="sidebar-content">
           <p className="navbar-brand ml-auto"> 
             <img src={agi} alt="logo" className="tinder" />
-            <p class="d-flex justify-content-center">Oaginaga23</p>
+            <p className="d-flex justify-content-center">Oaginaga23</p>
           </p><br></br>
         
-          <a href="/contact">Perfila</a><br></br>
+          <Link to="/contact">Perfila</Link><br></br>
         
-          <a className="navbar-brand ml-auto" href="/"> 
+          <Link className="navbar-brand ml-auto" to="/"> 
             <img src={tinder} alt="logo" className="tinder" />
-            <p class="d-flex justify-content-center">Txat-a</p>
-          </a><br></br>
-          <a href="/contact">Logout</a>
+            <p className="d-flex justify-content-center">Txat-a</p>
+          </Link><br></br>
+          <Link to="/contact">Logout</Link>
         </div>
       </div>
 
       {/* Barra de navegación */}
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
-          <a className="navbar-brand ml-auto" href="/"> 
+          <Link className="navbar-brand ml-auto" to="/"> 
             <img src={logo} alt="logo" className="logoa" />
             <span className="navbar-title">Tinderkete</span>
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -56,31 +62,31 @@ function Navbar() {
 
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/about">Gutaz</a>
+              <li className={`nav-item ${getActiveClass('/hasiera')}`}>
+                <Link className="nav-link" to="/hasiera">Gutaz</Link> {/* Enlace activo */}
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/features">Erreserbak</a>
+              <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
+                <Link className="nav-link" to="/erreserbak">Erreserbak</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">Txapelketak</a>
+              <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
+                <Link className="nav-link" to="/txapelketak">Txapelketak</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">Partiduak</a>
+              <li className={`nav-item ${getActiveClass('/partiduak')}`}>
+                <Link className="nav-link" to="/partiduak">Partiduak</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">Mapa</a>
+              <li className={`nav-item ${getActiveClass('/mapa')}`}>
+                <Link className="nav-link" to="/mapa">Mapa</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">Produktuak</a>
+              <li className={`nav-item ${getActiveClass('/produktuak')}`}>
+                <Link className="nav-link" to="/produktuak">Produktuak</Link>
               </li>
             </ul>
           </div>
 
-        {/* Emoticono de perfil para abrir la barra lateral */}
-        <a className="navbar-brand ml-auto" href="#" onClick={toggleSidebar}>
+          {/* Emoticono de perfil para abrir la barra lateral */}
+          <Link className="navbar-brand ml-auto" to="#" onClick={toggleSidebar}>
             <img src={logoImage} alt="1361728" className="profile-logo" />
-        </a>
+          </Link>
         </div>
       </nav>
     </div>

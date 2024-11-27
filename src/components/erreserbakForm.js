@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from './Navbar.js'; 
+import Footer from './Footer.js';
 
 function Erreserbak() {
   const [sportType, setSportType] = useState("");
@@ -22,7 +24,9 @@ function Erreserbak() {
   };
 
   return (
+    
     <div>
+      <Nav />
       <div className="container">
         <div className="row mt-5">
           {/* Card del Formulario */}
@@ -42,7 +46,7 @@ function Erreserbak() {
                       placeholder="Sartu kirol mota"
                       className="form-control"
                     />
-                  </div>
+                  </div><br></br>
                   <div className="form-group">
                     <label>Jokalari kopurua</label>
                     <input
@@ -52,7 +56,7 @@ function Erreserbak() {
                       placeholder="Jokalari kopurua"
                       className="form-control"
                     />
-                  </div>
+                  </div><br></br>
                   <div className="form-group">
                     <label>Lokalekua</label>
                     <input
@@ -62,7 +66,7 @@ function Erreserbak() {
                       placeholder="Lokalekua"
                       className="form-control"
                     />
-                  </div>
+                  </div><br></br>
                   <div className="form-group">
                     <label>Ordua</label>
                     <input
@@ -71,7 +75,7 @@ function Erreserbak() {
                       onChange={(e) => setTime(e.target.value)}
                       className="form-control"
                     />
-                  </div>
+                  </div><br></br>
                   <div className="form-group">
                     <label>
                       <input
@@ -81,7 +85,7 @@ function Erreserbak() {
                       />
                       Publikoa egin
                     </label>
-                  </div>
+                  </div><br></br>
                   <button type="submit" className="btn btn-primary">
                     Sartu
                   </button>
@@ -119,6 +123,7 @@ function Erreserbak() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -9,12 +9,23 @@ function Login() {
   // Estado para manejar los campos del formulario
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  // Valores predefinidos para correo y contraseña
+  const predefinedEmail = 'adibidea@tinderkete.com';
+  const predefinedPassword = '1234';
 
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}, Password: ${password}`);
+
+    // Verificamos si los valores ingresados coinciden con los predefinidos
+    if (email === predefinedEmail && password === predefinedPassword) {
+      navigate('/hasiera'); // Redirigir a la página principal o dashboard
+    } else {
+      alert('Erabiltzailea edo pasahitza gaizki sartu dira.');
+    }
   };
+
 
   return (
     <>

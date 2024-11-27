@@ -1,6 +1,6 @@
 /* Estilo para la navbar */
 .navbar {
-    background-color: rgb(70, 114, 26); 
+    background-color:#005C53; 
     height: 100px; 
     display: flex; 
     align-items: center; 
@@ -42,7 +42,43 @@
     height: 65px;  
     width: auto;   
     margin-right: 20px; 
+    border-radius: 100%;
 }
+
+/* Efecto de fuego en el logo */
+.navbar .logoa {
+    height: 65px;
+    width: auto;
+    margin-right: 20px;
+    position: relative; /* Necesario para posicionar el fuego */
+    animation: flame 1s infinite alternate; /* Animación de fuego */
+}
+
+/*@keyframes flame {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 100, 0, 0.7), 0 0 20px 5px rgba(255, 165, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.7), 0 0 30px 15px rgba(255, 140, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 30px 15px rgba(255, 165, 0, 0.7), 0 0 40px 20px rgba(255, 70, 0, 0.5);
+    }
+}*/
+
+@keyframes flame {
+    0% {
+        box-shadow: 0 0 5px 3px rgba(255, 90, 95, 0.8), 0 0 10px 3px rgba(255, 120, 120, 0.5); 
+    }
+    50% {
+        box-shadow: 0 0 10px 5px rgba(255, 100, 95, 0.9), 0 0 15px 8px rgba(255, 150, 130, 0.6); 
+    }
+    100% {
+        box-shadow: 0 0 15px 8px rgba(255, 95, 95, 0.9), 0 0 20px 10px rgba(255, 65, 60, 0.5);
+    }
+}
+
+
 
 /* Barra lateral */
 .sidebar {
@@ -104,3 +140,12 @@
     width: auto;   
     object-fit: cover; 
 }
+
+  
+ /* Subrayado y estilo activo para el enlace */
+.navbar-nav .nav-item .nav-link.active {
+    text-decoration: underline;  /* Subrayado */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Puedes elegir el color que desees */
+  }
+   
