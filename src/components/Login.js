@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
-import './style.css';
-import logo from '../images/logo.png'; // Cambia la ruta para importar desde src/
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css"; // Importa los estilos de Bootstrap
+import "./style.css";
+import logo from "../images/logo.png"; // Cambia la ruta para importar desde src/
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
   // Estado para manejar los campos del formulario
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   // Valores predefinidos para correo y contraseña
-  const predefinedEmail = 'adibidea@tinderkete.com';
-  const predefinedPassword = '1234';
+  const predefinedEmail = "adibidea@tinderkete.com";
+  const predefinedPassword = "1234";
 
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
@@ -20,12 +20,11 @@ function Login() {
 
     // Verificamos si los valores ingresados coinciden con los predefinidos
     if (email === predefinedEmail && password === predefinedPassword) {
-      navigate('/hasiera'); // Redirigir a la página principal o dashboard
+      navigate("/hasiera"); // Redirigir a la página principal o dashboard
     } else {
-      alert('Erabiltzailea edo pasahitza gaizki sartu dira.');
+      alert("Erabiltzailea edo pasahitza gaizki sartu dira.");
     }
   };
-
 
   return (
     <>
@@ -42,10 +41,15 @@ function Login() {
         </div>
 
         {/* Contenedor del formulario de login */}
-        <div className="container login-container" style={{ maxWidth: '400px', marginTop: '50px' }}>
+        <div
+          className="container login-container"
+          style={{ maxWidth: "400px", marginTop: "50px" }}
+        >
           <h2 className="mb-4">Login</h2> {/* Espacio abajo del título */}
           <form onSubmit={handleSubmit}>
-            <div className="form-group mb-3"> {/* Espacio debajo del campo de email */}
+            <div className="form-group mb-3">
+              {" "}
+              {/* Espacio debajo del campo de email */}
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -58,7 +62,9 @@ function Login() {
               />
             </div>
 
-            <div className="form-group mb-3"> {/* Espacio debajo del campo de contraseña */}
+            <div className="form-group mb-3">
+              {" "}
+              {/* Espacio debajo del campo de contraseña */}
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -80,11 +86,12 @@ function Login() {
 
             {/* Enlace para registrarse */}
             <div className="form-group d-flex align-items-center justify-content-center mt-3">
-              <p className="mb-0">Konturik ez?</p>
+              <p className="mb-0 me-2">Konturik ez?</p>{" "}
+              {/* Ajustamos el margen inferior */}
               <button
                 type="button"
-                className="btn btn-link ml-2"
-                onClick={() => navigate('/register')}
+                className="btn btn-link"
+                onClick={() => navigate("/register")}
               >
                 Erregistratu
               </button>
