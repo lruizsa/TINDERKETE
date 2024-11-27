@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 
-
 function EventCard({
   title,
   location,
@@ -16,7 +15,13 @@ function EventCard({
 }) {
   return (
     <div className="card shadow-sm">
-      <img src={image} className="card-img-top" alt={`${title}`} />
+      {/* Imagen con tamaño reducido */}
+      <img
+        src={image}
+        className="card-img-top"
+        alt={`${title}`}
+        style={{ height: "270px", objectFit: "cover" }} // Ajusta la altura y mantiene proporciones
+      />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
