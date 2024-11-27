@@ -36,3 +36,32 @@ header {
 .login-wrapper{
     margin-top: 70px;
 }
+
+
+
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: rgb(70, 114, 26); 
+    border-color: #1e7e34;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(130, 192, 69);
+  }
+  

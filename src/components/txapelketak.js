@@ -1,5 +1,13 @@
 import React from "react";
-import EventCard from "./EventCard"; // Asegúrate de que la ruta sea correcta
+import EventCard from "./EventCard"; 
+import urnietafrontoiaImg from "../images/urnietafrontoia.jpg";
+import lezoFrontoiaImg from "../images/LezoFrontoia.jpg";
+import zestoaFrontoiaImg from "../images/zestoafrontoia.jpg";
+import agi from '../images/agi.png'; 
+import p1 from '../images/pertsona1.jpg'; 
+import p2 from '../images/pertsona2.jpg'; 
+
+
 
 
 const Txapelketak = () => {
@@ -14,10 +22,11 @@ const Txapelketak = () => {
       participants: 3,
       maxParticipants: 24,
       price: 20,
-      image: "https://via.placeholder.com/50", // Sustituye con imágenes reales
+      image: urnietafrontoiaImg, 
       participantImages: [
-        "https://via.placeholder.com/40",
-        "https://via.placeholder.com/40",
+        agi,
+        p1,
+        p2,
       ],
     },
     {
@@ -29,25 +38,25 @@ const Txapelketak = () => {
       participants: 3,
       maxParticipants: 32,
       price: 15,
-      image: "https://via.placeholder.com/50",
+      image: lezoFrontoiaImg,
       participantImages: [
-        "https://via.placeholder.com/40",
-        "https://via.placeholder.com/40",
+        p1,
+        p2,
+        agi,
       ],
     },
     {
-      title: "Pista Ekitaldia",
+      title: "Frontenis trinkete txapelketa!",
       location: "Pista Handia",
       date: "Azaroak 5",
       time: "10:00",
       description: "Partida interesgarriak eta giro aparta!",
-      participants: 10,
+      participants: 1,
       maxParticipants: 50,
       price: 10,
-      image: "https://via.placeholder.com/50",
+      image: zestoaFrontoiaImg,
       participantImages: [
-        "https://via.placeholder.com/40",
-        "https://via.placeholder.com/40",
+        p2,
       ],
     },
   ];
