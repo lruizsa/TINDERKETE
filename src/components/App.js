@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './login';
-import Register from './erregistratu';
-import ErreserbakForm from './erreserbakForm';
+import Register from './Erregistratu';
+import ErreserbakForm from './ErreserbakForm';
 import TestPage from './TestPage'; 
-import Txapelketak from './txapelketak'; // Importamos el componente Txapelketak
-import Produktuak from './produktuak'; // Importa el componente Products
+import Txapelketak from './Txapelketak'; // Importamos el componente Txapelketak
+import Produktuak from './Produktuak'; // Importa el componente Products
 
 
 function App() {
