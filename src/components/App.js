@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './login';
+import Login from './Login';
 import Register from './Erregistratu';
 import ErreserbakForm from './ErreserbakForm';
 import TestPage from './TestPage'; 
-import Txapelketak from './Txapelketak'; // Importamos el componente Txapelketak
-import Produktuak from './Produktuak'; // Importa el componente Products
+import Txapelketak from './Txapelketak'; 
+import Produktuak from './Produktuak'; 
+import PartidoakCard from './PartidoakCard'; 
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Route path="/test" element={<TestPage />} />
         <Route path="/txapelketak" element={<Txapelketak />} /> 
         <Route path="/produktuak" element={<Produktuak />} /> 
-
+        <Route path="/partidoakCard" element={<PartidoakCard />} /> 
       </Routes>
     </Router>
   );
