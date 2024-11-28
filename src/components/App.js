@@ -7,7 +7,6 @@ import Txapelketak from './Txapelketak';
 import Produktuak from './Produktuak';
 import Hasiera from './hasiera';
 import PartidoakCard from './PartidoakCard'; 
-import ContactForm from './kontaktuacomp'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Kontaktu from './kontaktuacomp';
 
