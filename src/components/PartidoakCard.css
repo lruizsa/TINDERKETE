@@ -1,11 +1,13 @@
 /* Contenedor principal */
 .container-custom {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  flex-wrap: wrap; /* No permite que las tarjetas se envuelvan */
+  gap: 20px; /* Espacio entre tarjetas */
+  margin: 40px auto;
+  overflow-x: auto; /* Habilita desplazamiento horizontal si las tarjetas son demasiadas */
+  padding: 10px;
+  width: auto; /* Permite que el contenedor se ajuste dinámicamente */
 }
 
 /* Estilos para cada tarjeta */
@@ -15,10 +17,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 10px;
-  display: inline-block;
-  width: auto;
-  height: auto;
+  flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
+  width: 320px;
+  height: 300px; /* Tamaño fijo para cada tarjeta */
 }
 
 /* Encabezado de la tarjeta */
@@ -31,12 +32,11 @@
 .date-time {
   font-weight: bold;
   margin: 0;
-  font-size: 30px; /* Establece el tamaño de fuente pequeño */
+  font-size: 20px; /* Ajusta el tamaño */
 }
 
 .sport {
-    font-size: 20px; /* Establece el tamaño de fuente pequeño */
-
+  font-size: 18px; /* Ajusta el tamaño */
 }
 
 /* Contenedor de jugadores y lugares disponibles */
@@ -58,12 +58,18 @@
 /* Imágenes de jugadores */
 .player-box img,
 .spot-box img {
+  cursor: pointer;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-bottom: 8px;
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.spot-box img:hover {
+  transition: 0.5s;
+  transform: scale(1.1)
 }
 
 /* Línea vertical separadora */
@@ -105,9 +111,10 @@
 
 .duration {
   font-weight: lighter;
-  font-size: 10px; /* Establece el tamaño de fuente pequeño */
+  font-size: 10px;
 }
+
 .location {
-  font-size: 30px;
+  font-size: 20px;
   padding-left: 10%;
 }

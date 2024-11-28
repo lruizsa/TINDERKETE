@@ -77,8 +77,8 @@ function Navbar() {
               <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
                 <Link className="nav-link" to="/txapelketak">Txapelketak</Link>
               </li>
-              <li className={`nav-item ${getActiveClass('/partiduak')}`}>
-                <Link className="nav-link" to="/partiduak">Partiduak</Link>
+              <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
+                <Link className="nav-link" to="/PartidoakCard">Partiduak</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
                 <Link className="nav-link" to="/MapaLista">Mapa</Link>
