@@ -6,7 +6,7 @@ import TestPage from './TestPage';
 import Txapelketak from './Txapelketak'; 
 import Produktuak from './Produktuak';
 import Hasiera from './hasiera';
-import PartidoakCard from './PartidoakCard'; 
+import PartidoakCard from './PartidoakCard';
 
 
 
