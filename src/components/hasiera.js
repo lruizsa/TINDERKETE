@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
 import bat from '../images/LezoFrontoia.jpg'; 
@@ -7,13 +7,13 @@ import hiru from '../images/urnietafrontoia.jpg';
 
 function Hasiera() {
   return (
-    <div>
+    <div className="d-flex flex-column min-vh-100"> {/* Contenedor Flexbox para asegurar que ocupe toda la pantalla */}
       <Nav />
-      <div className="container mt-5" style={{ marginBottom: '63px' }}> {/* Agrega más margen en la parte inferior */}
+      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> {/* Espacio flexible para que el footer esté abajo */}
         <div className="d-flex justify-content-center mb-4">
           <h1 className="display-1">TINDERKETE</h1>
         </div>
-        
+
         <div className="row mb-4">
           <div className="col-12">
             <p className="text-justify">
