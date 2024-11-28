@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Importa Link y useLocation
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png'; 
 import agi from '../images/agi.png'; 
 import tinder from '../images/Tinder-Emblem.png'; 
@@ -8,21 +8,26 @@ import './navar.css';
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const location = useLocation(); // Obtiene la ubicación actual
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
 
-  // Función para aplicar la clase 'active' si estamos en la ruta deseada
   const getActiveClass = (path) => {
-    return location.pathname === path ? 'active' : ''; // Aplica 'active' si el path coincide
+    return location.pathname === path ? 'active' : ''; 
   };
 
-  // Función para alternar la visibilidad de la barra lateral
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen); // Cambia el estado de la barra lateral
+    setSidebarOpen(!sidebarOpen); 
+  };
+
+  
+  const handleLogout = (e) => {
+    e.preventDefault(); 
+    navigate('/');
   };
 
   return (
     <div>
-      {/* Barra lateral */}
+      
       <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-content">
           <p className="navbar-brand ml-auto"> 
@@ -36,11 +41,12 @@ function Navbar() {
             <img src={tinder} alt="logo" className="tinder" />
             <p className="d-flex justify-content-center">Txat-a</p>
           </Link><br></br>
-          <Link to="/contact">Logout</Link>
+          
+          <Link to="#" onClick={handleLogout}>Logout</Link>
         </div>
       </div>
 
-      {/* Barra de navegación */}
+      
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           <Link className="navbar-brand ml-auto" to="/"> 
@@ -63,7 +69,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className={`nav-item ${getActiveClass('/hasiera')}`}>
-                <Link className="nav-link" to="/hasiera">Gutaz</Link> {/* Enlace activo */}
+                <Link className="nav-link" to="/hasiera">Gutaz</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
                 <Link className="nav-link" to="/erreserbak">Erreserbak</Link>
@@ -83,7 +89,6 @@ function Navbar() {
             </ul>
           </div>
 
-          {/* Emoticono de perfil para abrir la barra lateral */}
           <Link className="navbar-brand ml-auto" to="#" onClick={toggleSidebar}>
             <img src={logoImage} alt="1361728" className="profile-logo" />
           </Link>

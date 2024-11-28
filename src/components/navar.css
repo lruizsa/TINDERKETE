@@ -1,4 +1,3 @@
-/* Estilo para la navbar */
 .navbar {
     background-color:#005C53; 
     /*background-color: #81B2A0;*/
@@ -7,7 +6,6 @@
     align-items: center; 
 }
 
-/* Aseguramos que los elementos dentro del contenedor estén alineados en fila */
 .navbar .container {
     display: flex;
     justify-content: center; 
@@ -15,13 +13,11 @@
     width: 100%;
 }
 
-/* Asegura que el texto 'Tinderkete' esté alineado */
 .navbar .navbar-title {
     font-size: 24px;
     color: white;
 }
 
-/* Estilo de los enlaces */
 .navbar .nav-link {
     font-size: 18px;
 }
@@ -32,7 +28,6 @@
     border-radius: 5px; 
 }  
 
-/* Estilo para la imagen de perfil */
 .navbar .profile-logo {
     height: 40px;  
     width: auto;   
@@ -46,13 +41,12 @@
     border-radius: 100%;
 }
 
-/* Efecto de fuego en el logo */
 .navbar .logoa {
     height: 65px;
     width: auto;
     margin-right: 20px;
-    position: relative; /* Necesario para posicionar el fuego */
-    animation: flame 1s infinite alternate; /* Animación de fuego */
+    position: relative; 
+    animation: flame 1s infinite alternate; 
 }
 
 /*@keyframes flame {
@@ -80,8 +74,6 @@
 }
 
 
-
-/* Barra lateral */
 .sidebar {
     position: fixed;
     top: 0;
@@ -117,7 +109,6 @@
 }
   
 .sidebar a:hover {
-    /*background-color: rgb(70, 114, 26);*/
     background-color: #F2AE30;
     border-radius: 20px;
 }
@@ -125,7 +116,6 @@
    color:white;
 }
   
-/* Estilo del emoticono de perfil */
 .profile-logo {
     width: 40px; 
     cursor: pointer;
@@ -146,10 +136,9 @@
 }
 
   
- /* Subrayado y estilo activo para el enlace */
 .navbar-nav .nav-item .nav-link.active {
-    text-decoration: underline;  /* Subrayado */
-    font-weight: bold; /* Negrita */
-    color: #007bff; /* Puedes elegir el color que desees */
+    text-decoration: underline; 
+    font-weight: bold;
+    color: #007bff; 
   }
    

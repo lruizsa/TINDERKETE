@@ -15,12 +15,12 @@ function EventCard({
 }) {
   return (
     <div className="card shadow-sm" >
-      {/* Imagen con tamaño reducido */}
+      
       <img
         src={image}
         className="card-img-top"
         alt={`${title}`}
-        style={{ height: "270px", objectFit: "cover" }} // Ajusta la altura y mantiene proporciones
+        style={{ height: "270px", objectFit: "cover" }} 
       />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
@@ -46,7 +46,7 @@ function EventCard({
             ))}
           </div>
         </div>
-        <button className="btn btn-primary w-100">Apuntatu</button> {/* Botón */}
+        <button className="btn btn-primary w-100">Apuntatu</button> 
       </div>
     </div>
   );

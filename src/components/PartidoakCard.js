@@ -15,7 +15,7 @@ function PartidoakCard() {
         { name: "Oihan", image: p1 },
         { name: "Leire", image: p2 },
       ],
-      availableSpots: 2, // LIBRE spots
+      availableSpots: 2, 
       price: "11,74€",
       duration: "90 minututu",
     },

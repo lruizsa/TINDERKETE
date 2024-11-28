@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import logo from '../images/logo.png';  // Cambia la ruta según la ubicación de tu logo
+import logo from '../images/logo.png'; 
 import { useNavigate } from 'react-router-dom';
 
 function Register() {
-  const navigate = useNavigate();  // Para redirigir después del registro
+  const navigate = useNavigate(); 
 
-  // Estados para los campos del formulario
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [birthdate, setBirthdate] = useState('');
 
-  // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar lógica para enviar datos o validar
     alert(`Izen Abizenak: ${name}, Email: ${email}, Pasahitza: ${password}, Jaiotze-data: ${birthdate}`);
-    navigate('/');  // Redirige a la página de inicio de sesión después del registro
+    navigate('/');  
   };
 
   return (
@@ -26,9 +23,8 @@ function Register() {
 
       <header></header>
             
-      {/* Contenedor del registro y el logo */}
       <div className="register-wrapper">
-        {/* Logo encima del formulario */}
+        
         <div className="logo-container d-flex justify-content-center mb-4">
           <img 
             src={logo}
@@ -37,7 +33,6 @@ function Register() {
           />
         </div>
 
-        {/* Formulario de registro */}
         <div className="container login-container" style={{ maxWidth: '400px', marginTop: '50px' }}>
           <h2 className="mb-4">Erregistroa</h2>
           <form onSubmit={handleSubmit}>

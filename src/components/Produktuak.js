@@ -29,12 +29,11 @@ const Produktuak = () => {
   ];
 
   return (
-    <div>
-      {/* Renderiza el Navbar */}
-      <Nav />
+    <div className="d-flex flex-column min-vh-100"> 
       
-      {/* Contenido principal */}
-      <div className="container mt-5">
+      <Nav />
+
+      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> 
         <h1 className="text-center mb-4">Gure produktuak</h1>
         <div className="row g-4">
           {products.map((product, index) => (
@@ -45,7 +44,6 @@ const Produktuak = () => {
         </div>
       </div>
 
-      {/* Renderiza el Footer */}
       <Footer />
     </div>
   );
