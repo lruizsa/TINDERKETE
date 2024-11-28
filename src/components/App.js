@@ -7,6 +7,11 @@ import Txapelketak from './Txapelketak';
 import Produktuak from './Produktuak';
 import Hasiera from './hasiera';
 import PartidoakCard from './PartidoakCard'; 
+import ContactForm from './kontaktuacomp'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Kontaktu from './kontaktuacomp';
+
+
 
 
 
@@ -21,8 +26,8 @@ function App() {
         <Route path="/txapelketak" element={<Txapelketak />} /> 
         <Route path="/produktuak" element={<Produktuak />} /> 
         <Route path="/hasiera" element={<Hasiera />} />
-        <Route path="/partidoakCard" element={<PartidoakCard />} /> 
-
+        <Route path="/partidoakCard" element={<PartidoakCard />} />
+        <Route path="/kontaktua" element={<Kontaktu />} />  
       </Routes>
     </Router>
   );

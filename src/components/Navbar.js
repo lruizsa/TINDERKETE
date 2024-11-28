@@ -86,6 +86,9 @@ function Navbar() {
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
                 <Link className="nav-link" to="/produktuak">Produktuak</Link>
               </li>
+              <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
+                <Link className="nav-link" to="/kontaktua">Kontaktua</Link>
+              </li>
             </ul>
           </div>
 

@@ -78,5 +78,20 @@ header {
   .btn-login:hover {
     background-color: transparent !important; 
   }
+
+
+.kontaktu-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+  margin-top: 50px; 
+  max-width: 1000px !important;
+  width: 100% !important; 
+  margin: 0 auto;
+  padding: 40px !important; 
+  box-sizing: border-box; 
+}
+
+
   
   
