@@ -10,6 +10,7 @@ import PartidoakCard from './PartidoakCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Kontaktu from './Kontaktuacomp';
+import MapaLista from './MapaLista';
 
 
 
@@ -27,7 +28,8 @@ function App() {
         <Route path="/produktuak" element={<Produktuak />} /> 
         <Route path="/hasiera" element={<Hasiera />} />
         <Route path="/partidoakCard" element={<PartidoakCard />} />
-        <Route path="/kontaktua" element={<Kontaktu />} />  
+        <Route path="/kontaktua" element={<Kontaktu />} />
+        <Route path="/mapalista" element={<MapaLista />} />  
       </Routes>
     </Router>
   );

@@ -24,13 +24,13 @@ function Hasiera() {
 
         <div className="row">
           <div className="col-12 col-md-4 text-center mb-4">
-            <img src={bat} alt="Imagen 1" className="img-fluid" />
+            <img src={bat} alt="Imagen 1" className="img-fluid rounded-3" />
           </div>
           <div className="col-12 col-md-4 text-center mb-4">
             <img src={bi} alt="Imagen 2" className="img-fluid" />
           </div>
           <div className="col-12 col-md-4 text-center mb-4">
-            <img src={hiru} alt="Imagen 3" className="img-fluid" />
+            <img src={hiru} alt="Imagen 3" className="img-fluid rounded-3" />
           </div>
         </div>
       </div>

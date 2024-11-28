@@ -80,8 +80,8 @@ function Navbar() {
               <li className={`nav-item ${getActiveClass('/partiduak')}`}>
                 <Link className="nav-link" to="/partiduak">Partiduak</Link>
               </li>
-              <li className={`nav-item ${getActiveClass('/mapa')}`}>
-                <Link className="nav-link" to="/mapa">Mapa</Link>
+              <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
+                <Link className="nav-link" to="/MapaLista">Mapa</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
                 <Link className="nav-link" to="/produktuak">Produktuak</Link>
