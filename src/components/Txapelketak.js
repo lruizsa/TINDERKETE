@@ -11,7 +11,6 @@ import Footer from './Footer.js';
 import './txapelketak.css';
 
 const Txapelketak = () => {
-  // Lista de eventos
   const events = [
     {
       title: "Frontoi Txapelketa!",
@@ -62,12 +61,11 @@ const Txapelketak = () => {
   ];
 
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Flexbox para asegurarse de que ocupa toda la altura de la pantalla */}
-      {/* Renderiza el Navbar */}
+    <div className="d-flex flex-column min-vh-100"> 
+      
       <Nav />
 
-      {/* Contenido principal */}
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> {/* Este div ahora ocupa el espacio restante */}
+      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> 
         <h1 className="text-center mb-4">Txapelketak</h1>
         <div className="row g-4">
           {events.map((event, index) => (
@@ -78,7 +76,6 @@ const Txapelketak = () => {
         </div>
       </div>
 
-      {/* Renderiza el Footer */}
       <Footer />
     </div>
   );

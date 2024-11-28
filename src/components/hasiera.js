@@ -7,9 +7,9 @@ import hiru from '../images/urnietafrontoia.jpg';
 
 function Hasiera() {
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Contenedor Flexbox para asegurar que ocupe toda la pantalla */}
+    <div className="d-flex flex-column min-vh-100"> 
       <Nav />
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> {/* Espacio flexible para que el footer esté abajo */}
+      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> 
         <div className="d-flex justify-content-center mb-4">
           <h1 className="display-1">TINDERKETE</h1>
         </div>

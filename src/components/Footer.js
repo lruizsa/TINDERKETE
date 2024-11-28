@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.css'; // Asegúrate de que el CSS esté vinculado correctamente
+import './footer.css'; 
 import img1 from '../images/facebookAplicacion.png';
 import img2 from '../images/logoInsta.png';
 import img3 from '../images/Xaplicacion.png';
@@ -21,7 +21,6 @@ function Footer() {
           </a>
         </p>
 
-        {/* Contenedor para las imágenes de redes sociales */}
         <div className="d-flex justify-content-center gap-2 mt-1">
           <a href="#" onClick={(e) => e.preventDefault()}>
             <img

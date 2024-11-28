@@ -11,25 +11,25 @@ function PartidoakCard() {
       time: "20:00",
       location: "Frontoia",
       players: [
-        { name: "Oihan", image: p1 }, // Associate image with player name
+        { name: "Oihan", image: p1 }, 
         { name: "Leire", image: p2 },
       ],
-      availableSpots: 2, // LIBRE spots
+      availableSpots: 2, 
       price: "11,74€",
       duration: "90 minututu",
     },
-    // You can add more reservations here
+    
   ]);
 
   return (
     <div className="container mt-5">
       <div className="row">
-        {/* Render each reservation */}
+        
         {reservations.map((reservation, index) => (
           <div className="col-md-3" key={index}>
             <div className="card shadow-sm">
               <div className="card-body">
-                {/* Reservation details */}
+                
                 <div className="d-flex justify-content-between">
                   <div>
                     <p className="m-0">
@@ -40,13 +40,11 @@ function PartidoakCard() {
                     <p className="m-0">{reservation.location}</p>
                   </div>
                   <div>
-                    {/* Price and Duration */}
                     <p className="m-0">{reservation.price}</p>
                     <p className="m-0">{reservation.duration}</p>
                   </div>
                 </div>
 
-                {/* Players */}
                 <div className="d-flex mt-3">
                   {reservation.players.map((player, index) => (
                     <div
@@ -63,7 +61,6 @@ function PartidoakCard() {
                     </div>
                   ))}
 
-                  {/* Reemplazar botones con imagen + texto LIBRE */}
                   <div className="mt-3">
                     {[...Array(reservation.availableSpots)].map((_, idx) => (
                       <div

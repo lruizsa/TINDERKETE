@@ -18,17 +18,17 @@ function Erreserbak() {
       playerCount,
       location,
       time,
-      isPublic, // Agregar el estado de si es pública o no
+      isPublic, 
     };
     setReservations([...reservations, newReservation]);
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Asegura que el contenedor ocupe al menos la altura total del viewport */}
+    <div className="d-flex flex-column min-vh-100"> 
       <Nav />
-      <div className="container flex-grow-1 mt-5"> {/* Hace que este contenedor ocupe el espacio restante */}
+      <div className="container flex-grow-1 mt-5"> 
         <div className="row mt-5">
-          {/* Card del Formulario */}
+          
           <div className="col-md-4">
             <div className="card shadow-sm">
               <div className="card-header">
@@ -93,7 +93,7 @@ function Erreserbak() {
             </div>
           </div>
 
-          {/* Card de la Lista de Reservas */}
+          
           <div className="col-md-8">
             <div className="card shadow-sm">
               <div className="card-header">
@@ -113,7 +113,7 @@ function Erreserbak() {
                       <span>
                         {reservation.isPublic ? "Publikoa" : "Pribatua"}
                       </span>{" "}
-                      {/* Mostrar si es pública o no */}
+                      
                     </li>
                   ))}
                 </ul>

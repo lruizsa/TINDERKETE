@@ -71,12 +71,12 @@ header {
   }
 
   .btn-login {
-    background-color: transparent !important; /* Asegura que el fondo sea transparente */
-    color: #007bff !important; /* Asegura que el color del texto sea azul */
-    border: none !important; /* Elimina el borde */
+    background-color: transparent !important; 
+    color: #007bff !important; 
+    border: none !important; 
   }
   .btn-login:hover {
-    background-color: transparent !important; /* Asegura que el fondo sea transparente */
+    background-color: transparent !important; 
   }
   
   
