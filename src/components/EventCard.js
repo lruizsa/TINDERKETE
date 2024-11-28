@@ -14,7 +14,7 @@ function EventCard({
   participantImages,
 }) {
   return (
-    <div className="card shadow-sm">
+    <div className="card shadow-sm" >
       {/* Imagen con tamaño reducido */}
       <img
         src={image}

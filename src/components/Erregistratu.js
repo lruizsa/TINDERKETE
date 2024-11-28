@@ -96,7 +96,7 @@ function Register() {
 
             <div className="form-group d-flex align-items-center justify-content-center">
               <p className="mb-0">Kontu bat baduzu?</p>
-              <button type="button" className="btn btn-link ml-2" onClick={() => navigate('/')}>Login</button>
+              <button type="button" className="btn btn-link ml-2 btn-login" onClick={() => navigate('/')}>Login</button>
             </div>
           </form>
         </div>

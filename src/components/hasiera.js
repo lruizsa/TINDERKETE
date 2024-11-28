@@ -9,7 +9,7 @@ function Hasiera() {
   return (
     <div>
       <Nav />
-      <div className="container mt-5">
+      <div className="container mt-5" style={{ marginBottom: '63px' }}> {/* Agrega más margen en la parte inferior */}
         <div className="d-flex justify-content-center mb-4">
           <h1 className="display-1">TINDERKETE</h1>
         </div>

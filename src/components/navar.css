@@ -1,6 +1,7 @@
 /* Estilo para la navbar */
 .navbar {
     background-color:#005C53; 
+    /*background-color: #81B2A0;*/
     height: 100px; 
     display: flex; 
     align-items: center; 
@@ -87,7 +88,8 @@
     right: -300px; 
     width: 300px;
     height: 100%;
-    background-color: #333;
+    /*background-color: #333;*/
+    background-color: #3B8C6E;
     overflow-x: hidden;
     transition: right 0.3s ease;
     padding-top: 20px;
@@ -115,7 +117,9 @@
 }
   
 .sidebar a:hover {
-    background-color: rgb(70, 114, 26);
+    /*background-color: rgb(70, 114, 26);*/
+    background-color: #F2AE30;
+    border-radius: 20px;
 }
 .sidebar p {
    color:white;

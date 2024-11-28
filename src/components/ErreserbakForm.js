@@ -24,10 +24,9 @@ function Erreserbak() {
   };
 
   return (
-    
-    <div>
+    <div className="d-flex flex-column min-vh-100"> {/* Asegura que el contenedor ocupe al menos la altura total del viewport */}
       <Nav />
-      <div className="container">
+      <div className="container flex-grow-1 mt-5"> {/* Hace que este contenedor ocupe el espacio restante */}
         <div className="row mt-5">
           {/* Card del Formulario */}
           <div className="col-md-4">
