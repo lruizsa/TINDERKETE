@@ -15,7 +15,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Izen Abizenak: ${name}, Email: ${email}, Pasahitza: ${password}, Jaiotze-data: ${birthdate}`);
-    navigate('/');  
+    navigate('/login');  
   };
 
   return (
@@ -91,7 +91,7 @@ function Register() {
 
             <div className="form-group d-flex align-items-center justify-content-center">
               <p className="mb-0">Kontu bat baduzu?</p>
-              <button type="button" className="btn btn-link ml-2 btn-login" onClick={() => navigate('/')}>Login</button>
+              <button type="button" className="btn btn-link ml-2 btn-login" onClick={() => navigate('/login')}>Login</button>
             </div>
           </form>
         </div>
