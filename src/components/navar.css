@@ -141,4 +141,21 @@
     font-weight: bold;
     color: #007bff; 
   }
-   
+
+
+  
+  
+  @media (max-width: 768px) { /* Ajusta el tamaño según lo necesario */
+    .navbar-collapse {
+      background-color: #d38c0af8; /* Cambia el fondo del menú desplegable */
+    }
+    
+    .navbar-nav .nav-item .nav-link {
+      color: #fff; /* Cambia el color del texto de los enlaces */
+    }
+    
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #ff5722; /* Cambia el color del texto al pasar el cursor */
+    }
+  }
+  
