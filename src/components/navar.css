@@ -147,7 +147,20 @@
   
   @media (max-width: 768px) { /* Ajusta el tamaño según lo necesario */
     .navbar-collapse {
-      background-color: #d38c0af8; /* Cambia el fondo del menú desplegable */
+      background-color: #9b9995f8;
+      position: relative;
+      z-index: 10; /* Cambia el fondo del menú desplegable */
+    }
+
+    .profile-logo {
+        position: relative;
+        z-index: 10;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 1%;
+        border-bottom: 1px solid grey;
     }
     
     .navbar-nav .nav-item .nav-link {
@@ -155,7 +168,7 @@
     }
     
     .navbar-nav .nav-item .nav-link:hover {
-      color: #ff5722; /* Cambia el color del texto al pasar el cursor */
+      color: #000000; /* Cambia el color del texto al pasar el cursor */
     }
   }
   
