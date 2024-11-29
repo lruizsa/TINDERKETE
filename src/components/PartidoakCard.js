@@ -52,7 +52,7 @@ function PartidoakCard() {
   return (
     <div className="d-flex flex-column min-vh-100">
       <Nav />
-      <h1 className="text-center mt-4 mb-2">Txapelketak</h1>
+      <h1 className="text-center mt-4 mb-2">Partiduak</h1>
       <div className="container-custom flex-grow-1 mt-4">
         
         {reservations.map((reservation, index) => (
