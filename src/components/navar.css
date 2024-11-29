@@ -145,7 +145,7 @@
 
   
   
-  @media (max-width: 768px) { /* Ajusta el tamaño según lo necesario */
+  @media (max-width: 991px) { /* Ajusta el tamaño según lo necesario */
     .navbar-collapse {
       background-color: #9b9995f8;
       position: relative;

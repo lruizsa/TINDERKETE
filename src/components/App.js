@@ -20,13 +20,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/erreserbak" element={<ErreserbakForm />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/txapelketak" element={<Txapelketak />} /> 
         <Route path="/produktuak" element={<Produktuak />} /> 
-        <Route path="/hasiera" element={<Hasiera />} />
+        <Route path="/" element={<Hasiera />} />
         <Route path="/partidoakCard" element={<PartidoakCard />} />
         <Route path="/kontaktua" element={<Kontaktu />} />
         <Route path="/mapalista" element={<MapaLista />} />  

@@ -77,8 +77,8 @@ function Navbar() {
           {/* Menú desplegable */}
           <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
             <ul className="navbar-nav ms-auto">
-              <li className={`nav-item ${getActiveClass('/hasiera')}`}>
-                <Link className="nav-link" to="/hasiera" onClick={closeMenu}>Gutaz</Link>
+              <li className={`nav-item ${getActiveClass('/')}`}>
+                <Link className="nav-link" to="/" onClick={closeMenu}>Gutaz</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
                 <Link className="nav-link" to="/erreserbak" onClick={closeMenu}>Erreserbak</Link>
