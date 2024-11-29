@@ -170,5 +170,13 @@
     .navbar-nav .nav-item .nav-link:hover {
       color: #000000; /* Cambia el color del texto al pasar el cursor */
     }
+
+    .profile-logo {
+        width: 60px; 
+        cursor: pointer;
+        display:flex;
+        align-items: center;
+        margin-top: 3%;
+    }
   }
   

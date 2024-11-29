@@ -30,7 +30,7 @@ function Navbar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    navigate('/'); // Redirige a la página de inicio
+    navigate('/login'); // Redirige a la página de inicio
   };
 
   return (
@@ -58,7 +58,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           {/* Logo */}
-          <Link className="navbar-brand ml-auto" to="/">
+          <Link className="navbar-brand ml-auto" to="/login">
             <img src={logo} alt="logo" className="logoa" />
             <span className="navbar-title">Tinderkete</span>
           </Link>
@@ -77,8 +77,8 @@ function Navbar() {
           {/* Menú desplegable */}
           <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
             <ul className="navbar-nav ms-auto">
-              <li className={`nav-item ${getActiveClass('/hasiera')}`}>
-                <Link className="nav-link" to="/hasiera" onClick={closeMenu}>Gutaz</Link>
+              <li className={`nav-item ${getActiveClass('/')}`}>
+                <Link className="nav-link" to="/" onClick={closeMenu}>Gutaz</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
                 <Link className="nav-link" to="/erreserbak" onClick={closeMenu}>Erreserbak</Link>
@@ -97,14 +97,18 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
                 <Link className="nav-link" to="/kontaktua" onClick={closeMenu}>Kontaktua</Link>
-              </li>
+              </li>       
+              <li>
+              <Link className="navbar-brand ml-auto" to="#" onClick={toggleSidebar}>
+                <img src={logoImage} alt="1361728" className="profile-logo mx-auto" />
+              </Link>
+              </li>   
+
             </ul>
           </div>
 
           {/* Sidebar toggle */}
-          <Link className="navbar-brand ml-auto" to="#" onClick={toggleSidebar}>
-            <img src={logoImage} alt="1361728" className="profile-logo" />
-          </Link>
+
         </div>
       </nav>
     </div>

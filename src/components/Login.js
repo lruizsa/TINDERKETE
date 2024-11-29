@@ -19,7 +19,7 @@ function Login() {
     e.preventDefault();
 
     if (email === predefinedEmail && password === predefinedPassword) {
-      navigate('/hasiera'); 
+      navigate('/'); 
     } else {
       alert('Erabiltzailea edo pasahitza gaizki sartu dira.');
     }
