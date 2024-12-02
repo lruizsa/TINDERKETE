@@ -1,19 +1,25 @@
-  .container {
-    flex: 1; 
-    padding: 8px;
-  }
-  
-  footer {
-    background-color: #005C53;
-    /*background-color: #81B2A0;*/
-    width: 100%;
-    text-align: center;
-    position:static;
-    bottom:0;
-  }
-  
-  footer a {
-    color: #fff;
-    text-decoration: none;
-  }
+/* Estilo para el nivel superior */
+.footer-top {
+  background-color: #83d8a9; /* Tono más claro */
+  color: #fff;
+}
 
+/* Estilo para el nivel inferior */
+.footer-bottom {
+  background-color: #41775c; /* Tono más oscuro */
+  color: #fff;
+}
+
+/* Ajustes generales */
+a.text-white:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.img-fluid {
+  transition: transform 0.2s ease-in-out;
+}
+
+.img-fluid:hover {
+  transform: scale(1.1);
+}
