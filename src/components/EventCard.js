@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 
 function EventCard({
   title,
@@ -14,39 +13,38 @@ function EventCard({
   participantImages,
 }) {
   return (
-    <div className="card shadow-sm" >
-      
+    <div className="card shadow-lg rounded-lg overflow-hidden hover:scale-100">
       <img
         src={image}
-        className="card-img-top"
+        className="w-full h-64 object-cover"
         alt={`${title}`}
-        style={{ height: "270px", objectFit: "cover" }} 
       />
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">
+      <div className="p-4">
+        <h5 className="text-xl font-semibold mb-2">{title}</h5>
+        <p className="text-sm text-gray-600">
           <strong>{location}</strong> - {date} at {time}
         </p>
-        <p className="card-text">{description}</p>
-        <p className="card-text">
+        <p className="text-sm text-gray-800 mb-2">{description}</p>
+        <p className="text-sm text-gray-700 mb-4">
           <strong>Price:</strong> {price}€ <br />
           <strong>Players:</strong> {participants}/{maxParticipants}
         </p>
-        <div className="participant-images mb-3">
-          <strong>Participants:</strong>
-          <div className="d-flex">
+        <div className="mb-3">
+          <strong className="block text-sm">Participants:</strong>
+          <div className="flex -space-x-2">
             {participantImages.map((img, index) => (
               <img
                 key={index}
                 src={img}
                 alt="Participant"
-                className="rounded-circle me-2"
-                style={{ width: "40px", height: "40px" }}
+                className="rounded-full border-2 border-white w-10 h-10"
               />
             ))}
           </div>
         </div>
-        <button className="btn btn-primary w-100">Apuntatu</button> 
+        <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+          Apuntatu
+        </button>
       </div>
     </div>
   );
