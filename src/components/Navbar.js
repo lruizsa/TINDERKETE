@@ -4,7 +4,8 @@ import logo from '../images/logo.png';
 import agi from '../images/agi.png';
 import tinder from '../images/Tinder-Emblem.png';
 import logoImage from '../images/1361728.png';
-import './navar.css';
+import '../components/navar.css'; 
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); // Estado del menú hamburguesa
@@ -13,7 +14,7 @@ function Navbar() {
   const navigate = useNavigate(); // Para redirigir al hacer logout
 
   const getActiveClass = (path) => {
-    return location.pathname === path ? 'active' : ''; // Clase activa según la ruta
+    return location.pathname === path ? 'bg-blue-500 text-white' : 'text-gray-300'; // Clase activa según la ruta
   };
 
   const toggleMenu = () => {
@@ -36,37 +37,34 @@ function Navbar() {
   return (
     <div>
       {/* Sidebar */}
-      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <div className="sidebar-content">
-          <p className="navbar-brand ml-auto">
-            <img src={agi} alt="logo" className="tinder" />
-            <p className="d-flex justify-content-center">Oaginaga23</p>
+      <div className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`} onClick={toggleSidebar}></div>
+      <div className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform`}>
+        <div className="p-4">
+          <p className="text-center mb-4">
+            <img src={agi} alt="logo" className="mx-auto mb-2 w-16 h-16" />
+            <p>Oaginaga23</p>
           </p>
-          <br />
-          <Link to="/contact" onClick={toggleSidebar}>Perfila</Link>
-          <br />
-          <Link className="navbar-brand ml-auto" to="/">
-            <img src={tinder} alt="logo" className="tinder" />
-            <p className="d-flex justify-content-center">Txat-a</p>
+          <Link to="/contact" className="block py-2 hover:bg-gray-700" onClick={toggleSidebar}>Perfila</Link>
+          <Link to="/" className="block py-2 hover:bg-gray-700" onClick={toggleSidebar}>
+            <img src={tinder} alt="logo" className="mx-auto mb-2 w-16 h-16" />
+            <p className="text-center">Txat-a</p>
           </Link>
-          <br />
-          <Link to="#" onClick={handleLogout}>Logout</Link>
+          <Link to="#" className="block py-2 hover:bg-gray-700" onClick={handleLogout}>Logout</Link>
         </div>
       </div>
 
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark">
-        <div className="container">
+      <nav className="bg-gray-800 text-white">
+        <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
-          <Link className="navbar-brand ml-auto" to="/login">
-            <img src={logo} alt="logo" className="logoa" />
-            <span className="navbar-title">Tinderkete</span>
+          <Link className="flex items-center" to="/">
+            <img src={logo} alt="logo" className="w-16 h-16 mr-2" />
+            <span className="text-xl font-semibold">Tinderkete</span>
           </Link>
 
-          {/* Botón de hamburguesa */}
+          {/* Menú hamburguesa */}
           <button
-            className="navbar-toggler"
-            type="button"
+            className="lg:hidden text-white focus:outline-none"
             onClick={toggleMenu}
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
@@ -74,41 +72,40 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Menú desplegable */}
-          <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
-            <ul className="navbar-nav ms-auto">
+          {/* Menú de navegación */}
+          <div className={`lg:flex space-x-6 ${menuOpen ? 'block' : 'hidden'}`}>
+            <ul className="flex space-x-4">
               <li className={`nav-item ${getActiveClass('/')}`}>
-                <Link className="nav-link" to="/" onClick={closeMenu}>Gutaz</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/" onClick={closeMenu}>Gutaz</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
-                <Link className="nav-link" to="/erreserbak" onClick={closeMenu}>Erreserbak</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/erreserbak" onClick={closeMenu}>Erreserbak</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
-                <Link className="nav-link" to="/txapelketak" onClick={closeMenu}>Txapelketak</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/txapelketak" onClick={closeMenu}>Txapelketak</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
-                <Link className="nav-link" to="/PartidoakCard" onClick={closeMenu}>Partiduak</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/PartidoakCard" onClick={closeMenu}>Partiduak</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
-                <Link className="nav-link" to="/MapaLista" onClick={closeMenu}>Mapa</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/MapaLista" onClick={closeMenu}>Mapa</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
-                <Link className="nav-link" to="/produktuak" onClick={closeMenu}>Produktuak</Link>
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/produktuak" onClick={closeMenu}>Produktuak</Link>
               </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
-                <Link className="nav-link" to="/kontaktua" onClick={closeMenu}>Kontaktua</Link>
-              </li>       
-              <li>
-              <Link className="navbar-brand ml-auto" to="#" onClick={toggleSidebar}>
-                <img src={logoImage} alt="1361728" className="profile-logo mx-auto" />
-              </Link>
-              </li>   
-
+                <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/kontaktua" onClick={closeMenu}>Kontaktua</Link>
+              </li>
             </ul>
           </div>
 
           {/* Sidebar toggle */}
-
+          <button
+            className="lg:block hidden"
+            onClick={toggleSidebar}
+          >
+            <img src={logoImage} alt="1361728" className="w-12 h-12 rounded-full" />
+          </button>
         </div>
       </nav>
     </div>
