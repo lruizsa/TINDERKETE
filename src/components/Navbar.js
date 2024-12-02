@@ -77,7 +77,7 @@ function Navbar() {
           </button>
 
           {/* Menú de navegación */}
-          <div className={`lg:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} flex items-center justify-center`}>
+          <div className={`lg:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} flex items-center justify-center mt-3`}>
             <ul className="flex space-x-4">
               <li className={`nav-item ${getActiveClass('/')}`}>
                 <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/" onClick={closeMenu}>Gutaz</Link>
