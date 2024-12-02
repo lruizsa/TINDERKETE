@@ -7,8 +7,6 @@ import Txapelketak from './Txapelketak';
 import Produktuak from './Produktuak';
 import Hasiera from './Hasiera';
 import PartidoakCard from './PartidoakCard'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
 

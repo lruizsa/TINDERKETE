@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import logo from '../images/logo.png'; 
+import logo from '../images/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 function Register() {
@@ -15,32 +14,34 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Izen Abizenak: ${name}, Email: ${email}, Pasahitza: ${password}, Jaiotze-data: ${birthdate}`);
-    navigate('/');  
+    navigate('/login');  
   };
 
   return (
     <>
-
-      <header></header>
-            
-      <div className="register-wrapper">
+      <header className='bg-gray-800'></header>
+      
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         
-        <div className="logo-container d-flex justify-content-center mb-4">
+        {/* Logo container with margin */}
+        <div className="mb-[-5px]  z-10">
           <img 
             src={logo}
             alt="Logo"
-            className="logo"
+            className="w-24 h-24"
           />
         </div>
 
-        <div className="container login-container" style={{ maxWidth: '400px', marginTop: '50px' }}>
-          <h2 className="mb-4">Erregistroa</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group mb-3">
-              <label htmlFor="name">Izen Abizenak</label>
+        {/* Card container */}
+        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md mt-[-40px]">
+          <h2 className="text-2xl font-bold text-center mb-6 mt-10">Erregistroa</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            
+            <div className="flex flex-col">
+              <label htmlFor="name" className="mb-1 text-gray-700">Izen Abizenak</label>
               <input
                 type="text"
-                className="form-control"
+                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -49,11 +50,11 @@ function Register() {
               />
             </div>
 
-            <div className="form-group mb-3">
-              <label htmlFor="email">Email</label>
+            <div className="flex flex-col">
+              <label htmlFor="email" className="mb-1 text-gray-700">Email</label>
               <input
                 type="email"
-                className="form-control"
+                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -62,11 +63,11 @@ function Register() {
               />
             </div>
 
-            <div className="form-group mb-3">
-              <label htmlFor="password">Pasahitza</label>
+            <div className="flex flex-col">
+              <label htmlFor="password" className="mb-1 text-gray-700">Pasahitza</label>
               <input
                 type="password"
-                className="form-control"
+                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -75,11 +76,11 @@ function Register() {
               />
             </div>
 
-            <div className="form-group mb-3">
-              <label htmlFor="birthdate">Jaiotze-data</label>
+            <div className="flex flex-col">
+              <label htmlFor="birthdate" className="mb-1 text-gray-700">Jaiotze-data</label>
               <input
                 type="date"
-                className="form-control"
+                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 id="birthdate"
                 value={birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
@@ -87,11 +88,22 @@ function Register() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block mb-3">Erregistratu</button>
+            <button 
+              type="submit" 
+              className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
+            >
+              Erregistratu
+            </button>
 
-            <div className="form-group d-flex align-items-center justify-content-center">
-              <p className="mb-0">Kontu bat baduzu?</p>
-              <button type="button" className="btn btn-link ml-2 btn-login" onClick={() => navigate('/')}>Login</button>
+            <div className="flex justify-center items-center mt-10">
+              <p className="mr-2 text-gray-600">Kontu bat baduzu?</p>
+              <p 
+                type="button" 
+                className="text-sm text-blue-600 cursor-pointer hover:underline" 
+                onClick={() => navigate('/login')}
+              >
+                Login
+              </p>
             </div>
           </form>
         </div>

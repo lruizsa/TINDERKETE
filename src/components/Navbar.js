@@ -31,7 +31,7 @@ function Navbar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    navigate('/'); // Redirige a la página de inicio
+    navigate('/login'); // Redirige a la página de inicio
   };
 
   return (
