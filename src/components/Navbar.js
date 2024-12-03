@@ -54,7 +54,7 @@ function Navbar() {
       </div>
 
       {/* Navbar */}
-      <nav className="bg-gray-800 text-white">
+      <nav className="bg-gray-800 text-white sticky">
         <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
           <Link className="flex items-center" to="/">
