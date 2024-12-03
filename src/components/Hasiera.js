@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./Navbar.js";
-import Register from './Erregistratu';
 import Footer from "./Footer.js";
 import bat from "../images/LezoFrontoia.jpg";
 import bi from "../images/Tinder-Emblem.png";
@@ -59,12 +58,12 @@ function Hasiera() {
             </div>
           </div>
 
-          <div className="bg-blue-50 dark:bg-gray-800 py-10 rounded-lg shadow-lg mb-5">
+          <div className="bg-blue-50 bg-gray-800 py-10 rounded-lg shadow-lg mb-5">
             <div className="container mx-auto text-center">
-              <h2 className="text-3xl font-bold text-blue-800 dark:text-white mb-6">
+              <h2 className="text-3xl font-bold text-blue-800 text-white mb-6">
                 Egin bat Komunitatearekin!
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+              <p className="text-lg text-gray-600 text-gray-300 max-w-2xl mx-auto mb-6">
                 Euskal kiroletan aritzeko lagunik aurkitu nahi?
                 Erregistratu gaur eta sartu instalazio onenetan, ezagutu
                 zale amorratuak, eta zure partidak erreserbatu.
