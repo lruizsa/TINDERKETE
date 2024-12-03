@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductCard from './ProductCard'; 
 import entrenatzailea from '../images/oihanEntrenatzailea.jpg'; 
 import pala from '../images/pala.jpg'; 
@@ -6,44 +6,64 @@ import pilotak from '../images/frontenisPelotak.jpg';
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
 
-
-
 const Produktuak = () => {
   const products = [
     {
       name: 'Oihan entrenatzailea',
       price: '25 orduko',
-      image: entrenatzailea, 
+      image: entrenatzailea,
     },
     {
       name: 'Pala',
-      price: 30,
+      price: '30',
       image: pala,
     },
     {
       name: 'Fronteniseko pilotak',
-      price: 10,
+      price: '10',
       image: pilotak,
     },
-   
   ];
 
-  return (
-    <div className="d-flex flex-column min-vh-100"> 
-      
-      <Nav />
+  // Estado para controlar los comentarios de los usuarios (simplificado)
+  const [comments] = useState([
+    { id: 1, text: "Excelente servicio, muy recomendable. El entrenador Oihan es muy profesional.", name: "Ana M." },
+    { id: 2, text: "Las pelotas de frontenis son de buena calidad y a buen precio.", name: "Carlos G." },
+    { id: 3, text: "Muy contento con la pala. La recomiendo totalmente.", name: "José L." }
+  ]);
 
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> 
-        <h1 className="text-center mb-4">Gure produktuak</h1>
-        <div className="row g-4">
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <Nav />
+      <div className="container mx-auto px-4 mt-12 mb-16">
+        <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">Gure produktuak</h1>
+
+        {/* Grid de productos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
-            <div className="col-md-6 col-lg-4" key={index}>
+            <div 
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+            >
               <ProductCard {...product} />
             </div>
           ))}
         </div>
-      </div>
 
+        {/* Sección de Comentarios (más discreta) */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Comentarios de Clientes</h2>
+          <div className="space-y-4 text-center">
+            {comments.slice(0, 2).map((comment) => ( // Mostramos solo los primeros 2 comentarios
+              <div key={comment.id} className="text-sm text-gray-700">
+                <p>"{comment.text}"</p>
+                <p className="text-xs text-gray-500">- {comment.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
       <Footer />
     </div>
   );
