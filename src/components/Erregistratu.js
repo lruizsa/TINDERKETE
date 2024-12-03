@@ -19,12 +19,12 @@ function Register() {
 
   return (
     <>
-      <header></header>
+      <header className='bg-gray-800'></header>
       
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         
         {/* Logo container with margin */}
-        <div className="mb-[-5px] mt-20 z-10">
+        <div className="mb-[-5px]  z-10">
           <img 
             src={logo}
             alt="Logo"
@@ -95,15 +95,15 @@ function Register() {
               Erregistratu
             </button>
 
-            <div className="text-center mt-4">
-              <p className="inline-block mr-2 text-gray-600">Kontu bat baduzu?</p>
-              <button 
+            <div className="flex justify-center items-center mt-10">
+              <p className="mr-2 text-gray-600">Kontu bat baduzu?</p>
+              <p 
                 type="button" 
-                className="text-blue-500 hover:underline" 
+                className="text-sm text-blue-600 cursor-pointer hover:underline" 
                 onClick={() => navigate('/login')}
               >
                 Login
-              </button>
+              </p>
             </div>
           </form>
         </div>

@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 import agi from '../images/agi.png';
 import tinder from '../images/Tinder-Emblem.png';
 import logoImage from '../images/1361728.png';
-import '../components/navar.css'; 
+import '../components/navar.css';
 
 
 function Navbar() {
@@ -14,7 +14,7 @@ function Navbar() {
   const navigate = useNavigate(); // Para redirigir al hacer logout
 
   const getActiveClass = (path) => {
-    return location.pathname === path ? 'bg-blue-500 text-white' : 'text-gray-300'; // Clase activa según la ruta
+    return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300';
   };
 
   const toggleMenu = () => {
@@ -58,9 +58,13 @@ function Navbar() {
         <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
           <Link className="flex items-center" to="/">
-            <img src={logo} alt="logo" className="w-16 h-16 mr-2" />
-            <span className="text-xl font-semibold">Tinderkete</span>
+            <img
+              src={logo}
+              alt="logo"
+              className="w-16 h-16 mr-2 flame-effect rounded-full" 
+            />
           </Link>
+          <h1 className="text-white font-bold text-3xl no-underline !text-decoration-none">  Tinderkete </h1>
 
           {/* Menú hamburguesa */}
           <button
@@ -73,7 +77,7 @@ function Navbar() {
           </button>
 
           {/* Menú de navegación */}
-          <div className={`lg:flex space-x-6 ${menuOpen ? 'block' : 'hidden'}`}>
+          <div className={`lg:flex space-x-6 ${menuOpen ? 'block' : 'hidden'} flex items-center justify-center mt-3`}>
             <ul className="flex space-x-4">
               <li className={`nav-item ${getActiveClass('/')}`}>
                 <Link className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md" to="/" onClick={closeMenu}>Gutaz</Link>
