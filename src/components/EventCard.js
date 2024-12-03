@@ -13,7 +13,7 @@ function EventCard({
   participantImages,
 }) {
   return (
-    <div className="card shadow-lg rounded-lg overflow-hidden hover:scale-100">
+    <div className="card shadow-lg rounded-lg overflow-hidden">
       <img
         src={image}
         className="w-full h-64 object-cover"
