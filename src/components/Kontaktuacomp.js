@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css';
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
 
@@ -16,18 +14,18 @@ function Kontaktu() {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Aseguramos que el footer esté abajo */}
+    <div className="flex flex-col min-h-screen">
       <Nav />
 
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> {/* Se asegura que el contenido crezca y el footer quede abajo */}
-        <h2 className="mb-4 text-center">Jarri gurekin kontaktuan</h2>
-        <form onSubmit={handleSubmit}>
+      <div className="container mx-auto flex-grow mt-5 mb-16 px-4"> {/* Se asegura que el contenido crezca y el footer quede abajo */}
+        <h2 className="mb-4 text-center text-2xl font-semibold">Jarri gurekin kontaktuan</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Campo de nombre */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="izen">Izen abizenak</label>
+          <div className="mb-4">
+            <label htmlFor="izen" className="block text-sm font-medium text-gray-700">Izen abizenak</label>
             <input
               type="text"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="izen"
               value={izen}
               onChange={(e) => setIzen(e.target.value)}
@@ -37,11 +35,11 @@ function Kontaktu() {
           </div>
 
           {/* Campo de email */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="email">Email-a</label>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email-a</label>
             <input
               type="email"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -51,11 +49,11 @@ function Kontaktu() {
           </div>
 
           {/* Campo de teléfono */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="telefonoa">Telefonoa</label>
+          <div className="mb-4">
+            <label htmlFor="telefonoa" className="block text-sm font-medium text-gray-700">Telefonoa</label>
             <input
               type="text"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="telefonoa"
               value={telefonoa}
               onChange={(e) => setTelefonoa(e.target.value)}
@@ -65,10 +63,10 @@ function Kontaktu() {
           </div>
 
           {/* Campo de mensaje */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="mezua">Mezua</label>
+          <div className="mb-4">
+            <label htmlFor="mezua" className="block text-sm font-medium text-gray-700">Mezua</label>
             <textarea
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="mezua"
               value={mezua}
               onChange={(e) => setMezua(e.target.value)}
@@ -78,8 +76,11 @@ function Kontaktu() {
           </div>
 
           {/* Botón de envío */}
-          <div className="form-group text-center">
-            <button type="submit" className="btn btn-primary btn-block">
+          <div className="mb-4">
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
               Bidali
             </button>
           </div>

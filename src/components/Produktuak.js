@@ -38,23 +38,23 @@ const Produktuak = () => {
       <div className="container mx-auto px-4 mt-12 mb-16">
         <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">Gure produktuak</h1>
 
-        {/* Grid de productos */}
+        {/* Produktuak */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl"
             >
               <ProductCard {...product} />
             </div>
           ))}
         </div>
 
-        {/* Sección de Comentarios (más discreta) */}
+        {/* Komentarioak */}
         <div className="mt-16">
           <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Bezeroen iritziak</h2>
           <div className="space-y-4 text-center">
-            {comments.slice(0, 2).map((comment) => ( // Mostramos solo los primeros 2 comentarios
+            {comments.slice(0, 2).map((comment) => ( // bi komentario soilik erakutsi
               <div key={comment.id} className="text-sm text-gray-700">
                 <p>"{comment.text}"</p>
                 <p className="text-xs text-gray-500">- {comment.name}</p>

@@ -14,7 +14,7 @@ function Hasiera() {
       {/* Navbar */}
       <Nav />
 
-      {/* Hero Section */}
+      {/* Main */}
       <section className="relative bg-gradient-to-r from-blue-700 to-indigo-900 text-white py-20">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-extrabold mb-6">TINDERKETE</h1>
@@ -32,7 +32,7 @@ function Hasiera() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Section izenburu */}
       <section className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800">Ezagutu Aplikazioa</h2>
@@ -41,9 +41,9 @@ function Hasiera() {
           </p>
         </div>
 
-        {/* Features Grid */}
+        {/* Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card 1 */}
+          {/* Frontoia */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
               src={bat}
@@ -58,7 +58,7 @@ function Hasiera() {
             </div>
           </div>
 
-          {/* Card 2 */}
+          {/* Tinder */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="flex justify-center items-center bg-gradient-to-r from-pink-500 to-red-500 h-48">
               <img
@@ -75,7 +75,7 @@ function Hasiera() {
             </div>
           </div>
 
-          {/* Card 3 */}
+          {/* Trinketeak */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
               src={hiru}
@@ -92,7 +92,7 @@ function Hasiera() {
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* Komunitatea */}
       <section className="bg-blue-600 text-white py-16">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Egin bat Komunitatearekin!</h2>

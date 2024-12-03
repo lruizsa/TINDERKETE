@@ -8,7 +8,7 @@ function ProductCard({ name, price, image }) {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">Prezioa: {price}€</p>
-        <button className="btn btn-primary">Erosi</button>
+        <button className="btn btn-primary w-full">Erosi</button>
       </div>
     </div>
   );

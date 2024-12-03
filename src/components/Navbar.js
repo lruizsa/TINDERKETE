@@ -13,33 +13,31 @@ function Navbar() {
   const navigate = useNavigate(); // Para redirigir al hacer logout
 
   const getActiveClass = (path) => {
-    return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300';
+    return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
   };
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Abre o cierra el menú hamburguesa
+    setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi
   };
 
   const closeMenu = () => {
-    setMenuOpen(false); // Cierra el menú hamburguesa al hacer clic en un enlace
+    setMenuOpen(false); // Hanburguesa menua itxi klik egitean link batean
   };
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen); // Abre o cierra el sidebar
+    setSidebarOpen(!sidebarOpen); // Sidebar ireki itxi
   };
 
   const handleLogout = (e) => {
     e.preventDefault();
-    navigate('/login'); // Redirige a la página de inicio
+    navigate('/login'); // Hasierako horria
   };
 
   return (
     <div className="relative sticky top-0 z-50 shadow-lg">
       {/* Sidebar */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 ${
-          sidebarOpen ? 'block' : 'hidden'
-        }`}
+        className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
         onClick={toggleSidebar}
       ></div>
       <div
@@ -49,12 +47,12 @@ function Navbar() {
       >
         <div className="p-4">
           <p className="text-center mb-4">
-            <img src={agi} alt="logo" className="mx-auto mb-2 w-16 h-16" />
+            <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
             <p>Oaginaga23</p>
           </p>
           <Link
             to="/contact"
-            className="block py-2 hover:bg-gray-700"
+            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >
             Perfila
@@ -64,12 +62,12 @@ function Navbar() {
             className="block py-2 hover:bg-gray-700"
             onClick={toggleSidebar}
           >
-            <img src={tinder} alt="logo" className="mx-auto mb-2 w-16 h-16" />
-            <p className="text-center">Txat-a</p>
+            <img src={tinder} alt="logo" className="mx-auto mb-2 w-17 h-17 object-contain" />
+            <p className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md">Txat-a</p>
           </Link>
           <Link
             to="#"
-            className="block py-2 hover:bg-gray-700"
+            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={handleLogout}
           >
             Logout
@@ -85,30 +83,98 @@ function Navbar() {
             <img
               src={logo}
               alt="logo"
-              className="w-16 h-16 sm-w-16 sm-h-16 mr-2 flame-effect rounded-full"
+              className="w-16 h-16 sm:w-16 sm:h-16 mr-2 flame-effect rounded-full object-contain"
             />
           </Link>
-          <h1 className="text-white font-bold text-3xl no-underline">
-            Tinderkete
-          </h1>
+          <h1 className="text-white font-bold text-3xl no-underline">Tinderkete</h1>
 
-          {/* Menú hamburguesa */}
-          <button
-            className="lg:hidden text-white focus:outline-none"
-            onClick={toggleMenu}
-            aria-expanded={menuOpen}
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          {/* Hanburguesa menua txikia */}
+          <div className="lg:hidden">
+            <button
+              className="navbar-burger flex items-center text-blue-600 p-3"
+              onClick={toggleMenu}
+            >
+              <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
 
-          {/* Menú de navegación */}
-          <div
-            className={`lg:flex space-x-6 ${
-              menuOpen ? 'block' : 'hidden'
-            } flex items-center justify-center mt-3`}
-          >
+          {/* Pantaila handitako navbar */}
+          <div className="hidden lg:flex space-x-6 mt-3">
             <ul className="flex space-x-4">
+              <li className={`nav-item ${getActiveClass('/')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/"
+                  onClick={closeMenu}
+                >
+                  Gutaz
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/erreserbak"
+                  onClick={closeMenu}
+                >
+                  Erreserbak
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/txapelketak"
+                  onClick={closeMenu}
+                >
+                  Txapelketak
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/PartidoakCard"
+                  onClick={closeMenu}
+                >
+                  Partiduak
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/MapaLista"
+                  onClick={closeMenu}
+                >
+                  Mapa
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/produktuak')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/produktuak"
+                  onClick={closeMenu}
+                >
+                  Produktuak
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/kontaktua"
+                  onClick={closeMenu}
+                >
+                  Kontaktua
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Hanburguesa menua pantaila txikitan */}
+          <div
+            className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} absolute bg-gray-800 text-white shadow-lg p-4 top-full right-0 mt-2 w-48`}
+          >
+            <ul className="flex flex-col space-y-4">
               <li className={`nav-item ${getActiveClass('/')}`}>
                 <Link
                   className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
@@ -180,7 +246,7 @@ function Navbar() {
             <img
               src={logoImage}
               alt="1361728"
-              className="w-12 h-12 rounded-full bg-amber-500 p-1"
+              className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
             />
           </button>
         </div>
