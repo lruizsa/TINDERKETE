@@ -27,7 +27,7 @@ const Produktuak = () => {
 
   // Estado para controlar los comentarios de los usuarios (simplificado)
   const [comments] = useState([
-    { id: 1, text: "Excelente servicio, muy recomendable. El entrenador Oihan es muy profesional.", name: "Ana M." },
+    { id: 1, text: "Itzelako zerbitzua, oso profesionala. Hoian entrenatzailea primerako tipoa da.", name: "Ana M." },
     { id: 2, text: "Las pelotas de frontenis son de buena calidad y a buen precio.", name: "Carlos G." },
     { id: 3, text: "Muy contento con la pala. La recomiendo totalmente.", name: "José L." }
   ]);
@@ -43,7 +43,7 @@ const Produktuak = () => {
           {products.map((product, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+              className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl"
             >
               <ProductCard {...product} />
             </div>
@@ -52,7 +52,7 @@ const Produktuak = () => {
 
         {/* Sección de Comentarios (más discreta) */}
         <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Comentarios de Clientes</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Bezeroen iritziak</h2>
           <div className="space-y-4 text-center">
             {comments.slice(0, 2).map((comment) => ( // Mostramos solo los primeros 2 comentarios
               <div key={comment.id} className="text-sm text-gray-700">

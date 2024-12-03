@@ -111,7 +111,7 @@ function Navbar() {
             <ul className="flex space-x-4">
               <li className={`nav-item ${getActiveClass('/')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/"
                   onClick={closeMenu}
                 >
@@ -120,7 +120,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/erreserbak"
                   onClick={closeMenu}
                 >
@@ -129,7 +129,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/txapelketak"
                   onClick={closeMenu}
                 >
@@ -138,7 +138,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/PartidoakCard"
                   onClick={closeMenu}
                 >
@@ -147,7 +147,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/MapaLista"
                   onClick={closeMenu}
                 >
@@ -156,7 +156,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/produktuak"
                   onClick={closeMenu}
                 >
@@ -165,7 +165,7 @@ function Navbar() {
               </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
                 <Link
-                  className="nav-link py-2 px-4 hover:bg-gray-700 rounded-md"
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                   to="/kontaktua"
                   onClick={closeMenu}
                 >

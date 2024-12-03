@@ -48,13 +48,8 @@ header {
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
-}
 
-/*
-  .card:hover {
-    transform: scale(1.05);
-  } */
+}
 
 .card-title {
   color: #333;
