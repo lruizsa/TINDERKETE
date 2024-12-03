@@ -8,7 +8,6 @@ import p1 from '../images/pertsona1.jpg';
 import p2 from '../images/pertsona2.jpg'; 
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
-import './txapelketak.css';
 
 const Txapelketak = () => {
   const events = [
@@ -61,15 +60,14 @@ const Txapelketak = () => {
   ];
 
   return (
-    <div className="d-flex flex-column min-vh-100"> 
-      
+    <div className="flex flex-col min-h-screen"> 
       <Nav />
 
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> 
-        <h1 className="text-center mb-4">Txapelketak</h1>
-        <div className="row g-4">
+      <div className="container mx-auto mt-10 mb-20">
+        <h1 className="text-3xl font-semibold text-center mb-6">Txapelketak</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
-            <div className="col-md-6 col-lg-4" key={index}>
+            <div key={index} className="col-span-1">
               <EventCard {...event} />
             </div>
           ))}
