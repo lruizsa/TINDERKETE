@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import p1 from "../images/pertsona1.jpg";
-import p2 from "../images/pertsona2.jpg";
+import p1 from "../images/mikel.jpg";
+import p2 from "../images/ane.jpg";
+import agi from "../images/agi.png"
 import libre from "../images/libre.png";
-import Nav from './Navbar.js'; 
+import Nav from './Navbar.js';
 import Footer from './Footer.js';
-import "./PartidoakCard.css"; // Importa el archivo CSS personalizado
 
 function PartidoakCard() {
   const [reservations] = useState([
@@ -20,6 +20,21 @@ function PartidoakCard() {
       availableSpots: 2,
       price: "11,74€",
       duration: "90 minututu",
+      type: "publiko"
+    },
+    {
+      date: "Gaur",
+      time: "18:00",
+      sport: "Frontoia",
+      location: "Antigua",
+      players: [
+        { name: "Oihan", image: agi },
+        { name: "Leire", image: p2 },
+      ],
+      availableSpots: 2,
+      price: "9,74€",
+      duration: "60 minututu",
+      type: "publiko"
     },
     {
       date: "Bihar",
@@ -33,6 +48,35 @@ function PartidoakCard() {
       availableSpots: 2,
       price: "15,00€",
       duration: "60 minututu",
+      type: "pribatu"
+    },
+    {
+      date: "Bihar",
+      time: "20:30",
+      sport: "Trinketea",
+      location: "Sagues",
+      players: [
+        { name: "Jon", image: p1 },
+        { name: "Ane", image: p2 },
+      ],
+      availableSpots: 2,
+      price: "20,00€",
+      duration: "60 minututu",
+      type: "pribatu"
+    },
+    {
+      date: "Etzi",
+      time: "17:00",
+      sport: "Frontoia",
+      location: "Loiola",
+      players: [
+        { name: "Mikel", image: agi },
+        { name: "Irati", image: p2 },
+      ],
+      availableSpots: 2,
+      price: "10,50€",
+      duration: "120 minututu",
+      type: "publiko"
     },
     {
       date: "Etzi",
@@ -46,65 +90,121 @@ function PartidoakCard() {
       availableSpots: 2,
       price: "10,50€",
       duration: "120 minututu",
+      type: "publiko"
     },
+    {
+      date: "Etzi",
+      time: "17:00",
+      sport: "Frontoia",
+      location: "Loiola",
+      players: [
+        { name: "Mikel", image: agi },
+        { name: "Irati", image: p2 },
+      ],
+      availableSpots: 2,
+      price: "10,50€",
+      duration: "120 minututu",
+      type: "publiko"
+    }
   ]);
 
+  const [activeList, setActiveList] = useState('publiko');
+
+  const filteredReservations = reservations.filter(reservation => reservation.type === activeList);
+
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <h1 className="text-center mt-4 mb-2">Partiduak</h1>
-      <div className="container-custom flex-grow-1 mt-4">
-        
-        {reservations.map((reservation, index) => (
-          <div className="card-custom" key={index}>
-            <div className="card-header">
-              <div className="azpi-header">
-                <p className="date-time">
-                  {reservation.date} | {reservation.time}
-                </p>
-                <p className="sport">{reservation.sport}</p>
-              </div>
+      <div className="text-center mt-8 mb-8 px-4">
+        <h1 className="text-3xl font-bold text-blue-600">Partidu publiko eta pribatuak</h1>
+        <p className="text-xl mt-2 text-gray-600">Aukeratu partidu pribatu edo publiko batean izena eman nahi duzun.</p>
+      </div>
+
+      <div className="flex justify-center space-x-4 mb-6">
+        <button
+          onClick={() => setActiveList('publiko')}
+          className={`px-6 py-2 rounded-lg ${activeList === 'publiko' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+        >
+          Publikoak
+        </button>
+        <button
+          onClick={() => setActiveList('pribatu')}
+          className={`px-6 py-2 rounded-lg ${activeList === 'pribatu' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
+        >
+          Pribatuak
+        </button>
+      </div>
+
+      {/* Grid de tarjetas responsive */}
+      <div className="container mx-auto flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+        {filteredReservations.map((reservation, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-md rounded-lg p-4 border border-gray-200"
+          >
+            {/* Encabezado con fecha y deporte */}
+            <div className="flex justify-between items-center border-b pb-2">
+              <p className="text-sm text-gray-500">
+                {reservation.date} | {reservation.time}
+              </p>
+              <p className="text-lg font-semibold text-gray-800">
+                {reservation.sport}
+              </p>
             </div>
 
-            {/* Línea horizontal encima de los jugadores */}
-            <hr className="horizontal-line" />
+            <hr className="my-2 border-gray-300" />
 
-            {/* Jugadores y lugares libres */}
-            <div className="players-container">
+            {/* Jugadores y espacios libres */}
+            <div className="flex items-center">
               {reservation.players.map((player, idx) => (
-                <div key={idx} className="player-box">
-                  <img src={player.image} alt={player.name} />
-                  <span>{player.name}</span>
+                <div
+                  key={idx}
+                  className="flex flex-col items-center mr-2 text-center"
+                >
+                  <img
+                    src={player.image}
+                    alt={player.name}
+                    className="w-16 h-16 rounded-full mb-1"
+                  />
+                  <span className="text-xs text-gray-700">{player.name}</span>
                 </div>
               ))}
 
-              {/* Separador vertical */}
-              <div className="separator"></div>
+              <div className="border-l border-gray-300 mx-2 h-10"></div>
 
-              {/* Espacios libres */}
               {[...Array(reservation.availableSpots)].map((_, idx) => (
-                <div key={`libre-${idx}`} className="spot-box">
-                  <img src={libre} alt="Libre" />
-                  <span>Libre</span>
+                <div
+                  key={`libre-${idx}`}
+                  className="flex flex-col items-center text-center"
+                >
+                  <img
+                    src={libre}
+                    alt="Libre"
+                    className="w-16 h-16 rounded-full mb-1 cursor-pointer"
+                    onClick={() => {}}
+                  />
+                  <span className="text-xs text-gray-500">Libre</span>
                 </div>
               ))}
             </div>
 
-            {/* Línea horizontal debajo de los jugadores */}
-            <hr className="horizontal-line" />
+            <hr className="my-2 border-gray-300" />
 
-            <div className="location-price-duration">
-              <p className="location">{reservation.location}</p>
-              <div className="separator"></div>
-              <div className="price-duration">
-                <p className="price">{reservation.price}</p>
-                <p className="duration">{reservation.duration}</p>
+            {/* Ubicación, precio y duración */}
+            <div className="flex justify-between items-center">
+              <p className="text-gray-600 text-sm">{reservation.location}</p>
+              <div className="text-right">
+                <p className="text-base font-semibold text-gray-800">
+                  {reservation.price}
+                </p>
+                <p className="text-xs text-gray-500">{reservation.duration}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
 
+      <div className="mb-8"></div>
       <Footer />
     </div>
   );
