@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
+import TxapelketaSortu from './TxapelketaSortu';
 
 
 
@@ -30,7 +31,8 @@ function App() {
         <Route path="/" element={<Hasiera />} />
         <Route path="/partidoakCard" element={<PartidoakCard />} />
         <Route path="/kontaktua" element={<Kontaktu />} />
-        <Route path="/mapalista" element={<MapaLista />} />  
+        <Route path="/mapalista" element={<MapaLista />} />
+        <Route path="/txapelketasortu" element={<TxapelketaSortu />} />  
       </Routes>
     </Router>
   );

@@ -25,7 +25,7 @@ function MapaLista() {
   const [activeList, setActiveList] = useState('frontoiak');
 
   return (
-    <div className="bg-gray-100">
+    <div className="">
       <Nav />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
