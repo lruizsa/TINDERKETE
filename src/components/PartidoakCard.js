@@ -204,10 +204,9 @@ function PartidoakCard() {
           </div>
         ))}
       </div>
-
-      <div className="mb-8"></div>
-      <Footer />
+      
     </div>
+    <Footer />
   </div>
       
   );
