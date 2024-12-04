@@ -57,7 +57,7 @@ function Navbar() {
           </p>
           <hr></hr>
           <Link
-            to="/contact"
+            to="/perfila"
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >

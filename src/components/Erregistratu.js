@@ -7,19 +7,55 @@ function Register() {
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
+  const [lastName, setLastName] = useState(''); // Añadido el estado para apellidos
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [birthdate, setBirthdate] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Izen Abizenak: ${name}, Email: ${email}, Pasahitza: ${password}, Jaiotze-data: ${birthdate}`);
-    navigate('/login');
+
+    // Verificación de que la contraseña y su confirmación coincidan
+    if (password !== passwordConfirmation) {
+      alert('Pasahitzak ez dira bat etorri');
+      return;
+    }
+
+    const userData = {
+      izena: name, // Nombre
+      abizenak: lastName, // Apellidos, que provienen del nuevo campo
+      email: email,
+      pasahitza: password,
+      pasahitza_confirmation: passwordConfirmation,
+      jaiotzeData: birthdate,
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Erabiltzailea ongi sortu da.');
+        navigate('/login');
+      } else {
+        alert('Errorea: ' + JSON.stringify(data.Errorea));
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Errorea gertatu da');
+    }
   };
 
   return (
     <>
-      {/* Header */}
       <header className="bg-gray-800 py-4"> </header>
 
         {/* Main Content */}
