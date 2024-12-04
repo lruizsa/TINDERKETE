@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Nav from './Navbar.js'; 
+import Nav from './Navbar.js';
 import Footer from './Footer.js';
 
 function Erreserbak() {
@@ -17,35 +17,37 @@ function Erreserbak() {
       playerCount,
       location,
       time,
-      isPublic, 
+      isPublic,
     };
     setReservations([...reservations, newReservation]);
   };
 
   return (
-    <div className="flex flex-col min-h-screen"> 
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <div className="container mx-auto flex-grow px-4 py-8"> 
-      <div className="text-center mb-8">
+      <div className="container mx-auto flex-grow px-4 py-8">
+        <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-blue-600">Erreserbak</h1>
           <p className="text-xl mt-2 text-gray-600">Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!</p>
         </div>
         <div className="flex flex-wrap -mx-4">
-          
+
           {/* Form Card */}
           <div className="w-full md:w-1/3 px-4 mb-8 ">
             <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6">
               <h5 className="text-xl font-bold mb-6 text-center">ERRESERBA EGIN</h5>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block mb-1 text-gray-700">Kirol mota</label>
-                  <input
-                    type="text"
+                  <label className="block mb-1 text-gray-700">Zelai mota</label>
+                  <select
                     value={sportType}
                     onChange={(e) => setSportType(e.target.value)}
-                    placeholder="Sartu kirol mota"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
+                  >
+                    <option value="">---</option>
+                    <option value="Trinketea">Trinketea</option>
+                    <option value="Frontoia">Frontoia</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block mb-1 text-gray-700">Jokalari kopurua</label>
@@ -85,8 +87,8 @@ function Erreserbak() {
                   />
                   <label className="ml-2 text-gray-700">Publikoa egin</label>
                 </div>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
                 >
                   Sartu
