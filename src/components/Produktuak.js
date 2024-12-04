@@ -10,7 +10,7 @@ const Produktuak = () => {
   const products = [
     {
       name: 'Oihan entrenatzailea',
-      price: '25 orduko',
+      price: '25 h/',
       image: entrenatzailea,
     },
     {
@@ -27,7 +27,7 @@ const Produktuak = () => {
 
   // Estado para controlar los comentarios de los usuarios (simplificado)
   const [comments] = useState([
-    { id: 1, text: "Itzelako zerbitzua, oso profesionala. Hoian entrenatzailea primerako tipoa da.", name: "Ana M." },
+    { id: 1, text: "Itzelako zerbitzua, oso profesionala. Ohian entrenatzailea primerako tipoa da.", name: "Ana M." },
     { id: 2, text: "Las pelotas de frontenis son de buena calidad y a buen precio.", name: "Carlos G." },
     { id: 3, text: "Muy contento con la pala. La recomiendo totalmente.", name: "José L." }
   ]);

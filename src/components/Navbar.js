@@ -34,7 +34,7 @@ function Navbar() {
   };
 
   return (
-    <div className="relative sticky top-0 z-50 shadow-lg">
+    <div className="sticky top-0 z-50 shadow-lg">
       {/* Sidebar */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
