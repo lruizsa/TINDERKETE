@@ -34,7 +34,7 @@ function Navbar() {
   };
 
   return (
-    <div className="relative sticky top-0 z-50 shadow-lg">
+    <div className="sticky top-0 z-50 shadow-lg">
       {/* Sidebar */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
@@ -237,8 +237,16 @@ function Navbar() {
                 >
                   Kontaktua
                 </Link>
-              </li>
+              </li>            
+              <button className="lg:block hidden" onClick={toggleSidebar}>
+            <img
+              src={logoImage}
+              alt="1361728"
+              className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
+            />
+          </button>
             </ul>
+
           </div>
 
           {/* Sidebar toggle */}

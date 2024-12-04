@@ -49,20 +49,26 @@ function MapaLista() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(activeList === 'frontoiak' ? frontoiak : trinketeak).map((item, index) => (
-            <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
-              <iframe
-                src={item.iframe}
-                className="w-full h-60 border-0"
-                title={item.name}
-              ></iframe>
-              <div className="p-4">
-                <h2 className="text-xl font-semibold text-gray-800">{item.name}</h2>
-                <a href={item.url || "#"} className="text-blue-500 mt-2 block">Google Mapsen Ireki</a>
-              </div>
-            </div>
-          ))}
+  {(activeList === 'frontoiak' ? frontoiak : trinketeak).map((item, index) => {
+    // Reemplaza el zoom en la URL del iframe dinámicamente
+    const updatedIframeSrc = item.iframe.replace(/!4f\d+(\.\d+)?/, '!4f40'); // Cambia a nivel de zoom deseado
+    
+    return (
+      <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
+        <iframe
+          src={updatedIframeSrc} // Usar la URL ajustada
+          className="w-full h-60 border-0"
+          title={item.name}
+        ></iframe>
+        <div className="p-4">
+          <h2 className="text-xl font-semibold text-gray-800">{item.name}</h2>
+          <a href={item.url || "#"} className="text-blue-500 mt-2 block">Google Mapsen Ireki</a>
         </div>
+      </div>
+    );
+  })}
+</div>
+
       </div>
       <Footer />
     </div>

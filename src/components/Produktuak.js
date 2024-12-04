@@ -10,7 +10,7 @@ const Produktuak = () => {
   const products = [
     {
       name: 'Oihan entrenatzailea',
-      price: '25 orduko',
+      price: '25 h/',
       image: entrenatzailea,
     },
     {
@@ -27,7 +27,7 @@ const Produktuak = () => {
 
   // Estado para controlar los comentarios de los usuarios (simplificado)
   const [comments] = useState([
-    { id: 1, text: "Itzelako zerbitzua, oso profesionala. Hoian entrenatzailea primerako tipoa da.", name: "Ana M." },
+    { id: 1, text: "Itzelako zerbitzua, oso profesionala. Ohian entrenatzailea primerako tipoa da.", name: "Ana M." },
     { id: 2, text: "Las pelotas de frontenis son de buena calidad y a buen precio.", name: "Carlos G." },
     { id: 3, text: "Muy contento con la pala. La recomiendo totalmente.", name: "José L." }
   ]);
@@ -35,9 +35,11 @@ const Produktuak = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <Nav />
-      <div className="container mx-auto px-4 mt-12 mb-16">
-        <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">Gure produktuak</h1>
-
+      <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">Produktuak</h1>
+          <p className="text-xl mt-2 text-gray-600">Entrenamendu eta produktu hoberenak!</p>
+        </div>
         {/* Produktuak */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (

@@ -58,114 +58,91 @@ function Register() {
     <>
       <header className="bg-gray-800 py-4"> </header>
 
-      <div className="h-screen bg-gray-100 flex justify-center items-center">
-        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative min-h-[500px] mt-[-95px]">
-          <div className="flex justify-center mb-6 relative">
-            <img src={logo} alt="Logo" className="h-24 w-24 mb-4 absolute top-[-90px]" />
+        {/* Main Content */}
+        <div className=" bg-gray-100 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative min-h-[500px] mt-[-95px]">
+
+            {/* Logo */}
+            <div className="flex justify-center mb-6 relative">
+              <img src={logo} alt="Logo" className="h-24 w-24 mb-4 absolute top-[-90px]" />
+            </div>
+
+            <h2 className="text-2xl font-semibold text-center mb-6">Erregistratu</h2>
+
+            <form onSubmit={handleSubmit}>
+
+              <div className="flex flex-col mb-4">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Izen Abizenak</label>
+                <input
+                  type="text"
+                  className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Sartu izen-abizenak"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Sartu email-a"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col mb-4">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Pasahitza</label>
+                <input
+                  type="password"
+                  className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Sartu pasahitza"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col mb-6">
+                <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">Jaiotze-data</label>
+                <input
+                  type="date"
+                  className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  id="birthdate"
+                  value={birthdate}
+                  onChange={(e) => setBirthdate(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
+                >
+                  Erregistratu
+                </button>
+              </div>
+
+              <div className="flex justify-center items-center mt-10">
+                <p className="mr-2 text-sm text-gray-600">Kontu bat baduzu?</p>
+                <p
+                  type="button"
+                  className="text-sm text-blue-600 cursor-pointer hover:underline"
+                  onClick={() => navigate('/login')}
+                >
+                  Login
+                </p>
+              </div>
+            </form>
           </div>
-
-          <h2 className="text-2xl font-semibold text-center mb-6">Erregistratu</h2>
-
-          <form onSubmit={handleSubmit}>
-            <div className="flex flex-col mb-4">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Izen</label>
-              <input
-                type="text"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Sartu izena"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col mb-4">
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Abizenak</label>
-              <input
-                type="text"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}  // Captura el apellido
-                placeholder="Sartu abizenak"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-              <input
-                type="email"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Sartu email-a"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Pasahitza</label>
-              <input
-                type="password"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Sartu pasahitza"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col mb-4">
-              <label htmlFor="password_confirmation" className="block text-sm font-medium text-gray-700">Pasahitza baieztatu</label>
-              <input
-                type="password"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="password_confirmation"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                placeholder="Pasahitza baieztatu"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col mb-6">
-              <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">Jaiotze-data</label>
-              <input
-                type="date"
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-                id="birthdate"
-                value={birthdate}
-                onChange={(e) => setBirthdate(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="mb-4">
-              <button
-                type="submit"
-                className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
-              >
-                Erregistratu
-              </button>
-            </div>
-
-            <div className="flex justify-center items-center mt-10">
-              <p className="mr-2 text-sm text-gray-600">Kontu bat baduzu?</p>
-              <p
-                type="button"
-                className="text-sm text-blue-600 cursor-pointer hover:underline"
-                onClick={() => navigate('/login')}
-              >
-                Login
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
+        </div>        
     </>
   );
 }
