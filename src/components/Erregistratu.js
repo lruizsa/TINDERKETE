@@ -59,7 +59,7 @@ function Register() {
       <header className="bg-gray-800 py-4"> </header>
 
         {/* Main Content */}
-        <div className=" bg-gray-100 flex justify-center items-center">
+        <div className="min-h-screen bg-gray-100 flex justify-center items-center">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative min-h-[500px] mt-[-95px]">
 
             {/* Logo */}
