@@ -48,6 +48,8 @@ function App() {
         <Route path="/" element={<Hasiera />} />
         <Route path="/partidoakCard" element={<PartidoakCard />} />
         <Route path="/kontaktua" element={<Kontaktu />} />
+        <Route path="/mapalista" element={<MapaLista />} />
+        <Route path="/txapelketasortu" element={<TxapelketaSortu />} />  
         <Route path="/mapalista" element={<MapaLista />} />  
         <Route path="/perfila" element={<PerfilaIkusi />} />  
       </Routes>

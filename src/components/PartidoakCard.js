@@ -115,7 +115,8 @@ function PartidoakCard() {
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
-      <div className="text-center mt-8 mb-8 px-4">
+      <div className="px-4 py-8">
+        <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-blue-600">Partidu publiko eta pribatuak</h1>
         <p className="text-xl mt-2 text-gray-600">Aukeratu partidu pribatu edo publiko batean izena eman nahi duzun.</p>
       </div>
@@ -207,6 +208,8 @@ function PartidoakCard() {
       <div className="mb-8"></div>
       <Footer />
     </div>
+  </div>
+      
   );
 }
 

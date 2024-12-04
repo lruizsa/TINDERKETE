@@ -5,6 +5,11 @@ import agi from '../images/agi.png';
 import tinder from '../images/Tinder-Emblem.png';
 import logoImage from '../images/1361728.png';
 import '../components/navar.css';
+import logotxuri from '../images/perfiltxuri.png'
+import logout from '../images/logout.png'
+import ezarpenak from '../images/ezarpenak.png'
+
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); // Estado del menú hamburguesa
@@ -48,30 +53,46 @@ function Navbar() {
         <div className="p-4">
           <p className="text-center mb-4">
             <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-            <p>Oaginaga23</p>
+            <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Oaginaga23</h3>
           </p>
+          <hr></hr>
           <Link
             to="/perfila"
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >
-            Perfila
+            <div className="flex justify-start items-center"><img src={logotxuri} className="w-8 h-8 mr-2"/><h4 className="mt-2">Perfila</h4></div>
+ 
           </Link>
+          <hr></hr>
           <Link
-            to="/"
-            className="block py-2 hover:bg-gray-700"
+            to="/contact"
+            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >
-            <img src={tinder} alt="logo" className="mx-auto mb-2 w-17 h-17 object-contain" />
-            <p className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md">Txat-a</p>
-          </Link>
+            <div className="flex justify-start items-center"><img src={tinder} className="w-18 h-8 mr-2"/><h4 className="mt-2">Txat-a</h4></div>
+ 
+          </Link>          
+          {/* <hr></hr>
           <Link
-            to="#"
+            to="/contact"
+            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+            onClick={toggleSidebar}
+          >
+            <div className="flex justify-start items-center"><img src={ezarpenak} className="w-8 h-7 mr-2"/><h4 className="mt-2">TXP Kudeatu</h4></div>
+ 
+          </Link>
+          <br></br><br></br><br></br><br></br><br></br><br></br> */}
+          <hr></hr>
+          <Link
+            to="/contact"
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={handleLogout}
           >
-            Logout
+            <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2"/><h4 className="mt-2">Logout</h4></div>
+ 
           </Link>
+
         </div>
       </div>
 
