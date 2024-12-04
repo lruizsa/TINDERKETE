@@ -28,8 +28,7 @@ function TxapelketaSortu () {
       <Nav />
       <div className="container mx-auto flex-grow px-4 py-8"> 
       <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Erreserbak</h1>
-          <p className="text-xl mt-2 text-gray-600">Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!</p>
+          <h1 className="text-3xl font-bold text-blue-600">Txapelketak sortzeko gunea</h1>
         </div>
         <div className="flex flex-wrap -mx-4">
           
@@ -96,8 +95,8 @@ function TxapelketaSortu () {
             </div>
           </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
     </div>
 
     );

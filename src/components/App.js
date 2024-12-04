@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
+import TxapelketaSortu from './TxapelketaSortu';
 import React from "react";
 //import ReactDOM from "react-dom/client";
 // import App from "./App.tsx";

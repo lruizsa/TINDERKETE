@@ -258,14 +258,17 @@ function Navbar() {
                 >
                   Kontaktua
                 </Link>
+              </li>
+              <li>
+                <button className="lg:block hidden" onClick={toggleSidebar}>
+                  <img
+                    src={logoImage}
+                    alt="1361728"
+                    className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
+                  />
+                </button> 
               </li>            
-              <button className="lg:block hidden" onClick={toggleSidebar}>
-            <img
-              src={logoImage}
-              alt="1361728"
-              className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
-            />
-          </button>
+
             </ul>
 
           </div>

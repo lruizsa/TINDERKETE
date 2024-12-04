@@ -69,10 +69,10 @@ function Footer() {
         {/* Elemento único */}
         <div className="text-center my-8">
           <h3 className="text-2xl font-bold text-white">
-            "Más que deporte, ¡conexiones auténticas!"
+            "Kirola baino gehiago, benetako loturak!"
           </h3>
           <p className="text-gray-400 mt-4">
-            En Tinderkete, unimos pasión y tradición. ¿Estás listo para tu próximo desafío?
+          Tinderketen, pasioa eta tradizioa batzen ditugu. Prest zaude hurrengo erronkarako?
           </p>
         </div>
 
