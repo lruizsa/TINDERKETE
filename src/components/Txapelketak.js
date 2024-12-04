@@ -44,7 +44,7 @@ const Txapelketak = () => {
       ],
     },
     {
-      title: "Frontenis trinkete txapelketa!",
+      title: "Frontenis txapelketa!",
       location: "Pista Handia",
       date: "Azaroak 5",
       time: "10:00",
@@ -63,8 +63,11 @@ const Txapelketak = () => {
     <div className="flex flex-col min-h-screen"> 
       <Nav />
 
-      <div className="container mx-auto mt-10 mb-20">
-        <h1 className="text-3xl font-semibold text-center mb-6">Txapelketak</h1>
+      <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">Frontoiak eta Trinketeak</h1>
+          <p className="text-xl mt-2 text-gray-600">Herrialdeko txapelketa dibertigarrienetan parte hartu!</p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
             <div key={index} className="col-span-1">

@@ -17,8 +17,11 @@ function Kontaktu() {
     <div className="flex flex-col min-h-screen">
       <Nav />
 
-      <div className="container mx-auto flex-grow mt-5 mb-16 px-4"> {/* Se asegura que el contenido crezca y el footer quede abajo */}
-        <h2 className="mb-4 text-center text-2xl font-semibold">Jarri gurekin kontaktuan</h2>
+      <div className="container mx-auto flex-grow px-4 py-8"> {/* Se asegura que el contenido crezca y el footer quede abajo */}
+      <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">Jarri gurekin kontaktuan</h1>
+          <p className="text-xl mt-2 text-gray-600">Ez gelditu gogoekin!</p>
+        </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Campo de nombre */}
           <div className="mb-4">

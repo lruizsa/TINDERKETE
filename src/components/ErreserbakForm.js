@@ -25,12 +25,16 @@ function Erreserbak() {
   return (
     <div className="flex flex-col min-h-screen"> 
       <Nav />
-      <div className="container mx-auto flex-grow mt-10 px-4"> 
+      <div className="container mx-auto flex-grow px-4 py-8"> 
+      <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">Erreserbak</h1>
+          <p className="text-xl mt-2 text-gray-600">Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!</p>
+        </div>
         <div className="flex flex-wrap -mx-4">
           
           {/* Form Card */}
-          <div className="w-full md:w-1/3 px-4 mb-8">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden p-6">
+          <div className="w-full md:w-1/3 px-4 mb-8 ">
+            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6">
               <h5 className="text-xl font-bold mb-6 text-center">ERRESERBA EGIN</h5>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -93,7 +97,7 @@ function Erreserbak() {
 
           {/* Reservations List */}
           <div className="w-full md:w-2/3 px-4">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden p-6">
+            <div className="bg-white shadow-md rounded-lg overflow-hidden p-6 border border-gray-200">
               <h5 className="text-xl font-bold mb-6 text-center">ZURE ERRESERBAK</h5>
               <ul className="space-y-4">
                 {reservations.map((reservation, index) => (
