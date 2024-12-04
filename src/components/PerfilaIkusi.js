@@ -36,6 +36,13 @@ const Perfila = () => {
     setIsEditing(false); // Stop editing after form submission
   };
 
+  const handleImageChange = (newImage) => {
+    setUser((prevUser) => ({
+      ...prevUser,
+      image: newImage,
+    }));
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />
@@ -46,7 +53,7 @@ const Perfila = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center">
           <div className="w-full sm:w-3/4 lg:w-2/3">
-            <PerfilaCard image={user.image} onEditClick={handleEditClick} />
+            <PerfilaCard image={user.image} onImageChange={handleImageChange} />
           </div>
 
           <div className="w-full sm:w-3/4 lg:w-full">
@@ -101,11 +108,11 @@ const Perfila = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="jaiotzeData" className="block font-bold">Jaioterria</label>
+                  <label htmlFor="jaioterria" className="block font-bold">Jaioterria</label>
                   <input
-                    type="date"
-                    id="jaiotzeData"
-                    name="jaiotzeData"
+                    type="text"
+                    id="jaioterria"
+                    name="jaioterria"
                     value={user.jaioterria}
                     onChange={handleInputChange}
                     className="w-full p-2 border border-gray-300 rounded"
@@ -113,11 +120,11 @@ const Perfila = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="jaiotzeData" className="block font-bold">Telefonoa</label>
+                  <label htmlFor="telefonoa" className="block font-bold">Telefonoa</label>
                   <input
-                    type="date"
-                    id="jaiotzeData"
-                    name="jaiotzeData"
+                    type="text"
+                    id="telefonoa"
+                    name="telefonoa"
                     value={user.telefonoa}
                     onChange={handleInputChange}
                     className="w-full p-2 border border-gray-300 rounded"
@@ -129,7 +136,7 @@ const Perfila = () => {
                 </div>
               </form>
             ) : (
-              <UserProfileTable user={user} />
+              <UserProfileTable user={user} onEditClick={handleEditClick} />
             )}
           </div>
         </div>
