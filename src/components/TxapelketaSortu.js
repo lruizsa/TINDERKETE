@@ -1,105 +1,181 @@
 import React, { useState } from "react";
-import Nav from './Navbar.js'; 
-import Footer from './Footer.js';
+import EventCard from "./EventCard";
+import Nav from "./Navbar.js";
+import Footer from "./Footer.js";
 
-function TxapelketaSortu () {
-    const [sportType, setSportType] = useState("");
-    const [playerCount, setPlayerCount] = useState("");
-    const [location, setLocation] = useState("");
-    const [time, setTime] = useState("");
-    const [isPublic, setIsPublic] = useState(false);
-    const [reservations, setReservations] = useState([]);
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const newReservation = {
-        sportType,
-        playerCount,
-        location,
-        time,
-        isPublic, 
-      };
-      setReservations([...reservations, newReservation]);
-    };
+function TxapelketaSortu() {
+  const [formData, setFormData] = useState({
+    title: "",
+    location: "",
+    date: "",
+    time: "",
+    description: "",
+    price: "",
+    maxParticipants: "",
+    image: "",
+    participantImages: [],
+  });
 
-    return (
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-    <div className="flex flex-col min-h-screen"> 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setFormData((prev) => ({
+        ...prev,
+        image: imageUrl,
+      }));
+    }
+  };
+
+  const handleParticipantImagesUpload = (e) => {
+    const files = Array.from(e.target.files);
+    const uploadedImages = files.map((file) => URL.createObjectURL(file));
+    setFormData((prev) => ({
+      ...prev,
+      participantImages: uploadedImages,
+    }));
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <div className="container mx-auto flex-grow px-4 py-8"> 
-      <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Txapelketak sortzeko gunea</h1>
+      <div className="container mx-auto flex-grow px-8 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">Txapelketa Sortu</h1>
         </div>
-        <div className="flex flex-wrap -mx-4">
-          
-          {/* Form Card */}
-          <div className="w-full md:w-1/3 px-4 mb-8 ">
-            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6">
-              <h5 className="text-xl font-bold mb-6 text-center">ERRESERBA EGIN</h5>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block mb-1 text-gray-700">Kirol mota</label>
+        <div className="flex flex-wrap lg:flex-nowrap -mx-4">
+          {/* Formulario */}
+          <div className="w-full lg:w-2/3 px-4 mb-8">
+            <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6 h-full">
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Título */}
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Izenburua</label>
                   <input
                     type="text"
-                    value={sportType}
-                    onChange={(e) => setSportType(e.target.value)}
-                    placeholder="Sartu kirol mota"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleInputChange}
+                    placeholder="Sartu txapelketaren izenburua"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                <div>
-                  <label className="block mb-1 text-gray-700">Jokalari kopurua</label>
-                  <input
-                    type="number"
-                    value={playerCount}
-                    onChange={(e) => setPlayerCount(e.target.value)}
-                    placeholder="Jokalari kopurua"
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
-                <div>
-                  <label className="block mb-1 text-gray-700">Lokalekua</label>
+                {/* Localización */}
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Kokalekua</label>
                   <input
                     type="text"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    placeholder="Lokalekua"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    placeholder="Sartu kokalekua"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                <div>
+                {/* Fecha */}
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Data</label>
+                  <input
+                    type="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleInputChange}
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                {/* Hora */}
+                <div className="col-span-2 md:col-span-1">
                   <label className="block mb-1 text-gray-700">Ordua</label>
                   <input
                     type="time"
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
+                    name="time"
+                    value={formData.time}
+                    onChange={handleInputChange}
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={isPublic}
-                    onChange={() => setIsPublic(!isPublic)}
-                    className="h-4 w-4 text-blue-500 focus:ring-blue-400"
+                {/* Descripción */}
+                <div className="col-span-2">
+                  <label className="block mb-1 text-gray-700">Deskribapena</label>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    placeholder="Sartu deskribapena"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
-                  <label className="ml-2 text-gray-700">Publikoa egin</label>
                 </div>
-                <button 
-                  type="submit" 
-                  className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
-                >
-                  Sartu
-                </button>
+                {/* Precio */}
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Prezioa (€)</label>
+                  <input
+                    type="number"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleInputChange}
+                    placeholder="Sartu prezioa"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                {/* Máximo de participantes */}
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Gehieneko Partehartzaileak</label>
+                  <input
+                    type="number"
+                    name="maxParticipants"
+                    value={formData.maxParticipants}
+                    onChange={handleInputChange}
+                    placeholder="Sartu gehienezko partehartzaile kopurua"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                {/* Imagen */}
+                <div className="col-span-2">
+                  <label className="block mb-1 text-gray-700">Irudia</label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
               </form>
             </div>
           </div>
-      </div>
-    </div>
-    <Footer />
-    </div>
 
-    );
+          {/* Preview dinámico */}
+          <div className="w-full lg:w-1/3 px-4">
+            <div className="sticky top-4">
+              <EventCard
+                title={formData.title || "Txapelketaren izenburua"}
+                location={formData.location || "Kokalekua"}
+                date={formData.date || "Data"}
+                time={formData.time || "Ordua"}
+                description={formData.description || "Deskribapena"}
+                price={formData.price || "0"}
+                participants={0} // Preview siempre muestra 0 participantes
+                maxParticipants={formData.maxParticipants || "0"}
+                image={
+                  formData.image ||
+                  "https://via.placeholder.com/150?text=Irudi+faltan"
+                }
+                participantImages={[]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default TxapelketaSortu;
