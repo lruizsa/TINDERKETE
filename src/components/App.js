@@ -13,32 +13,27 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
 import TxapelketaSortu from './TxapelketaSortu';
-import React from "react";
-//import ReactDOM from "react-dom/client";
-// import App from "./App.tsx";
-// import i18n from "i18next";
-// import { initReactI18next } from "react-i18next";
-// import englishContent from "./lang/en.json";
-// import spanishContent from "./lang/es.json";
-
-// i18n.use(initReactI18next).init({
-//     resources: {
-//         en: englishContent,
-//         es: spanishContent,
-//     },
-
-//     fallbackLng: "en",
-
-//     interpolation: {
-//         escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
-//     },
-// });
-
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";  // Importa el hook useTranslation
+import '../i18n';  // Asegúrate de que i18n está configurado correctamente
 
 
 function App() {
+  const { t, i18n } = useTranslation();  // Usa el hook useTranslation para acceder a la función t y i18n
+
+  // Función para cambiar de idioma
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <Router>
+      {/* Selector de idioma */}
+      <div className="language-selector">
+        <button onClick={() => changeLanguage('en')}>English</button>
+        <button onClick={() => changeLanguage('eu')}>Euskera</button>
+      </div>
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";  // Importa el hook useTranslation
 import Nav from './Navbar.js';
 import Footer from './Footer.js';
 
 function Erreserbak() {
+  const { t } = useTranslation();  // Obtén la función t para usar las traducciones
   const [sportType, setSportType] = useState("");
   const [playerCount, setPlayerCount] = useState("");
   const [location, setLocation] = useState("");
@@ -27,18 +29,18 @@ function Erreserbak() {
       <Nav />
       <div className="container mx-auto flex-grow px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Erreserbak</h1>
-          <p className="text-xl mt-2 text-gray-600">Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!</p>
+          <h1 className="text-3xl font-bold text-blue-600">{t('header')}</h1>  {/* Usando t() para las traducciones */}
+          <p className="text-xl mt-2 text-gray-600">{t('description')}</p> {/* Usando t() para las traducciones */}
         </div>
         <div className="flex flex-wrap -mx-4">
 
           {/* Form Card */}
           <div className="w-full md:w-1/3 px-4 mb-8 ">
             <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6">
-              <h5 className="text-xl font-bold mb-6 text-center">ERRESERBA EGIN</h5>
+              <h5 className="text-xl font-bold mb-6 text-center">{t('header')}</h5> {/* Usando t() para las traducciones */}
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block mb-1 text-gray-700">Zelai mota</label>
+                  <label className="block mb-1 text-gray-700">{t('sportType')}</label> {/* Usando t() para las traducciones */}
                   <select
                     value={sportType}
                     onChange={(e) => setSportType(e.target.value)}
@@ -50,27 +52,27 @@ function Erreserbak() {
                   </select>
                 </div>
                 <div>
-                  <label className="block mb-1 text-gray-700">Jokalari kopurua</label>
+                  <label className="block mb-1 text-gray-700">{t('playerCount')}</label> {/* Usando t() para las traducciones */}
                   <input
                     type="number"
                     value={playerCount}
                     onChange={(e) => setPlayerCount(e.target.value)}
-                    placeholder="Jokalari kopurua"
+                    placeholder={t('playerCount')}  
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
                 <div>
-                  <label className="block mb-1 text-gray-700">Lokalekua</label>
+                  <label className="block mb-1 text-gray-700">{t('location')}</label> {/* Usando t() para las traducciones */}
                   <input
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    placeholder="Lokalekua"
+                    placeholder={t('location')}  
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
                 <div>
-                  <label className="block mb-1 text-gray-700">Ordua</label>
+                  <label className="block mb-1 text-gray-700">{t('time')}</label> {/* Usando t() para las traducciones */}
                   <input
                     type="time"
                     value={time}
@@ -85,13 +87,13 @@ function Erreserbak() {
                     onChange={() => setIsPublic(!isPublic)}
                     className="h-4 w-4 text-blue-500 focus:ring-blue-400"
                   />
-                  <label className="ml-2 text-gray-700">Publikoa egin</label>
+                  <label className="ml-2 text-gray-700">{t('isPublic')}</label> {/* Usando t() para las traducciones */}
                 </div>
                 <button
                   type="submit"
                   className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
                 >
-                  Sartu
+                  {t('submit')}  {/* Usando t() para las traducciones */}
                 </button>
               </form>
             </div>
@@ -100,15 +102,15 @@ function Erreserbak() {
           {/* Reservations List */}
           <div className="w-full md:w-2/3 px-4">
             <div className="bg-white shadow-md rounded-lg overflow-hidden p-6 border border-gray-200">
-              <h5 className="text-xl font-bold mb-6 text-center">ZURE ERRESERBAK</h5>
+              <h5 className="text-xl font-bold mb-6 text-center">{t('yourReservations')}</h5> {/* Usando t() para las traducciones */}
               <ul className="space-y-4">
                 {reservations.map((reservation, index) => (
                   <li key={index} className="p-4 border-b border-gray-200">
                     <strong className="text-lg">{reservation.sportType}</strong>
-                    <p className="text-gray-600">{reservation.playerCount} Jokalari</p>
+                    <p className="text-gray-600">{reservation.playerCount} {t('playerCount')}</p>  {/* Usando t() para las traducciones */}
                     <p className="text-gray-600">{reservation.location} - {reservation.time}</p>
                     <p className="text-gray-700">
-                      {reservation.isPublic ? "Publikoa" : "Pribatua"}
+                      {reservation.isPublic ? t('public') : t('private')} {/* Usando t() para las traducciones */}
                     </p>
                   </li>
                 ))}
