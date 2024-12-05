@@ -6,32 +6,51 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      "header": "Reservation",
-      "description": "You can make private or public matches in the reservation area!",
-      "sportType": "Sport Type",
-      "playerCount": "Player Count",
-      "location": "Location",
-      "time": "Time",
-      "isPublic": "Make it public",
-      "submit": "Submit",
-      "yourReservations": "Your Reservations",
-      "public": "Public",
-      "private": "Private"
+      "erreserbak": {
+        "header": "Reservation",
+        "description": "You can make private or public matches in the reservation area!",
+        "sportType": "Sport Type",
+        "playerCount": "Player Count",
+        "location": "Location",
+        "time": "Time",
+        "isPublic": "Make it public",
+        "submit": "Submit",
+        "yourReservations": "Your Reservations",
+        "public": "Public",
+        "private": "Private",
+      },
+      "login":{
+        "password" : "password",
+        "noAccount" : "Don't have an account?",
+        "emailHolder" : "Enter email",
+        "passHolder" : "Enter password",
+        
+      }
+
     }
   },
   eu: {
     translation: {
-      "header": "Erreserbak",
-      "description": "Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!",
-      "sportType": "Zelai mota",
-      "playerCount": "Jokalari kopurua",
-      "location": "Lokalekua",
-      "time": "Ordua",
-      "isPublic": "Publikoa egin",
-      "submit": "Sartu",
-      "yourReservations": "Zure Erreserbak",
-      "public": "Publikoa",
-      "private": "Pribatua"
+      "erreserbak": {
+        "header": "Erreserbak",
+        "description": "Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!",
+        "sportType": "Zelai mota",
+        "playerCount": "Jokalari kopurua",
+        "location": "Lokalekua",
+        "time": "Ordua",
+        "isPublic": "Publikoa egin",
+        "submit": "Sartu",
+        "yourReservations": "Zure Erreserbak",
+        "public": "Publikoa",
+        "private": "Pribatua"
+      },
+      "login":{
+        "password" : "pasahitza",
+        "noAccount" : "Konturik ez?",
+        "emailHolder" : "Sartu emaila",
+        "passHolder" : "Sartu pasahitza",
+
+      }
     }
   }
 };
