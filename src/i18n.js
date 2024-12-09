@@ -61,7 +61,7 @@ const resources = {
         "apuntatu": "Sign up",
       },    
       "gutaz": {
-        "main" : "Our aim is to encourage the practice of Basque sports by young people. Play on the fronton and ratchet easily, creating open or closed groups and booking places. Meet the big fans and start participating!",
+        "main" : "Our aim is to encourage the practice of Basque sports by young people. Play on the fronton and trinquets easily, creating open or closed groups and booking places. Meet the big fans and start participating!",
         "section" : "Get to know the Web",
         "section2" : "Our goal is to provide a professional platform to make Basque sports easier.",
         "grid1" : "Lezo Fronton",
