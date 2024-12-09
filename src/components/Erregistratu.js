@@ -114,7 +114,7 @@ function Register() {
               </div>
 
               <div className="flex flex-col mb-6">
-                <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">{t('register.jaiotzedata')}</label>
+                <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">{t('register.jaitozedata')}</label>
                 <input
                   type="date"
                   className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"

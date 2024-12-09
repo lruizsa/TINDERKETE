@@ -174,7 +174,7 @@ const resources = {
         "private": "Pribatua"
       },
       "login":{
-        "password" : "pasahitza",
+        "password" : "Pasahitza",
         "noAccount" : "Konturik ez?",
         "emailHolder" : "Sartu emaila",
         "passHolder" : "Sartu pasahitza",
@@ -268,14 +268,14 @@ const resources = {
         "apuntatu" : "Izena eman"
       },
       "register": {
-        "header" : "Register",
+        "header" : "Erregistratu",
         "izena" : "Izen abizenak",
         "izenap" : "Sartu izen abizenak",
         "email" : "Email-a",
         "emailp" : "Idatzi email-a",
         "pasahitza" : "Pasahitza",
         "pasahitzap" : "Sartu pasahitza",
-        "jaitozedata" : "JaiotzeData",
+        "jaitozedata" : "Jaiotze Data",
         "bidali" : "Erregistratu",
         "kontua" : "Kontu bat baduzu?"
       },
