@@ -33,11 +33,11 @@ const resources = {
         "esaldi2" : "In Tinderkete, we combine passion and tradition. Are you ready for the next challenge?",
       },
       "mapak": {
-        "header": "Frontons and Ratchets",
+        "header": "Frontons and Trinquets",
         "description": "Choose a field type to view the location of Google Maps.",
         "google":"Open on Google Maps",
         "frontoiak":"Frontons",
-        "trinketeak":"Ratchets",
+        "trinketeak":"Trinquets",
       },
       "nav": {
         "nav1": "About us",
@@ -56,7 +56,7 @@ const resources = {
         "public": "Public",
         "private": "Private",
         "frontoia":"Frontons",
-        "trinketea":"Ratchets",
+        "trinketea":"Trinquets",
         "minutu":"minutes",
         "apuntatu": "Sign up",
       },    
@@ -104,7 +104,7 @@ const resources = {
         "pelotak" : "Frontenis Pilots"
       },
       "txapelketa": {
-        "header" : "Frontons and Ratchets",
+        "header" : "Frontons and Trinquets",
         "header2" : "Take part in the most fun tournaments in the country!",
       },
       "eventcard": {
