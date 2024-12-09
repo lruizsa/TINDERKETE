@@ -102,7 +102,7 @@ const resources = {
         "header" : "Frontons and Trinquets",
         "header2" : "Take part in the most fun tournaments in the country!",
       },
-      "evencard": {
+      "eventcard": {
         "prezioa" : "Price:",
         "jokalariak" : "Players:",
         "partaideak" : "Participants: ",
@@ -119,7 +119,28 @@ const resources = {
         "jaitozedata" : "Birth Date",
         "bidali" : "Register",
         "kontua" : "Have an account?"
-      }
+      },
+      "txapelketa1": {
+        "title" : "Fronton tournament!",
+        "location" : "Fronton",
+        "date" : "23 September",
+        "description" : "Awards, music, games...",
+
+      },
+      "txapelketa2": {
+        "title" : "Ratchets tournament!",
+        "location" : "Ratchets",
+        "date" : "12 October",
+        "description" : "Awards, music, games...",
+
+      },
+      "txapelketa3": {
+        "title" : "Frontonis tournament!",
+        "location" : "Big Fronton",
+        "date" : "5 November",
+        "description" : "Interesting games and great atmosphere!",
+
+      }  
       
 
     }
@@ -188,12 +209,10 @@ const resources = {
         "grid2-2" : "Sortu eta batu taldeetan, ezagutu beste jokalariak eta hasi jolasten.",
         "grid3" : "Urnieta Frontoia",
         "grid3-3" : "Erreserbatu erraz eta gozatu modernitate eta tradizioa uztartzen dituen frontoian.",
-        "grid4" : "Urnieta Frontoia",
-        "grid4-4" : "Erreserbatu erraz eta gozatu modernitate eta tradizioa uztartzen dituen frontoian.",
-        "grid5" : "Urnieta Frontoia",
-        "grid5-5" : "Erreserbatu erraz eta gozatu modernitate eta tradizioa uztartzen dituen frontoian.",
-        "komunitatea" : "Egin bat Komunitatearekin!",
-        "komunitatea2" : "Euskal kiroletan aritzeko lagunik aurkitu nahi? Erregistratu gaur eta hasi zure esperientzia!",
+        "grid4" : "Trinketeak",
+        "grid4-4" : "Ezagutu trinketeko magia: tradizioak eta kirolak bat egiten dute istorioak eta erronkak kontatzen dituzten pareten artean",
+        "grid5" : "Produktuak",
+        "grid5-5" : "Aztertu gure aukeraketa: zure maila hobetzeko, nabarmentzeko eta eraldatzeko diseinatutako produktu bakarrak.",
         "register" : "Erregistratu orain"
       },
       "kontaktua": {
@@ -239,7 +258,25 @@ const resources = {
         "jaitozedata" : "JaiotzeData",
         "bidali" : "Erregistratu",
         "kontua" : "Kontu bat baduzu?"
-      }
+      },
+      "txapelketa1": {
+        "title" : "Frontoi Txapelketa!",
+        "location" : "Frontoia",
+        "date" : "Irailak 23",
+        "description" : "Sariak, musika, jokoak",
+      },
+      "txapelketa2": {
+        "title" : "Trinkete Txapelketa!",
+        "location" : "Trinkete",
+        "date" : "Urriak 12",
+        "description" : "Sariak, musika, jokoak",
+      },
+      "txapelketa3": {
+        "title" : "Frontenis Txapelketa!",
+        "location" : "Pista Handia",
+        "date" : "Azaroak 5",
+        "description" : "Partida interesgarriak eta giro aparta!",
+      }  
     }
   }
 

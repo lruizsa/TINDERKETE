@@ -78,22 +78,9 @@ function Hasiera() {
               className="w-full h-48 object-cover"
             />
             <div className="p-6 text-center">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('gutaz.grid3')}</h3>
-              <p className="text-gray-600">
-                {t('gutaz.grid3-3')}
-              </p>
-            </div>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img
-              src={hiru}
-              alt="Urnieta Frontoia"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6 text-center">
               <h3 className="text-xl font-bold text-gray-800 mb-2">{t('gutaz.grid4')}</h3>
               <p className="text-gray-600">
-              {t('gutaz.grid4-4')}
+                {t('gutaz.grid4-4')}
               </p>
             </div>
           </div>
@@ -106,7 +93,20 @@ function Hasiera() {
             <div className="p-6 text-center">
               <h3 className="text-xl font-bold text-gray-800 mb-2">{t('gutaz.grid5')}</h3>
               <p className="text-gray-600">
-                {t('gutaz.grid5-5')}
+              {t('gutaz.grid5-5')}
+              </p>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src={hiru}
+              alt="Urnieta Frontoia"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('gutaz.grid3')}</h3>
+              <p className="text-gray-600">
+                {t('gutaz.grid3-3')}
               </p>
             </div>
           </div>
