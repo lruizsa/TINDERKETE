@@ -70,7 +70,7 @@ const resources = {
         "grid2-2" : "Create and join the teams, meet the other players and start playing.",
         "grid3" : "Urnieta Fronton",
         "grid3-3" : "Book easy and enjoy a fronton that combines modernity and tradition.",
-        "grid4" : "Ratchets",
+        "grid4" : "Trinquets",
         "grid4-4" : "Book easy and enjoy a fronton that combines modernity and tradition.",
         "grid5" : "Products",
         "grid5-5" : "Book easy and enjoy a fronton that combines modernity and tradition.",
@@ -133,8 +133,8 @@ const resources = {
 
       },
       "txapelketa2": {
-        "title" : "Ratchets tournament!",
-        "location" : "Ratchets",
+        "title" : "Trinquets tournament!",
+        "location" : "Trinquets",
         "date" : "12 October",
         "description" : "Awards, music, games...",
 
