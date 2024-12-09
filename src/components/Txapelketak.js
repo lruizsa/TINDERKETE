@@ -10,15 +10,16 @@ import Nav from './Navbar.js';
 import Footer from './Footer.js';
 import { useTranslation } from "react-i18next";
 
-
 const Txapelketak = () => {
+const { t } = useTranslation();
+
   const events = [
     {
-      title: "Frontoi Txapelketa!",
-      location: "Frontoia",
-      date: "Irailak 23",
+      title: t('txapelketa1.title'),
+      location: t('txapelketa1.location'),
+      date: t('txapelketa1.date'),
       time: "16:00",
-      description: "Sariak, musika, jokoak...",
+      description: t('txapelketa1.description'),
       participants: 3,
       maxParticipants: 24,
       price: 20,
@@ -30,11 +31,11 @@ const Txapelketak = () => {
       ],
     },
     {
-      title: "Trinkete Txapelketa!",
-      location: "Trinketea",
-      date: "Urriak 12",
-      time: "12:00",
-      description: "Sariak, musika, jokoak...",
+      title: t('txapelketa2.title'),
+      location: t('txapelketa2.location'),
+      date: t('txapelketa2.date'),
+      time: "16:00",
+      description: t('txapelketa2.description'),
       participants: 3,
       maxParticipants: 32,
       price: 15,
@@ -46,11 +47,11 @@ const Txapelketak = () => {
       ],
     },
     {
-      title: "Frontenis txapelketa!",
-      location: "Pista Handia",
-      date: "Azaroak 5",
-      time: "10:00",
-      description: "Partida interesgarriak eta giro aparta!",
+      title: t('txapelketa3.title'),
+      location: t('txapelketa3.location'),
+      date: t('txapelketa3.date'),
+      time: "16:00",
+      description: t('txapelketa3.description'),
       participants: 1,
       maxParticipants: 50,
       price: 10,
@@ -60,7 +61,6 @@ const Txapelketak = () => {
       ],
     },
   ];
-  const { t } = useTranslation();
 
 
   return (
