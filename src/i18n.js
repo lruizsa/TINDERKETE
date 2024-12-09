@@ -101,7 +101,7 @@ const resources = {
         "iritziak" : "Customer opinions",
         "entrenatzaile" : "Trainer Oihan",
         "pala" : "Pala",
-        "pelotak" : "Frontenis Pilots"
+        "pelotak" : "Frontenis Balls"
       },
       "txapelketa": {
         "header" : "Frontons and Trinquets",
