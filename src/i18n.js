@@ -57,7 +57,7 @@ const resources = {
         "trinketea":"Ratchets",
         "minutu":"minutes",
         "apuntatu": "Sign up",
-      }    
+      },    
       "gutaz": {
         "main" : "Our aim is to encourage the practice of Basque sports by young people. Play on the fronton and ratchet easily, creating open or closed groups and booking places. Meet the big fans and start participating!",
         "section" : "Get to know the Web",
