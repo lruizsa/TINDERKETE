@@ -8,6 +8,8 @@ import p1 from '../images/pertsona1.jpg';
 import p2 from '../images/pertsona2.jpg'; 
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
+import { useTranslation } from "react-i18next";
+
 
 const Txapelketak = () => {
   const events = [
@@ -58,6 +60,8 @@ const Txapelketak = () => {
       ],
     },
   ];
+  const { t } = useTranslation();
+
 
   return (
     <div className="flex flex-col min-h-screen"> 
@@ -65,8 +69,8 @@ const Txapelketak = () => {
 
       <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Frontoiak eta Trinketeak</h1>
-          <p className="text-xl mt-2 text-gray-600">Herrialdeko txapelketa dibertigarrienetan parte hartu!</p>
+          <h1 className="text-3xl font-bold text-blue-600">{t('txapelketa.header')}</h1>
+          <p className="text-xl mt-2 text-gray-600">{t('txapelketa.header2')}</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (

@@ -85,7 +85,7 @@ function Login() {
                 onClick={() => navigate('/register')}
                 className="text-sm text-blue-600 cursor-pointer hover:underline"
               >
-                Erregistratu
+                {t('login.register')}
               </p>
             </div>
 
