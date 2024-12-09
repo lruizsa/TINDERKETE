@@ -5,8 +5,11 @@ import pala from '../images/pala.jpg';
 import pilotak from '../images/frontenisPelotak.jpg'; 
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
+import { useTranslation } from "react-i18next";
+
 
 const Produktuak = () => {
+   
   const products = [
     {
       name: 'Oihan entrenatzailea',
@@ -24,7 +27,7 @@ const Produktuak = () => {
       image: pilotak,
     },
   ];
-
+  const { t } = useTranslation();
   // Estado para controlar los comentarios de los usuarios (simplificado)
   const [comments] = useState([
     { id: 1, text: "Itzelako zerbitzua, oso profesionala. Ohian entrenatzailea primerako tipoa da.", name: "Ana M." },
@@ -37,8 +40,8 @@ const Produktuak = () => {
       <Nav />
       <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Produktuak</h1>
-          <p className="text-xl mt-2 text-gray-600">Entrenamendu eta produktu hoberenak!</p>
+          <h1 className="text-3xl font-bold text-blue-600">{t('produkt.header')}</h1>
+          <p className="text-xl mt-2 text-gray-600">{t('produkt.header2')}</p>
         </div>
         {/* Produktuak */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,7 +57,7 @@ const Produktuak = () => {
 
         {/* Komentarioak */}
         <div className="mt-16">
-          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">Bezeroen iritziak</h2>
+          <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">{t('produkt.iritziak')}</h2>
           <div className="space-y-4 text-center">
             {comments.slice(0, 2).map((comment) => ( // bi komentario soilik erakutsi
               <div key={comment.id} className="text-sm text-gray-700">
