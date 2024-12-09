@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from "react-i18next";
 
+
 function EventCard({
+  
   title,
   location,
   date,
@@ -12,8 +14,10 @@ function EventCard({
   maxParticipants,
   image,
   participantImages,
+
 }) {
   const { t } = useTranslation();
+
 
   return (
     <div className="card shadow-lg rounded-lg overflow-hidden">
