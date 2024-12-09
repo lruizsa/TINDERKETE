@@ -207,9 +207,11 @@ import bat from "../images/LezoFrontoia.jpg";
 import bi from "../images/Tinder-Emblem.png";
 import hiru from "../images/urnietafrontoia.jpg";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Hasiera() {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">

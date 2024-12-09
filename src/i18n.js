@@ -25,6 +25,11 @@ const resources = {
         "emailHolder" : "Enter email",
         "passHolder" : "Enter password",
         
+      },
+      "footer":{
+        "ref" : "Contact",
+        "esaldi" : '"More than sport, real ties!"',
+        "esaldi2" : "In Tinderkete, we combine passion and tradition. Are you ready for the next challenge?",
       }
 
     }
@@ -49,7 +54,11 @@ const resources = {
         "noAccount" : "Konturik ez?",
         "emailHolder" : "Sartu emaila",
         "passHolder" : "Sartu pasahitza",
-
+      },
+      "footer":{
+        "ref" : "Kontaktua",
+        "esaldi" : '"Kirola baino gehiago, benetako loturak!"',
+        "esaldi2" : "Tinderketen, pasioa eta tradizioa batzen ditugu. Prest zaude hurrengo erronkarako?",
       }
     }
   }

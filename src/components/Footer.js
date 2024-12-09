@@ -13,9 +13,10 @@ function Footer() {
   const [activeLanguage, setActiveLanguage] = useState(i18n.language); // Inicializa con el idioma actual de i18n
 
   // Función para cambiar de idioma
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);  // Cambia el idioma de i18n
-    setActiveLanguage(lang);     // Actualiza el estado con el nuevo idioma
+  const changeLanguage = (event) => {
+    const lang = event.target.value; // Obtener el valor seleccionado del evento
+    i18n.changeLanguage(lang);       // Cambia el idioma de i18n
+    setActiveLanguage(lang);         // Actualiza el estado
   };
 
   
@@ -39,7 +40,7 @@ function Footer() {
             <div className="flex grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Kontaktua
+                  {t('footer.ref')}
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
@@ -86,10 +87,10 @@ function Footer() {
         {/* Elemento único */}
         <div className="text-center my-8">
           <h3 className="text-2xl font-bold text-white">
-            "Kirola baino gehiago, benetako loturak!"
+            {t('footer.esaldi')}
           </h3>
           <p className="text-gray-400 mt-4">
-            Tinderketen, pasioa eta tradizioa batzen ditugu. Prest zaude hurrengo erronkarako?
+            {t('footer.esaldi2')}
           </p>
         </div>
 
@@ -100,10 +101,11 @@ function Footer() {
           </span>
                   {/* Botones de idioma */}
             <div className="text-center my-4">
-                  <select id="language-select" value={activeLanguage} onChange={changeLanguage} className="p-2 bg-blue-200 rounded-lg">
-                        <option value="en">English</option>
-                        <option value="eu">Euskera</option>
-                  </select>
+            <select id="language-select" value={activeLanguage} onChange={changeLanguage} className="p-2 bg-blue-200 rounded-lg">
+    <option value="en">English</option>
+    <option value="eu">Euskera</option>
+</select>
+
             </div>
             <div className="flex sm:justify-center sm:mt-0 gap-2">
                 <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
