@@ -30,7 +30,21 @@ const resources = {
         "ref" : "Contact",
         "esaldi" : '"More than sport, real ties!"',
         "esaldi2" : "In Tinderkete, we combine passion and tradition. Are you ready for the next challenge?",
+      },
+        "login": {
+        "password": "password",
+        "noAccount": "Don't have an account?",
+        "emailHolder": "Enter email",
+        "passHolder": "Enter password",
+      },
+      "mapak": {
+        "header": "Frontons and Ratchets",
+        "description": "Choose a field type to view the location of Google Maps.",
+        "google":"Open on Google Maps",
+        "frontoiak":"Frontons",
+        "trinketeak":"Ratchets",
       }
+      
 
     }
   },
@@ -59,9 +73,28 @@ const resources = {
         "ref" : "Kontaktua",
         "esaldi" : '"Kirola baino gehiago, benetako loturak!"',
         "esaldi2" : "Tinderketen, pasioa eta tradizioa batzen ditugu. Prest zaude hurrengo erronkarako?",
+      },
+        "login": {
+        "password": "pasahitza",
+        "noAccount": "Konturik ez?",
+        "emailHolder": "Sartu emaila",
+        "passHolder": "Sartu pasahitza",
+      },
+      "mapak": {
+        "header": "Frontoiak eta Trinketeak",
+        "description": "Aukeratu kantxa mota bat Google Mapsen kokapena ikusteko.",
+        "google":"Google Mapsen Ireki",
+        "frontoiak":"Frontoiak",
+        "trinketeak":"Trinketeak",
+        
+        
       }
     }
   }
+
+
+
+  
 };
 
 // Configuración de i18next
