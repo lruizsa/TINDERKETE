@@ -5,12 +5,10 @@ import agi from '../images/agi.png';
 import tinder from '../images/Tinder-Emblem.png';
 import logoImage from '../images/1361728.png';
 import '../components/navar.css';
-import logotxuri from '../images/perfiltxuri.png'
-import logout from '../images/logout.png'
+import logotxuri from '../images/perfiltxuri.png';
+import logout from '../images/logout.png';
+import ezarpenak from '../images/ezarpenak.png';
 import { useTranslation } from "react-i18next";
-
-
-
 
 function Navbar() {
   const { t } = useTranslation(); 
@@ -22,6 +20,8 @@ function Navbar() {
   const getActiveClass = (path) => {
     return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
   };
+  const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Erabiltzailea admin baldin bada funtzionalitate bat geihago dago
+  const email = localStorage.getItem('email'); // Recupera el email del usuario
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi
@@ -42,21 +42,35 @@ function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 shadow-lg">
+
       {/* Sidebar */}
+
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
         onClick={toggleSidebar}
       ></div>
-      <div
-        className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } transition-transform`}
-      >
+      <div className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${ 
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        } 
+        transition-transform`}>
         <div className="p-4">
+
+          {/* ERABILTZAILE OIHAN BALDIN BADA BERE PERFILA AZALDUKO DA */}
+
           <p className="text-center mb-4">
-            <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-            <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Oaginaga23</h3>
+            {email === 'oihanaginaga@gmail.com' ? (
+              <>
+                <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Oaginaga23</h3>
+              </>
+            ) : (
+              <>
+                <img src={logotxuri} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">login</h3>
+              </>
+            )}
           </p>
+
           <hr></hr>
           <Link
             to="/perfila"
@@ -75,16 +89,33 @@ function Navbar() {
             <div className="flex justify-start items-center"><img src={tinder} className="w-18 h-8 mr-2"/><h4 className="mt-2">{t('nav.sidebar2')}</h4></div>
  
           </Link>          
-          {/* <hr></hr>
-          <Link
-            to="/contact"
-            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            onClick={toggleSidebar}
-          >
-            <div className="flex justify-start items-center"><img src={ezarpenak} className="w-8 h-7 mr-2"/><h4 className="mt-2">TXP Kudeatu</h4></div>
- 
-          </Link>
-          <br></br><br></br><br></br><br></br><br></br><br></br> */}
+         <hr></hr>
+
+          {/* ADMINISTRARIA BALDIN BADA TXAPELKETAKSORTU FUNTZIONALITATEA IZANGO DU */}
+
+          {isAdmin && (
+            <Link
+              to="/txapelketasortu"
+              className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+              onClick={toggleSidebar}
+            >
+              <div className="flex justify-start items-center">
+                <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon"/>
+                <h4 className="mt-2">TXP Kudeatu</h4>
+              </div>
+            </Link>
+          )}
+
+          {/* ------------------------------------------------------------------- */}
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
           <hr></hr>
           <Link
             to="/contact"

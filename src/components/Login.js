@@ -10,16 +10,24 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const predefinedEmail = 'adibidea@tinderkete.com';
+    const predefinedEmail = 'oihanaginaga@gmail.com';
   const predefinedPassword = '1234';
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+
+    const adminEmail = 'admin@gmail.com';
+    const adminPassword = 'admin123';
+  
     if (email === predefinedEmail && password === predefinedPassword) {
-      navigate('/'); // Redirige al home
-    } else {
-      alert('Erabiltzailea edo pasahitza gaizki sartu dira.');
+      localStorage.setItem('isAdmin', 'false'); // Usuario normal
+      localStorage.setItem('email', email); // Guarda el email del usuario
+      navigate('/'); // Redirigir al inicio
+    } else if (email === adminEmail && password === adminPassword) {
+      localStorage.setItem('isAdmin', 'true'); // Usuario administrador
+      localStorage.setItem('email', email); // Guarda el email del usuario
+      navigate('/'); // Redirigir al inicio
     }
   };
 
