@@ -47,6 +47,8 @@ const resources = {
         "nav5": "Maps",
         "nav6": "Products",
         "nav7": "Contact",
+        "sidebar1" : "Profile",
+        "sidebar2" : "Chat",        
       },
       "partidak": {
         "header": "Public and private matches",
@@ -68,9 +70,9 @@ const resources = {
         "grid2-2" : "Create and join the teams, meet the other players and start playing.",
         "grid3" : "Urnieta Fronton",
         "grid3-3" : "Book easy and enjoy a fronton that combines modernity and tradition.",
-        "grid4" : "Urnieta Fronton",
+        "grid4" : "Ratchets",
         "grid4-4" : "Book easy and enjoy a fronton that combines modernity and tradition.",
-        "grid5" : "Urnieta Fronton",
+        "grid5" : "Products",
         "grid5-5" : "Book easy and enjoy a fronton that combines modernity and tradition.",
         "komunitatea" : "Join the Community!",
         "komunitatea2" : "You want to find friends to play Basque sports? Register today and start your experience!",
@@ -96,7 +98,10 @@ const resources = {
       "produkt":{
         "header" : "Products",
         "header2" : "Best training and products!",
-        "iritziak" : "Customer opinions"
+        "iritziak" : "Customer opinions",
+        "entrenatzaile" : "Trainer Oihan",
+        "pala" : "Pala",
+        "pelotak" : "Frontenis Pilots"
       },
       "txapelketa": {
         "header" : "Frontons and Ratchets",
@@ -139,10 +144,18 @@ const resources = {
         "location" : "Big Fronton",
         "date" : "5 November",
         "description" : "Interesting games and great atmosphere!",
-
-      }  
-      
-
+      },
+      "profila": {
+        "header" : "Profile",
+        "header2" : "View and edit your user's information.",
+        "izena" : "Name",
+        "abizena" : "Surnames",
+        "email" : "Email",
+        "jaiotzedata" : "Date of birth",
+        "jaioterria" : "Place of birth",
+        "telefonoa" : "Phone number",
+        "gorde" : "Save"
+      }
     }
   },
   eu: {
@@ -187,6 +200,8 @@ const resources = {
         "nav5": "Mapa",
         "nav6": "Produktuak",
         "nav7": "Kontaktua",
+        "sidebar1" : "Profila",
+        "sidebar2" : "Txat-a"
       },
       "partidak": {
         "header": "Partida publiko eta pribatuak",
@@ -210,9 +225,11 @@ const resources = {
         "grid3" : "Urnieta Frontoia",
         "grid3-3" : "Erreserbatu erraz eta gozatu modernitate eta tradizioa uztartzen dituen frontoian.",
         "grid4" : "Trinketeak",
-        "grid4-4" : "Ezagutu trinketeko magia: tradizioak eta kirolak bat egiten dute istorioak eta erronkak kontatzen dituzten pareten artean",
+        "grid4-4" : "Know the magic of ratchet: tradition and sport come together between walls that tell stories and challenges",
         "grid5" : "Produktuak",
-        "grid5-5" : "Aztertu gure aukeraketa: zure maila hobetzeko, nabarmentzeko eta eraldatzeko diseinatutako produktu bakarrak.",
+        "grid5-5" : "Check out our selection of the only products designed to improve, enhance and transform your level.",
+        "komunitatea" : "Bat egin komunitatearekin!",
+        "komunitatea2" : "Euskal kirola egiteko lagunak aurkitu nahi dituzu? Erregistratu gaur eta ekin zure esperientziari!",
         "register" : "Erregistratu orain"
       },
       "kontaktua": {
@@ -235,7 +252,10 @@ const resources = {
       "produkt": {
         "header" : "Produktuak",
         "header2" : "Entranamendu eta produktu hoberenak!",
-        "iritziak" : "Bezeroen iritziak"
+        "iritziak" : "Bezeroen iritziak",
+        "entrenatzaile" : "Oihan entrenatzailea",
+        "pala" : "Pala",
+        "pelotak" : "Fronteniseko pelotak"
       },
       "txapelketa":{
         "header" : "Friontoiak eta Trinketeak",
@@ -276,7 +296,18 @@ const resources = {
         "location" : "Pista Handia",
         "date" : "Azaroak 5",
         "description" : "Partida interesgarriak eta giro aparta!",
-      }  
+      },
+      "profila": {
+        "header" : "Profila",
+        "header2" : "Ikusi eta editatu zure erabiltzailearen inforamzioa.",
+        "izena" : "Izena",
+        "abizena" : "Abizenak",
+        "email" : "Email",
+        "jaiotzedata" : "Jaiotze Data",
+        "jaioterria" : "Jaioterria",
+        "telefonoa" : "Telefonoa",
+        "gorde" : "Gorder"
+      }
     }
   }
 

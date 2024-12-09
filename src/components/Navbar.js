@@ -63,7 +63,7 @@ function Navbar() {
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >
-            <div className="flex justify-start items-center"><img src={logotxuri} className="w-8 h-8 mr-2"/><h4 className="mt-2">Perfila</h4></div>
+            <div className="flex justify-start items-center"><img src={logotxuri} className="w-8 h-8 mr-2"/><h4 className="mt-2">{t('nav.sidebar1')}</h4></div>
  
           </Link>
           <hr></hr>
@@ -72,7 +72,7 @@ function Navbar() {
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
             onClick={toggleSidebar}
           >
-            <div className="flex justify-start items-center"><img src={tinder} className="w-18 h-8 mr-2"/><h4 className="mt-2">Txat-a</h4></div>
+            <div className="flex justify-start items-center"><img src={tinder} className="w-18 h-8 mr-2"/><h4 className="mt-2">{t('nav.sidebar2')}</h4></div>
  
           </Link>          
           {/* <hr></hr>

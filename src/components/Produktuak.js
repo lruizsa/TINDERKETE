@@ -9,25 +9,25 @@ import { useTranslation } from "react-i18next";
 
 
 const Produktuak = () => {
+  const { t } = useTranslation();
    
   const products = [
     {
-      name: 'Oihan entrenatzailea',
+      name: t('produkt.entrenatzaile'),
       price: '25 h/',
       image: entrenatzailea,
     },
     {
-      name: 'Pala',
+      name: t('produkt.pala'),
       price: '30',
       image: pala,
     },
     {
-      name: 'Fronteniseko pilotak',
+      name: t('produkt.pelotak'),
       price: '10',
       image: pilotak,
     },
   ];
-  const { t } = useTranslation();
   // Estado para controlar los comentarios de los usuarios (simplificado)
   const [comments] = useState([
     { id: 1, text: "Itzelako zerbitzua, oso profesionala. Ohian entrenatzailea primerako tipoa da.", name: "Ana M." },
