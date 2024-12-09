@@ -23,7 +23,7 @@ function Erreserbak() {
     };
     setReservations([...reservations, newReservation]);
   };
-
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Nav />

@@ -14,26 +14,13 @@ import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
 import TxapelketaSortu from './TxapelketaSortu';
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";  // Importa el hook useTranslation
-import '../i18n';  // Asegúrate de que i18n está configurado correctamente
 
 
 function App() {
-  const { t, i18n } = useTranslation();  // Usa el hook useTranslation para acceder a la función t y i18n
-
-  // Función para cambiar de idioma
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
-
+  
   return (
     <Router>
-      {/* Selector de idioma */}
-      <div className="language-selector">
-        <button onClick={() => changeLanguage('en')}>English</button>
-        <button onClick={() => changeLanguage('eu')}>Euskera</button>
-      </div>
-
+      {/* Rutas */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -46,7 +33,6 @@ function App() {
         <Route path="/kontaktua" element={<Kontaktu />} />
         <Route path="/mapalista" element={<MapaLista />} />
         <Route path="/txapelketasortu" element={<TxapelketaSortu />} />  
-        <Route path="/mapalista" element={<MapaLista />} />  
         <Route path="/perfila" element={<PerfilaIkusi />} />  
       </Routes>
     </Router>
