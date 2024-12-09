@@ -43,8 +43,26 @@ const resources = {
         "google":"Open on Google Maps",
         "frontoiak":"Frontons",
         "trinketeak":"Ratchets",
-      }
-      
+      },
+      "nav": {
+        "nav1": "About us",
+        "nav2": "Reservations",
+        "nav3": "Championships",
+        "nav4": "Matches",
+        "nav5": "Maps",
+        "nav6": "Products",
+        "nav7": "Contact",
+      },
+      "partidak": {
+        "header": "Public and private matches",
+        "description": "Choose if you want to join a private or public match.",
+        "public": "Public",
+        "private": "Private",
+        "frontoia":"Frontons",
+        "trinketea":"Ratchets",
+        "minutu":"minutes",
+        "apuntatu": "Sign up",
+      }    
 
     }
   },
@@ -86,8 +104,25 @@ const resources = {
         "google":"Google Mapsen Ireki",
         "frontoiak":"Frontoiak",
         "trinketeak":"Trinketeak",
-        
-        
+      },
+      "nav": {
+        "nav1": "Gutaz",
+        "nav2": "Erreserbak",
+        "nav3": "Txapelketak",
+        "nav4": "Partiduak",
+        "nav5": "Mapa",
+        "nav6": "Produktuak",
+        "nav7": "Kontaktua",
+      },
+      "partidak": {
+        "header": "Partida publiko eta pribatuak",
+        "description": "Aukeratu partida pribatu edo publiko batean izena eman nahi duzun.",
+        "public": "Publikoak",
+        "private": "Pribatuak",
+        "frontoia":"Frontoia",
+        "trinketea":"Trinketea",
+        "minutu":"minutu",
+        "apuntatu": "Apuntatu",
       }
     }
   }

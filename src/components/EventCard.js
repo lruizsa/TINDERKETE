@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 function EventCard({
+  
   title,
   location,
   date,
@@ -11,7 +13,10 @@ function EventCard({
   maxParticipants,
   image,
   participantImages,
-}) {
+})
+
+{
+  
   return (
     <div className="card shadow-lg rounded-lg overflow-hidden">
       <img

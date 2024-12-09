@@ -7,11 +7,13 @@ import logoImage from '../images/1361728.png';
 import '../components/navar.css';
 import logotxuri from '../images/perfiltxuri.png'
 import logout from '../images/logout.png'
-import ezarpenak from '../images/ezarpenak.png'
+import { useTranslation } from "react-i18next";
+
 
 
 
 function Navbar() {
+  const { t } = useTranslation(); 
   const [menuOpen, setMenuOpen] = useState(false); // Estado del menú hamburguesa
   const [sidebarOpen, setSidebarOpen] = useState(false); // Estado del sidebar
   const location = useLocation(); // Para saber la ruta activa
@@ -131,7 +133,7 @@ function Navbar() {
                   to="/"
                   onClick={closeMenu}
                 >
-                  Gutaz
+                  {t('nav.nav1')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
@@ -140,7 +142,7 @@ function Navbar() {
                   to="/erreserbak"
                   onClick={closeMenu}
                 >
-                  Erreserbak
+                  {t('nav.nav2')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
@@ -149,7 +151,7 @@ function Navbar() {
                   to="/txapelketak"
                   onClick={closeMenu}
                 >
-                  Txapelketak
+                  {t('nav.nav3')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
@@ -158,7 +160,7 @@ function Navbar() {
                   to="/PartidoakCard"
                   onClick={closeMenu}
                 >
-                  Partiduak
+                  {t('nav.nav4')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
@@ -167,7 +169,7 @@ function Navbar() {
                   to="/MapaLista"
                   onClick={closeMenu}
                 >
-                  Mapa
+                  {t('nav.nav5')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
@@ -176,7 +178,7 @@ function Navbar() {
                   to="/produktuak"
                   onClick={closeMenu}
                 >
-                  Produktuak
+                  {t('nav.nav6')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
@@ -185,7 +187,7 @@ function Navbar() {
                   to="/kontaktua"
                   onClick={closeMenu}
                 >
-                  Kontaktua
+                  {t('nav.nav7')}
                 </Link>
               </li>
             </ul>
@@ -202,7 +204,7 @@ function Navbar() {
                   to="/"
                   onClick={closeMenu}
                 >
-                  Gutaz
+                  {t('nav.nav1')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
@@ -211,7 +213,7 @@ function Navbar() {
                   to="/erreserbak"
                   onClick={closeMenu}
                 >
-                  Erreserbak
+                  {t('nav.nav2')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
@@ -220,7 +222,7 @@ function Navbar() {
                   to="/txapelketak"
                   onClick={closeMenu}
                 >
-                  Txapelketak
+                  {t('nav.nav3')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
@@ -229,7 +231,7 @@ function Navbar() {
                   to="/PartidoakCard"
                   onClick={closeMenu}
                 >
-                  Partiduak
+                  {t('nav.nav4')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
@@ -238,7 +240,7 @@ function Navbar() {
                   to="/MapaLista"
                   onClick={closeMenu}
                 >
-                  Mapa
+                  {t('nav.nav5')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/produktuak')}`}>
@@ -247,7 +249,7 @@ function Navbar() {
                   to="/produktuak"
                   onClick={closeMenu}
                 >
-                  Produktuak
+                  {t('nav.nav6')}
                 </Link>
               </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
@@ -256,7 +258,7 @@ function Navbar() {
                   to="/kontaktua"
                   onClick={closeMenu}
                 >
-                  Kontaktua
+                  {t('nav.nav7')}
                 </Link>
               </li>
               <li>
