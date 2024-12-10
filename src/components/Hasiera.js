@@ -6,7 +6,7 @@ import bi from "../images/Tinder-Emblem.png";
 import hiru from "../images/urnietafrontoia.jpg";
 import eskupilota from "../images/eskupilota.jpg";
 import trinkete from "../images/trinkete.jpg";
-import comingsoon from "../images/comingsoon.avif";
+import comingsoon from "../images/comingsoon.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -22,13 +22,14 @@ function Hasiera() {
       {/* Main */}
 
       <section className="relative bg-gradient-to-r from-blue-400 to-indigo-800 text-white py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-6xl font-extrabold mb-6">MATCH, CHAT, WIN!</h1>
-          <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-            {t('gutaz.main')}
-          </p>
-        </div>
-      </section>
+  <div className="container mx-auto px-6 text-center">
+    <h1 className="text-6xl font-extrabold mb-6 animate-fade-left">MATCH, CHAT, WIN!</h1>
+    <p className="text-lg max-w-3xl mx-auto leading-relaxed">
+      {t('gutaz.main')}
+    </p>
+  </div>
+</section>
+
 
       {/* Section izenburu */}
       <section className="container mx-auto px-6 py-16">
