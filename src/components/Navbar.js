@@ -21,7 +21,7 @@ function Navbar() {
     return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
   };
   const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Erabiltzailea admin baldin bada funtzionalitate bat geihago dago
-  const email = localStorage.getItem('email'); // Recupera el email del usuario
+  const email = localStorage.getItem('email'); // Emaila berifikatzen du
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi

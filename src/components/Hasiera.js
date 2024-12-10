@@ -4,6 +4,9 @@ import Footer from "./Footer.js";
 import bat from "../images/LezoFrontoia.jpg";
 import bi from "../images/Tinder-Emblem.png";
 import hiru from "../images/urnietafrontoia.jpg";
+import eskupilota from "../images/eskupilota.jpg";
+import trinkete from "../images/trinkete.jpg";
+import comingsoon from "../images/comingsoon.avif";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -73,7 +76,7 @@ function Hasiera() {
           {/* Trinketeak */}
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
-              src={hiru}
+              src={trinkete}
               alt="Urnieta Frontoia"
               className="w-full h-48 object-cover"
             />
@@ -84,9 +87,12 @@ function Hasiera() {
               </p>
             </div>
           </div>
+
+          {/* PRODUKTUAK */}
+
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
-              src={hiru}
+              src={eskupilota}
               alt="Urnieta Frontoia"
               className="w-full h-48 object-cover"
             />
@@ -97,6 +103,9 @@ function Hasiera() {
               </p>
             </div>
           </div>
+
+          {/* URNIETAKO FRONTOIA */}
+
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img
               src={hiru}
@@ -110,6 +119,17 @@ function Hasiera() {
               </p>
             </div>
           </div>
+
+          {/* COMING SOON */}
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src={comingsoon}
+              alt="Urnieta Frontoia"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
         </div>
       </section>
       
