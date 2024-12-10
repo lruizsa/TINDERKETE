@@ -21,21 +21,21 @@ function Hasiera() {
 
       {/* Main */}
 
-      <section className="relative bg-gradient-to-r from-blue-400 to-indigo-800 text-white py-16">
-  <div className="container mx-auto px-6 text-center">
-    <h1 className="text-6xl font-extrabold mb-6 animate-fade-left">MATCH, CHAT, WIN!</h1>
-    <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-      {t('gutaz.main')}
-    </p>
-  </div>
-</section>
+      <section className="w-full relative bg-gradient-to-r from-blue-400 to-indigo-800 text-white py-16">
+        <div className="container mx-auto px-6 text-center animate-wiggle">
+          <h1 className="text-6xl font-extrabold mb-6">MATCH, CHAT, WIN!</h1>
+          <p className="text-lg max-w-3xl mx-auto leading-relaxed">
+            {t('gutaz.main')}
+          </p>
+        </div>
+      </section>
 
 
       {/* Section izenburu */}
       <section className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800">{t('gutaz.section')}</h2>
-          <p className="text-gray-600 mt-4">
+          <h2 className="text-4xl font-bold text-gray-800 animate-fade-right">{t('gutaz.section')}</h2>
+          <p className="text-gray-600 mt-4 animate-fade-up">
             {t('gutaz.section2')}
           </p>
         </div>
@@ -43,7 +43,7 @@ function Hasiera() {
         {/* Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Frontoia */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
             <img
               src={bat}
               alt="Lezo Frontoia"
@@ -58,7 +58,7 @@ function Hasiera() {
           </div>
 
           {/* Tinder */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
             <div className="flex justify-center items-center bg-gradient-to-r from-pink-500 to-red-500 h-48">
               <img
                 src={bi}
@@ -75,7 +75,7 @@ function Hasiera() {
           </div>
 
           {/* Trinketeak */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
             <img
               src={trinkete}
               alt="Urnieta Frontoia"
@@ -91,7 +91,7 @@ function Hasiera() {
 
           {/* PRODUKTUAK */}
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
             <img
               src={eskupilota}
               alt="Urnieta Frontoia"
