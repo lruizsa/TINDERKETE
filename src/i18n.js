@@ -271,7 +271,7 @@ i18n
               "pelotak" : "Fronteniseko pelotak"
             },
             "txapelketa":{
-              "header" : "Friontoiak eta Trinketeak",
+              "header" : "Frontoiak eta Trinketeak",
               "header2" : "Herrialdeko txapelketa diebrtigarrienetan parte hartu!"
             },
             "eventcard": {
