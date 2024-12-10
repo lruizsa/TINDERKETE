@@ -5,12 +5,15 @@ import ErreserbakForm from './ErreserbakForm';
 import TestPage from './TestPage'; 
 import Txapelketak from './Txapelketak'; 
 import Produktuak from './Produktuak';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import Hasiera from './Hasiera';
 import PartidoakCard from './PartidoakCard'; 
 import PerfilaIkusi from './PerfilaIkusi'; 
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
 import TxapelketaSortu from './TxapelketaSortu';
+
 import React, { useState } from "react";
 
 
