@@ -5,18 +5,23 @@ import ErreserbakForm from './ErreserbakForm';
 import TestPage from './TestPage'; 
 import Txapelketak from './Txapelketak'; 
 import Produktuak from './Produktuak';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import Hasiera from './Hasiera';
 import PartidoakCard from './PartidoakCard'; 
+import PerfilaIkusi from './PerfilaIkusi'; 
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
+import TxapelketaSortu from './TxapelketaSortu';
 
-
-
+import React, { useState } from "react";
 
 
 function App() {
+  
   return (
     <Router>
+      {/* Rutas */}
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -27,7 +32,9 @@ function App() {
         <Route path="/" element={<Hasiera />} />
         <Route path="/partidoakCard" element={<PartidoakCard />} />
         <Route path="/kontaktua" element={<Kontaktu />} />
-        <Route path="/mapalista" element={<MapaLista />} />  
+        <Route path="/mapalista" element={<MapaLista />} />
+        <Route path="/txapelketasortu" element={<TxapelketaSortu />} />  
+        <Route path="/perfila" element={<PerfilaIkusi />} />  
       </Routes>
     </Router>
   );

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css';
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
+import { useTranslation } from "react-i18next";
 
 function Kontaktu() {
+  const { t } = useTranslation(); 
+
   const [izen, setIzen] = useState('');
   const [email, setEmail] = useState('');
   const [telefonoa, setTelefonoa] = useState('');
@@ -16,71 +17,77 @@ function Kontaktu() {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Aseguramos que el footer esté abajo */}
+    <div className="flex flex-col min-h-screen">
       <Nav />
 
-      <div className="container flex-grow-1 mt-5" style={{ marginBottom: '63px' }}> {/* Se asegura que el contenido crezca y el footer quede abajo */}
-        <h2 className="mb-4 text-center">Jarri gurekin kontaktuan</h2>
-        <form onSubmit={handleSubmit}>
+      <div className="container mx-auto flex-grow px-4 py-8"> {/* Se asegura que el contenido crezca y el footer quede abajo */}
+      <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-blue-600">{t('kontaktua.header')}</h1>
+          <p className="text-xl mt-2 text-gray-600">{t('kontaktua.header2')}</p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Campo de nombre */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="izen">Izen abizenak</label>
+          <div className="mb-4">
+            <label htmlFor="izen" className="block text-sm font-medium text-gray-700">{t('kontaktua.izena')}</label>
             <input
               type="text"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="izen"
               value={izen}
               onChange={(e) => setIzen(e.target.value)}
-              placeholder="Sartu izen abizenak"
+              placeholder={t('kontaktua.izenap')}
               required
             />
           </div>
 
           {/* Campo de email */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="email">Email-a</label>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('kontaktua.email')}</label>
             <input
               type="email"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Idatzi email-a"
+              placeholder={t('kontaktua.emailp')}
               required
             />
           </div>
 
           {/* Campo de teléfono */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="telefonoa">Telefonoa</label>
+          <div className="mb-4">
+            <label htmlFor="telefonoa" className="block text-sm font-medium text-gray-700">{t('kontaktua.telefonoa')}</label>
             <input
               type="text"
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="telefonoa"
               value={telefonoa}
               onChange={(e) => setTelefonoa(e.target.value)}
-              placeholder="Idatzi telefonoa"
+              placeholder={t('kontaktua.telefonoap')}
               required
             />
           </div>
 
           {/* Campo de mensaje */}
-          <div className="form-group mb-3"> 
-            <label htmlFor="mezua">Mezua</label>
+          <div className="mb-4">
+            <label htmlFor="mezua" className="block text-sm font-medium text-gray-700">{t('kontaktua.mezua')}</label>
             <textarea
-              className="form-control"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               id="mezua"
               value={mezua}
               onChange={(e) => setMezua(e.target.value)}
-              placeholder="Idatzi zure mezua"
+              placeholder={t('kontaktua.mezuap')}
               required
             ></textarea>
           </div>
 
           {/* Botón de envío */}
-          <div className="form-group text-center">
-            <button type="submit" className="btn btn-primary btn-block">
-              Bidali
+          <div className="mb-4">
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              {t('kontaktua.bidali')}
             </button>
           </div>
         </form>

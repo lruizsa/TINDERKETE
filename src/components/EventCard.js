@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
+
 
 function EventCard({
+  
   title,
   location,
   date,
@@ -11,7 +14,11 @@ function EventCard({
   maxParticipants,
   image,
   participantImages,
+
 }) {
+  const { t } = useTranslation();
+
+
   return (
     <div className="card shadow-lg rounded-lg overflow-hidden">
       <img
@@ -26,11 +33,11 @@ function EventCard({
         </p>
         <p className="text-sm text-gray-800 mb-2">{description}</p>
         <p className="text-sm text-gray-700 mb-4">
-          <strong>Price:</strong> {price}€ <br />
-          <strong>Players:</strong> {participants}/{maxParticipants}
+          <strong>{t('eventcard.prezioa')}</strong> {price}€ <br />
+          <strong>{t('eventcard.jokalariak')}</strong> {participants}/{maxParticipants}
         </p>
         <div className="mb-3">
-          <strong className="block text-sm">Participants:</strong>
+          <strong className="block text-sm">{t('eventcard.partaideak')}</strong>
           <div className="flex -space-x-2">
             {participantImages.map((img, index) => (
               <img
@@ -43,7 +50,7 @@ function EventCard({
           </div>
         </div>
         <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
-          Apuntatu
+          {t('eventcard.apuntatu')}
         </button>
       </div>
     </div>

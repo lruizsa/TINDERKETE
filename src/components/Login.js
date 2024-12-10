@@ -1,23 +1,33 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png'; // Asegúrate de tener la ruta correcta
+import { useTranslation } from "react-i18next";  // Importa el hook useTranslation
 
 function Login() {
+  const { t } = useTranslation();  // Obtén la función t para usar las traducciones
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const predefinedEmail = 'adibidea@tinderkete.com';
+    const predefinedEmail = 'oihanaginaga@gmail.com';
   const predefinedPassword = '1234';
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+
+    const adminEmail = 'admin@gmail.com';
+    const adminPassword = 'admin123';
+  
     if (email === predefinedEmail && password === predefinedPassword) {
-      navigate('/'); // Redirige al home
-    } else {
-      alert('Erabiltzailea edo pasahitza gaizki sartu dira.');
+      localStorage.setItem('isAdmin', 'false'); // Usuario normal
+      localStorage.setItem('email', email); // Guarda el email del usuario
+      navigate('/'); // Redirigir al inicio
+    } else if (email === adminEmail && password === adminPassword) {
+      localStorage.setItem('isAdmin', 'true'); // Usuario administrador
+      localStorage.setItem('email', email); // Guarda el email del usuario
+      navigate('/'); // Redirigir al inicio
     }
   };
 
@@ -47,7 +57,7 @@ function Login() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Sartu emaila"
+                placeholder={t('login.emailHolder')}
                 required
                 className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
               />
@@ -55,13 +65,13 @@ function Login() {
 
             {/* Password */}
             <div className="mb-6">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Pasahitza</label>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">{t('login.password')}</label>
               <input
                 type="password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Sartu pasahitza"
+                placeholder={t('login.passHolder')}
                 required
                 className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
               />
@@ -78,12 +88,12 @@ function Login() {
             </div>
 
             <div className="flex justify-center items-center mt-10">
-              <p className="mr-2 text-sm text-gray-600">Konturik ez?</p>
+              <p className="mr-2 text-sm text-gray-600">{t('login.noAccount')}</p>
               <p
                 onClick={() => navigate('/register')}
                 className="text-sm text-blue-600 cursor-pointer hover:underline"
               >
-                Erregistratu
+                {t('login.register')}
               </p>
             </div>
 
