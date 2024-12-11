@@ -93,7 +93,7 @@ function Erreserbak() {
                   type="submit"
                   className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
                 >
-                  {t('erreserbaksubmit')}  {/* Usando t() para las traducciones */}
+                  {t('erreserbak.submit')}  {/* Usando t() para las traducciones */}
                 </button>
               </form>
             </div>
