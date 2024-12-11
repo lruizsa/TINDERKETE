@@ -9,26 +9,87 @@ import trinkete from "../images/trinkete.jpg";
 import comingsoon from "../images/comingsoon.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import altuna from '../images/altuna.png';
+import aldabe from '../images/aldabe.png';
+import dario from '../images/dario.png';
+import bikuna from '../images/bikuna.png';
+
+
 
 function Hasiera() {
   const navigate = useNavigate();
   const { t } = useTranslation(); 
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="bg-gray-100">
       {/* Navbar */}
       <Nav />
 
       {/* Main */}
 
-      <section className="w-full relative bg-gradient-to-r from-blue-400 to-indigo-800 text-white py-16">
-        <div className="container mx-auto px-6 text-center animate-wiggle">
+      {/* <section className="w-full relative bg-gradient-to-r from-blue-400 to-indigo-800 text-white py-16">
+        <div className="container mx-auto px-6 text-center animate-jump-in animate-duration-1000">
           <h1 className="text-6xl font-extrabold mb-6">MATCH, CHAT, WIN!</h1>
           <p className="text-lg max-w-3xl mx-auto leading-relaxed">
             {t('gutaz.main')}
           </p>
         </div>
-      </section>
+      </section> */}    
+     <div className="relative">
+  <header className="relative flex items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-800 h-[20vh] md:h-[65vh] lg:h-100vh">
+    <div className="absolute inset-0 flex justify-between items-center w-full">
+      {/* Imagen izquierda */}
+      <div className="relative w-1/3 h-full flex justify-center items-center">
+        {/* Primer jugador (más centrado y arriba) */}
+        <img
+          className="absolute left-[0%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
+          src={altuna} // Cambia por la ruta correcta
+          alt="Altuna"
+          fetchpriority="high"
+        />
+        {/* Segundo jugador */}
+        <img
+          className="absolute left-[30%] top-[10%] h-auto mt-[4.5] max-h-[90%] object-contain animate-fade-right animate-delay-300"
+          src={dario} // Cambia por la ruta correcta
+          alt="Dario"
+          fetchpriority="high"
+        />
+      </div>
+
+      {/* Eslogan centrado */}
+      <div className="relative z-20 text-center">
+        <h1 className="font-boxing text-3xl lg:text-5xl font-bold text-white">
+          <span
+            className="bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-300 to-white"
+          >
+            MATCH, CHAT, WIN!
+          </span>
+        </h1>
+      </div>
+
+      {/* Imagen derecha */}
+      <div className="relative w-1/3 h-full flex justify-center items-center">
+        {/* Primer jugador (más centrado y arriba) */}
+        <img
+          className="absolute right-[0%] z-10 h-auto max-h-[100%] object-contain animate-fade-left"
+          src={aldabe} // Cambia por la ruta correcta
+          alt="Aldabe"
+          fetchpriority="high"
+        />
+        {/* Segundo jugador */}
+        <img
+          className="absolute top-[10%] right-[35%] h-auto max-h-[90%] object-contain animate-fade-left animate-delay-300"
+          src={bikuna} // Cambia por la ruta correcta
+          alt="Bikuna"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </header>
+</div>
+
+
+
 
 
       {/* Section izenburu */}
@@ -43,7 +104,7 @@ function Hasiera() {
         {/* Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Frontoia */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up animate-duration-200">
             <img
               src={bat}
               alt="Lezo Frontoia"
@@ -58,7 +119,7 @@ function Hasiera() {
           </div>
 
           {/* Tinder */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up animate-duration-1000">
             <div className="flex justify-center items-center bg-gradient-to-r from-pink-500 to-red-500 h-48">
               <img
                 src={bi}
@@ -75,7 +136,7 @@ function Hasiera() {
           </div>
 
           {/* Trinketeak */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-fade-up animate-duration-[1700ms]">
             <img
               src={trinkete}
               alt="Urnieta Frontoia"
@@ -143,10 +204,15 @@ function Hasiera() {
             {t('gutaz.komunitatea2')}
           </p>
           <button
-            className="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium shadow hover:bg-gray-100 transition"
-            onClick={() => navigate("/register")}
+            className="px-6 py-3 bg-white text-blue-600 rounded-lg font-medium shadow hover:bg-gray-100 transition active:animate-jump-out focus:animate-jump-out"
+            onClick={() => {
+              // Espera 1 segundo antes de navegar
+              setTimeout(() => {
+                navigate("/register"); // Redirige después de la espera
+              }, 500);
+            }}
           >
-            {t('gutaz.register')}
+            {t("gutaz.register")}
           </button>
         </div>
       </section>
