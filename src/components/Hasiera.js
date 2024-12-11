@@ -13,6 +13,18 @@ import altuna from '../images/altuna.png';
 import aldabe from '../images/aldabe.png';
 import dario from '../images/dario.png';
 import bikuna from '../images/bikuna.png';
+import tenis from '../images/tenis.png';
+import tenisneska from '../images/tenisneska.png';
+import kirolaria from '../images/kirolaria.png';
+import kirolarianeska from '../images/kirolarianeska.png';
+import bikotea from '../images/Removal-512.png';
+import bikoteneska from '../images/bikoteneska.png';
+import bikotemutila from '../images/bikotemutila.png';
+import pelotarihandia from '../images/pelotarihandia.png';
+import zestapunta from '../images/zestapunta.png';
+
+
+
 
 
 
@@ -34,7 +46,7 @@ function Hasiera() {
             {t('gutaz.main')}
           </p>
         </div>
-      </section> */}    
+      </section>     */}
      <div className="relative">
   <header className="relative flex items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-800 h-[20vh] md:h-[65vh] lg:h-100vh">
     <div className="absolute inset-0 flex justify-between items-center w-full">
@@ -42,15 +54,15 @@ function Hasiera() {
       <div className="relative w-1/3 h-full flex justify-center items-center">
         {/* Primer jugador (más centrado y arriba) */}
         <img
-          className="absolute left-[0%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
-          src={altuna} // Cambia por la ruta correcta
+          className="absolute left-[0%] top-[20%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
+          src={zestapunta} // Cambia por la ruta correcta
           alt="Altuna"
           fetchpriority="high"
         />
         {/* Segundo jugador */}
         <img
-          className="absolute left-[30%] top-[10%] h-auto mt-[4.5] max-h-[90%] object-contain animate-fade-right animate-delay-300"
-          src={dario} // Cambia por la ruta correcta
+          className="absolute left-[35%] top-[10%] h-auto mt-[4.5] max-h-[90%] object-contain animate-fade-right animate-delay-300"
+          src={tenisneska} // Cambia por la ruta correcta
           alt="Dario"
           fetchpriority="high"
         />
@@ -71,15 +83,15 @@ function Hasiera() {
       <div className="relative w-1/3 h-full flex justify-center items-center">
         {/* Primer jugador (más centrado y arriba) */}
         <img
-          className="absolute right-[0%] z-10 h-auto max-h-[100%] object-contain animate-fade-left"
-          src={aldabe} // Cambia por la ruta correcta
+          className="absolute right-[-15%] top-[20%] z-10 h-auto max-h-[80%] object-contain animate-fade-left"
+          src={bikotemutila} // Cambia por la ruta correcta
           alt="Aldabe"
           fetchpriority="high"
         />
         {/* Segundo jugador */}
         <img
-          className="absolute top-[10%] right-[35%] h-auto max-h-[90%] object-contain animate-fade-left animate-delay-300"
-          src={bikuna} // Cambia por la ruta correcta
+          className="absolute top-[30%] right-[60%] h-auto max-h-[70%] object-contain animate-fade-left animate-delay-300"
+          src={bikoteneska} // Cambia por la ruta correcta
           alt="Bikuna"
           fetchpriority="high"
         />
