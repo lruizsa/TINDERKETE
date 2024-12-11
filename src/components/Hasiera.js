@@ -60,7 +60,7 @@ function Hasiera() {
       <div className="relative z-20 text-center">
         <h1 className="font-boxing text-3xl lg:text-5xl font-bold text-white">
           <span
-            className="bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-300 to-white"
+            className="bg-clip-text text-6xl text-transparent bg-gradient-to-b from-white via-gray-300 to-white"
           >
             MATCH, CHAT, WIN!
           </span>
