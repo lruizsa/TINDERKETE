@@ -94,21 +94,23 @@ function Navbar() {
           {/* ADMINISTRARIA BALDIN BADA TXAPELKETAKSORTU FUNTZIONALITATEA IZANGO DU */}
 
           {isAdmin && (
-            <Link
-              to="/txapelketasortu"
-              className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-              onClick={toggleSidebar}
-            >
-              <div className="flex justify-start items-center">
-                <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon"/>
-                <h4 className="mt-2">TXP Kudeatu</h4>
-              </div>
-            </Link>
+            <>
+              <Link
+                to="/txapelketasortu"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={toggleSidebar}
+              >
+                <div className="flex justify-start items-center">
+                  <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon"/>
+                  <h4 className="mt-2">TXP Kudeatu</h4>
+                </div>
+              </Link>    
+              <hr />
+            </> 
           )}
 
           {/* ------------------------------------------------------------------- */}
 
-          <hr></hr>
           <Link
             to="/contact"
             className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"

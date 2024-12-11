@@ -41,7 +41,7 @@ i18n
               
             },
             "footer":{
-              "ref" : "Contact",
+              "ref" : "CONTACT",
               "esaldi" : '"More than sport, real ties!"',
               "esaldi2" : "In Tinderkete, we combine passion and tradition. Are you ready for the next challenge?",
             },
@@ -194,7 +194,7 @@ i18n
               "register" : "Erregistratu"
             },
             "footer":{
-              "ref" : "Kontaktua",
+              "ref" : "KONTAKTUA",
               "esaldi" : '"Kirola baino gehiago, benetako loturak!"',
               "esaldi2" : "Tinderketen, pasioa eta tradizioa batzen ditugu. Prest zaude hurrengo erronkarako?",
             },
@@ -271,7 +271,7 @@ i18n
               "pelotak" : "Fronteniseko pelotak"
             },
             "txapelketa":{
-              "header" : "Friontoiak eta Trinketeak",
+              "header" : "Frontoiak eta Trinketeak",
               "header2" : "Herrialdeko txapelketa diebrtigarrienetan parte hartu!"
             },
             "eventcard": {
