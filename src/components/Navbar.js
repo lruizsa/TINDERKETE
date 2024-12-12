@@ -9,9 +9,10 @@ import logotxuri from '../images/perfiltxuri.png';
 import logout from '../images/logout.png';
 import ezarpenak from '../images/ezarpenak.png';
 import { useTranslation } from "react-i18next";
+import ane from '../images/ane.jpg';
 
 function Navbar() {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false); // Estado del menú hamburguesa
   const [sidebarOpen, setSidebarOpen] = useState(false); // Estado del sidebar
   const location = useLocation(); // Para saber la ruta activa
@@ -37,6 +38,8 @@ function Navbar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
+    localStorage.removeItem('email');
+    localStorage.removeItem('isAdmin');
     navigate('/login'); // Hasierako horria
   };
 
@@ -44,82 +47,105 @@ function Navbar() {
     <div className="sticky top-0 z-50 shadow-lg">
 
       {/* Sidebar */}
-
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
         onClick={toggleSidebar}
       ></div>
-      <div className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${ 
-        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } 
-        transition-transform`}>
+      <div className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform`}>
         <div className="p-4">
 
-          {/* ERABILTZAILE OIHAN BALDIN BADA BERE PERFILA AZALDUKO DA */}
-
-          <p className="text-center mb-4">
-            {email === 'oihanaginaga@gmail.com' ? (
-              <>
+          {/* Verificar si es Oihan */}
+          {email === 'oihanaginaga@gmail.com' ? (
+            <>
+              <p className="text-center mb-4">
                 <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
                 <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Oaginaga23</h3>
-              </>
-            ) : (
-              <>
-                <img src={logotxuri} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">login</h3>
-              </>
-            )}
-          </p>
+              </p>
 
-          <hr></hr>
-          <Link
-            to="/perfila"
-            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            onClick={toggleSidebar}
-          >
-            <div className="flex justify-start items-center"><img src={logotxuri} className="w-8 h-8 mr-2"/><h4 className="mt-2">{t('nav.sidebar1')}</h4></div>
- 
-          </Link>
-          <hr></hr>
-          <Link
-            to="/contact"
-            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            onClick={toggleSidebar}
-          >
-            <div className="flex justify-start items-center"><img src={tinder} className="w-18 h-8 mr-2"/><h4 className="mt-2">{t('nav.sidebar2')}</h4></div>
- 
-          </Link>          
-         <hr></hr>
+              <hr />
+              <Link
+                to="/perfila"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={toggleSidebar}
+              >
+                <div className="flex justify-start items-center">
+                  <img src={logotxuri} className="w-8 h-8 mr-2" />
+                  <h4 className="mt-2">{t('nav.sidebar1')}</h4>
+                </div>
+              </Link>
+              <hr />
 
-          {/* ADMINISTRARIA BALDIN BADA TXAPELKETAKSORTU FUNTZIONALITATEA IZANGO DU */}
+              {/* Mostrar Txata solo si es Oihan */}
+              <Link
+                to="/contact"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={toggleSidebar}
+              >
+                <div className="flex justify-start items-center">
+                  <img src={tinder} className="w-18 h-8 mr-2" />
+                  <h4 className="mt-2">{t('nav.sidebar2')}</h4>
+                </div>
+              </Link>
+              <hr />
 
-          {isAdmin && (
+              {/* Logout */}
+              <Link
+                to="/login"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={handleLogout}
+              >
+                <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2" /><h4 className="mt-2">Logout</h4></div>
+              </Link>
+
+            </>
+          ) : isAdmin ? (
             <>
+              {/* Si es admin */}
+              <p className="text-center mb-4">
+                <img src={ane} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Admin</h3>
+              </p>
+
+              <hr />
               <Link
                 to="/txapelketasortu"
                 className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
                 onClick={toggleSidebar}
               >
                 <div className="flex justify-start items-center">
-                  <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon"/>
-                  <h4 className="mt-2">TXP Kudeatu</h4>
+                  <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon" />
+                  <h4 className="mt-2">Ezarpenak</h4>
                 </div>
-              </Link>    
+              </Link>
               <hr />
-            </> 
+
+              {/* Logout */}
+              <Link
+                to="/login"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={handleLogout}
+              >
+                <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2" /><h4 className="mt-2">Logout</h4></div>
+              </Link>
+
+            </>
+          ) : (
+            <>
+              {/* Si no es Oihan ni Admin */}
+              <p className="text-center mb-4">
+                <img src={logotxuri} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+              </p>
+
+              <hr />
+              <Link
+                to="/login"
+                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                onClick={toggleSidebar}
+              >
+                <div className="flex justify-start items-center"><img src={logotxuri} className="w-8 h-8 mr-2" /><h4 className="mt-2">Login</h4></div>
+              </Link>
+            </>
           )}
-
-          {/* ------------------------------------------------------------------- */}
-
-          <Link
-            to="/contact"
-            className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            onClick={handleLogout}
-          >
-            <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2"/><h4 className="mt-2">Logout</h4></div>
- 
-          </Link>
-
         </div>
       </div>
 
@@ -293,8 +319,8 @@ function Navbar() {
                     alt="1361728"
                     className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
                   />
-                </button> 
-              </li>            
+                </button>
+              </li>
 
             </ul>
 
@@ -315,3 +341,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
