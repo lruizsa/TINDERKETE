@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard"; 
 import urnietafrontoiaImg from "../images/urnietafrontoia.jpg";
 import lezoFrontoiaImg from "../images/LezoFrontoia.jpg";
@@ -9,9 +9,22 @@ import p2 from '../images/pertsona2.jpg';
 import Nav from './Navbar.js'; 
 import Footer from './Footer.js';
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";  // Importamos useNavigate para redirigir
 
 const Txapelketak = () => {
-const { t } = useTranslation();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para verificar si el usuario está logueado
+  const [showLoginMessage, setShowLoginMessage] = useState(false); // Estado para mostrar el mensaje de login
+
+  // Verificamos si hay un usuario logueado al cargar el componente
+  useEffect(() => {
+    const userEmail = localStorage.getItem("email");
+    if (userEmail) {
+      setIsLoggedIn(true);  // Si hay un email en localStorage, el usuario está logueado
+    }
+  }, []);
 
   const events = [
     {
@@ -62,20 +75,49 @@ const { t } = useTranslation();
     },
   ];
 
+  const handleEventClick = () => {
+    if (!isLoggedIn) {
+      setShowLoginMessage(true);  // Mostrar el mensaje de login si no está logueado
+    }
+  };
+
+  const handleLoginRedirect = () => {
+    navigate("/login");  // Redirigir a la página de login
+  };
 
   return (
     <div className="flex flex-col min-h-screen"> 
       <Nav />
-
+      
       <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-8">
+        <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-blue-600">{t('txapelketa.header')}</h1>
           <p className="text-xl mt-2 text-gray-600">{t('txapelketa.header2')}</p>
         </div>
+
+        {/* Mostrar mensaje si no está logueado */}
+        {showLoginMessage && !isLoggedIn && (
+          <div className="text-center text-red-600 mb-6">
+            <p>{t('erreserbak.notLoggedInMessage')}</p>
+            <button
+              onClick={handleLoginRedirect}
+              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-200"
+            >
+              Login
+            </button>
+          </div>
+        )}
+
+        {/* Eventos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
             <div key={index} className="col-span-1">
-              <EventCard {...event} />
+              <div 
+                className="cursor-pointer"
+                onClick={handleEventClick}  // Acción de hacer clic en el evento
+              >
+                <EventCard {...event} />
+              </div>
             </div>
           ))}
         </div>

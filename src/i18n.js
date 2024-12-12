@@ -31,6 +31,7 @@ i18n
               "yourReservations": "Your Reservations",
               "public": "Public",
               "private": "Private",
+              "notLoggedInMessage" : "Not logged in? Check in now!",
             },
             "login":{
               "password" : "password",
@@ -184,7 +185,8 @@ i18n
               "submit": "Sartu",
               "yourReservations": "Zure Erreserbak",
               "public": "Publikoa",
-              "private": "Pribatua"
+              "private": "Pribatua",
+              "notLoggedInMessage" : "Ez zaude logeatuta? Logeatu orain!",
             },
             "login":{
               "password" : "Pasahitza",
