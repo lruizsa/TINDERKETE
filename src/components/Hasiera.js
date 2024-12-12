@@ -9,19 +9,21 @@ import trinkete from "../images/trinkete.jpg";
 import comingsoon from "../images/comingsoon.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import altuna from '../images/altuna.png';
-import aldabe from '../images/aldabe.png';
-import dario from '../images/dario.png';
-import bikuna from '../images/bikuna.png';
-import tenis from '../images/tenis.png';
-import tenisneska from '../images/tenisneska.png';
-import kirolaria from '../images/kirolaria.png';
-import kirolarianeska from '../images/kirolarianeska.png';
-import bikotea from '../images/Removal-512.png';
-import bikoteneska from '../images/bikoteneska.png';
-import bikotemutila from '../images/bikotemutila.png';
-import pelotarihandia from '../images/pelotarihandia.png';
-import zestapunta from '../images/zestapunta.png';
+// import altuna from '../images/altuna.png';
+// import aldabe from '../images/aldabe.png';
+// import dario from '../images/dario.png';
+// import bikuna from '../images/bikuna.png';
+// import tenis from '../images/tenis.png';
+// import tenisneska from '../images/tenisneska.png';
+// import kirolaria from '../images/kirolaria.png';
+// import kirolarianeska from '../images/kirolarianeska.png';
+// import bikotea from '../images/Removal-512.png';
+// import bikoteneska from '../images/bikoteneska.png';
+// import bikotemutila from '../images/bikotemutila.png';
+// import pelotarihandia from '../images/pelotarihandia.png';
+// import zestapunta from '../images/zestapunta.png';
+import bikotetenis from '../images/bikotetenis.png';
+import bikote from '../images/bikotea.png';
 
 
 
@@ -54,23 +56,23 @@ function Hasiera() {
       <div className="relative w-1/3 h-full flex justify-center items-center">
         {/* Primer jugador (más centrado y arriba) */}
         <img
-          className="absolute left-[0%] top-[20%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
-          src={zestapunta} // Cambia por la ruta correcta
+          className="absolute left-[10%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
+          src={bikotetenis} // Cambia por la ruta correcta
           alt="Altuna"
           fetchpriority="high"
         />
         {/* Segundo jugador */}
-        <img
+        {/* <img
           className="absolute left-[35%] top-[10%] h-auto mt-[4.5] max-h-[90%] object-contain animate-fade-right animate-delay-300"
           src={tenisneska} // Cambia por la ruta correcta
           alt="Dario"
           fetchpriority="high"
-        />
+        /> */}
       </div>
 
       {/* Eslogan centrado */}
       <div className="relative z-20 text-center">
-        <h1 className="font-boxing text-3xl lg:text-5xl font-bold text-white">
+        <h1 className="font-boxing text-3xl lg:text-5xl font-bold text-white animate-jump-in">
           <span
             className="bg-clip-text text-6xl text-transparent bg-gradient-to-b from-white via-gray-300 to-white"
           >
@@ -83,18 +85,18 @@ function Hasiera() {
       <div className="relative w-1/3 h-full flex justify-center items-center">
         {/* Primer jugador (más centrado y arriba) */}
         <img
-          className="absolute right-[-15%] top-[20%] z-10 h-auto max-h-[80%] object-contain animate-fade-left"
-          src={bikotemutila} // Cambia por la ruta correcta
-          alt="Aldabe"
+          className="absolute right-[10%] top-[3.5%] z-10 h-auto max-h-[100%] object-contain animate-fade-left"
+          src={bikote} // Cambia por la ruta correcta
+          alt="Bikotea"
           fetchpriority="high"
         />
         {/* Segundo jugador */}
-        <img
+        {/* <img
           className="absolute top-[30%] right-[60%] h-auto max-h-[70%] object-contain animate-fade-left animate-delay-300"
           src={bikoteneska} // Cambia por la ruta correcta
           alt="Bikuna"
           fetchpriority="high"
-        />
+        /> */}
       </div>
     </div>
   </header>
