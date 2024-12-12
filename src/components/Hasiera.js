@@ -101,6 +101,13 @@ function Hasiera() {
     </div>
   </header>
 </div>
+<div className="relative flex items-center justify-center bg-blue-800 h-[20vh]">
+<div className="container mx-auto px-6 text-center animate-jump-in animate-duration-1000">
+          <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white">
+            {t('gutaz.main')}
+          </p>
+        </div>
+</div>
 
 
 
