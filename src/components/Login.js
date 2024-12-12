@@ -10,25 +10,42 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const predefinedEmail = 'oihanaginaga@gmail.com';
-  const predefinedPassword = '1234';
+  // const predefinedEmail = 'oihanaginaga@gmail.com';
+  // const predefinedPassword = '1234';
+
+  const predefinedEmail = '';
+  const predefinedPassword = '';
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
+    const oihanEmail = 'oihanaginaga@gmail.com';
+    const oihanPassword = '1234';
+  
     const adminEmail = 'admin@gmail.com';
     const adminPassword = 'admin123';
-
+  
+    // Limpiar el localStorage al intentar iniciar sesión
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('email');
+  
     if (email === predefinedEmail && password === predefinedPassword) {
       localStorage.setItem('isAdmin', 'false');
-      localStorage.setItem('email', email);
+      localStorage.setItem('email', '');
       navigate('/');
-    } else if (email === adminEmail && password === adminPassword) {
+    } 
+    else if (email === adminEmail && password === adminPassword) {
       localStorage.setItem('isAdmin', 'true');
       localStorage.setItem('email', email);
       navigate('/');
     }
+    else if (email === oihanEmail && password === oihanPassword) {
+      localStorage.setItem('isAdmin', 'false');
+      localStorage.setItem('email', 'oihanaginaga@gmail.com');
+      navigate('/');
+    }
   };
+  
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
