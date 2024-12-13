@@ -34,11 +34,12 @@ i18n
               "notLoggedInMessage" : "Not logged in? Check in now!",
             },
             "login":{
-              "password" : "password",
+              "password" : "Password",
               "noAccount" : "Don't have an account?",
               "emailHolder" : "Enter email",
               "passHolder" : "Enter password",
-              "register" : "Register"
+              "register" : "Register",
+              "email": "Email"
               
             },
             "footer":{
@@ -193,7 +194,8 @@ i18n
               "noAccount" : "Konturik ez?",
               "emailHolder" : "Sartu emaila",
               "passHolder" : "Sartu pasahitza",
-              "register" : "Erregistratu"
+              "register" : "Erregistratu",
+              "email" : "Emaila"
             },
             "footer":{
               "ref" : "KONTAKTUA",

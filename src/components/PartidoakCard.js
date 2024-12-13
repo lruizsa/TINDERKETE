@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import p1 from "../images/mikel.jpg";
 import p2 from "../images/ane.jpg";
-import agi from "../images/agi.png"
+import agi from "../images/agi.png";
 import libre from "../images/libre.png";
 import Nav from './Navbar.js';
 import Footer from './Footer.js';
 import { useTranslation } from "react-i18next";
-
+import { useNavigate } from "react-router-dom";
 
 function PartidoakCard() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para verificar si el usuario está logueado
+  const [showLoginMessage, setShowLoginMessage] = useState(false); // Estado para mostrar el mensaje de login
+
+  // Verificamos si hay un usuario logueado al cargar el componente
+  useEffect(() => {
+    const userEmail = localStorage.getItem("email"); // Verificar si hay un email en localStorage
+    if (userEmail) {
+      setIsLoggedIn(true);  // Si hay un email, el usuario está logueado
+    }
+  }, []);
+
+  const [activeList, setActiveList] = useState("publiko"); // Mostrar público o privado
   const [reservations] = useState([
     {
       date: "2024/12/08",
@@ -112,9 +125,24 @@ function PartidoakCard() {
     }
   ]);
 
-  const [activeList, setActiveList] = useState('publiko');
+  // Filtrar partidas según el estado de login y tipo (público/privado)
+  const filteredReservations = reservations.filter((reservation) => {
+    if (activeList === "pribatu" && !isLoggedIn) return false; // No mostrar privadas si no está logueado
+    return reservation.type === activeList;
+  });
 
-  const filteredReservations = reservations.filter(reservation => reservation.type === activeList);
+  const handleJoinClick = (reservation) => {
+    if (!isLoggedIn) {
+      setShowLoginMessage(true); // Mostrar mensaje si no está logueado
+    } else {
+      setShowLoginMessage(false);
+      console.log("Usuario apuntado a la partida", reservation);
+    }
+  };
+
+  const handleLoginRedirect = () => {
+    navigate("/login"); // Redirigir al login
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -125,6 +153,20 @@ function PartidoakCard() {
           <p className="text-xl mt-2 text-gray-600">{t('partidak.description')}</p>
         </div>
 
+        {/* Mostrar mensaje si no está logueado */}
+        {!isLoggedIn && showLoginMessage && (
+          <div className="text-center text-red-600 mb-6">
+            <p>{t('erreserbak.notLoggedInMessage')}</p>
+            <button
+              onClick={handleLoginRedirect}
+              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-200"
+            >
+              Login
+            </button>
+          </div>
+        )}
+
+        {/* Mostrar opciones de filtro entre público y privado */}
         <div className="flex justify-center space-x-4 mb-6">
           <button
             onClick={() => setActiveList('publiko')}
@@ -140,14 +182,13 @@ function PartidoakCard() {
           </button>
         </div>
 
-        {/* Grid de tarjetas responsive */}
+        {/* Lista de partidas */}
         <div className="container mx-auto flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
           {filteredReservations.map((reservation, index) => (
             <div
               key={index}
               className="bg-white shadow-md rounded-lg p-4 border border-gray-200"
             >
-              {/* Encabezado con fecha y deporte */}
               <div className="flex justify-between items-center border-b pb-2">
                 <p className="text-sm text-gray-500">
                   {reservation.date} | {reservation.time}
@@ -156,21 +197,14 @@ function PartidoakCard() {
                   {reservation.sport === "Frontoia"
                     ? t('partidak.frontoia')
                     : reservation.sport === "Trinketea"
-                      ? t('partidak.trinketea')
-                      : reservation.sport}
+                    ? t('partidak.trinketea')
+                    : reservation.sport}
                 </p>
               </div>
-
-
               <hr className="my-2 border-gray-300" />
-
-              {/* Jugadores y espacios libres */}
               <div className="flex items-center">
                 {reservation.players.map((player, idx) => (
-                  <div
-                    key={idx}
-                    className="flex flex-col items-center mr-2 text-center"
-                  >
+                  <div key={idx} className="flex flex-col items-center mr-2 text-center">
                     <img
                       src={player.image}
                       alt={player.name}
@@ -179,28 +213,20 @@ function PartidoakCard() {
                     <span className="text-xs text-gray-700">{player.name}</span>
                   </div>
                 ))}
-
                 <div className="border-l border-gray-300 mx-2 h-10"></div>
-
                 {[...Array(reservation.availableSpots)].map((_, idx) => (
-                  <div
-                    key={`libre-${idx}`}
-                    className="flex flex-col items-center text-center"
-                  >
+                  <div key={`libre-${idx}`} className="flex flex-col items-center text-center">
                     <img
                       src={libre}
                       alt="Libre"
                       className="w-16 h-16 rounded-full mb-1 cursor-pointer"
-                      onClick={() => { }}
+                      onClick={() => handleJoinClick(reservation)}
                     />
                     <span className="text-xs text-gray-500">{t('partidak.apuntatu')}</span>
                   </div>
                 ))}
               </div>
-
               <hr className="my-2 border-gray-300" />
-
-              {/* Ubicación, precio y duración */}
               <div className="flex justify-between items-center">
                 <p className="text-gray-600 text-sm">{reservation.location}</p>
                 <div className="text-right">
@@ -213,11 +239,9 @@ function PartidoakCard() {
             </div>
           ))}
         </div>
-
       </div>
       <Footer />
     </div>
-
   );
 }
 

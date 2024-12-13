@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard'; 
 import entrenatzailea from '../images/oihanEntrenatzailea.jpg'; 
 import pala from '../images/pala.jpg'; 
@@ -14,6 +14,14 @@ const Produktuak = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para verificar si el usuario está logueado
   const [showLoginMessage, setShowLoginMessage] = useState(false); // Estado para mostrar el mensaje de login
+
+  // Verificamos si hay un usuario logueado al cargar el componente
+  useEffect(() => {
+    const userEmail = localStorage.getItem("email");
+    if (userEmail) {
+      setIsLoggedIn(true);  // Si hay un email en localStorage, el usuario está logueado
+    }
+  }, []);
 
   const handleEventClick = () => {
     if (!isLoggedIn) {
@@ -75,7 +83,7 @@ const Produktuak = () => {
           </div>
         )}
 
-        {/* Produktuak */}
+        {/* Productos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <div 
@@ -90,8 +98,7 @@ const Produktuak = () => {
           ))}
         </div>
 
-
-        {/* Komentarioak */}
+        {/* Comentarios */}
         <div className="mt-16">
           <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">{t('produkt.iritziak')}</h2>
           <div className="space-y-4 text-center">
