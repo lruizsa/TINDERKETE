@@ -78,6 +78,8 @@ const Txapelketak = () => {
   const handleEventClick = () => {
     if (!isLoggedIn) {
       setShowLoginMessage(true);  // Mostrar el mensaje de login si no está logueado
+    } else {
+      setShowLoginMessage(false); // Asegurarse de que no se muestre el mensaje si está logueado
     }
   };
 

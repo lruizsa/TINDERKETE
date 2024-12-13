@@ -34,11 +34,12 @@ i18n
               "notLoggedInMessage" : "Not logged in? Check in now!",
             },
             "login":{
-              "password" : "password",
+              "password" : "Password",
               "noAccount" : "Don't have an account?",
               "emailHolder" : "Enter email",
               "passHolder" : "Enter password",
-              "register" : "Register"
+              "register" : "Register",
+              "email": "Email"
               
             },
             "footer":{
@@ -62,7 +63,10 @@ i18n
               "nav6": "Products",
               "nav7": "Contact",
               "sidebar1" : "Profile",
-              "sidebar2" : "Chat",        
+              "sidebar2" : "Chat",
+              "navadmin1" : "Create Tournaments",
+              "navadmin3" : "Config Products",
+              "navadmin2" : "Create New Map"        
             },
             "partidak": {
               "header": "Public and private matches",
@@ -169,6 +173,18 @@ i18n
               "jaioterria" : "Place of birth",
               "telefonoa" : "Phone number",
               "gorde" : "Save"
+            },
+            "hasieraAdmin": {
+              "header" : "Application Management Control Panel",
+            },
+            "mapakSortu": {
+              "header" : "Map Creation Area",
+              "subHeader" : "In this area you can create maps of frontons and Trinquets.",
+              "izena" : "Name",
+              "mota" : "Type",
+              "iframe" : "Iframe",
+              "url" : "URL",
+              "bidali" : "Submit"
             }
           }
         },
@@ -189,11 +205,13 @@ i18n
               "notLoggedInMessage" : "Ez zaude logeatuta? Logeatu orain!",
             },
             "login":{
+              "email" : "Emaila",
               "password" : "Pasahitza",
               "noAccount" : "Konturik ez?",
               "emailHolder" : "Sartu emaila",
               "passHolder" : "Sartu pasahitza",
-              "register" : "Erregistratu"
+              "register" : "Erregistratu",
+              "email" : "Emaila"
             },
             "footer":{
               "ref" : "KONTAKTUA",
@@ -216,7 +234,10 @@ i18n
               "nav6": "Produktuak",
               "nav7": "Kontaktua",
               "sidebar1" : "Profila",
-              "sidebar2" : "Txat-a"
+              "sidebar2" : "Txat-a",
+              "navadmin1" : "Txapelketak Sortu",
+              "navadmin3" : "Produktuak Kudeatu",
+              "navadmin2" : "Mapa Berria Sortu"   
             },
             "partidak": {
               "header": "Partida publiko eta pribatuak",
@@ -322,6 +343,18 @@ i18n
               "jaioterria" : "Jaioterria",
               "telefonoa" : "Telefonoa",
               "gorde" : "Gorder"
+            },
+            "hasieraAdmin": {
+              "header" : "Aplikazioa Kudeatzeko Kontrol Panela",
+            },
+            "mapakSortu": {
+              "header" : "Mapak sortzeko gunea",
+              "subHeader" : "Gune honetan Frontoi eta Trinketeen mapak sor ditzakezu.",
+              "izena" : "Izena",
+              "mota" : "Mota",
+              "iframe" : "Iframe",
+              "url" : "URL",
+              "bidali" : "Bidali"
             }
           }
         }
