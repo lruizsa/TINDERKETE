@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import EventCard from "./EventCard";
 import NavbarAdmin from "./NavbarAdmin.js";
 import Footer from "./Footer.js";
 
-function TxapelketaSortu() {
+function ProduktuSortu() {
   const [formData, setFormData] = useState({
-    title: "",
-    location: "",
-    date: "",
-    time: "",
-    description: "",
+    name: "",
+    category: "",
     price: "",
-    maxParticipants: "",
+    stock: "",
+    description: "",
     image: "",
-    participantImages: [],
   });
 
   const handleInputChange = (e) => {
@@ -35,85 +31,43 @@ function TxapelketaSortu() {
     }
   };
 
-  const handleParticipantImagesUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const uploadedImages = files.map((file) => URL.createObjectURL(file));
-    setFormData((prev) => ({
-      ...prev,
-      participantImages: uploadedImages,
-    }));
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
       <NavbarAdmin />
       <div className="container mx-auto flex-grow px-8 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">Txapelketa Sortu</h1>
+          <h1 className="text-3xl font-bold text-blue-600">Produktu Sortu</h1>
         </div>
         <div className="flex flex-wrap lg:flex-nowrap -mx-4">
           {/* Formulario */}
           <div className="w-full lg:w-2/3 px-4 mb-8">
             <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6 h-full">
               <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Título */}
+                {/* Izena */}
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block mb-1 text-gray-700">Izenburua</label>
+                  <label className="block mb-1 text-gray-700">Produktuaren Izena</label>
                   <input
                     type="text"
-                    name="title"
-                    value={formData.title}
+                    name="name"
+                    value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Sartu txapelketaren izenburua"
+                    placeholder="Sartu produktuaren izena"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Localización */}
+                {/* Kategoria */}
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block mb-1 text-gray-700">Kokalekua</label>
+                  <label className="block mb-1 text-gray-700">Kategoria</label>
                   <input
                     type="text"
-                    name="location"
-                    value={formData.location}
+                    name="category"
+                    value={formData.category}
                     onChange={handleInputChange}
-                    placeholder="Sartu kokalekua"
+                    placeholder="Sartu kategoria"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Fecha */}
-                <div className="col-span-2 md:col-span-1">
-                  <label className="block mb-1 text-gray-700">Data</label>
-                  <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
-                {/* Hora */}
-                <div className="col-span-2 md:col-span-1">
-                  <label className="block mb-1 text-gray-700">Ordua</label>
-                  <input
-                    type="time"
-                    name="time"
-                    value={formData.time}
-                    onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
-                {/* Descripción */}
-                <div className="col-span-2">
-                  <label className="block mb-1 text-gray-700">Deskribapena</label>
-                  <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleInputChange}
-                    placeholder="Sartu deskribapena"
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
-                {/* Precio */}
+                {/* Prezioa */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block mb-1 text-gray-700">Prezioa (€)</label>
                   <input
@@ -125,19 +79,30 @@ function TxapelketaSortu() {
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Máximo de participantes */}
+                {/* Stock */}
                 <div className="col-span-2 md:col-span-1">
-                  <label className="block mb-1 text-gray-700">Gehieneko Partehartzaileak</label>
+                  <label className="block mb-1 text-gray-700">Stock-a</label>
                   <input
                     type="number"
-                    name="maxParticipants"
-                    value={formData.maxParticipants}
+                    name="stock"
+                    value={formData.stock}
                     onChange={handleInputChange}
-                    placeholder="Sartu gehienezko partehartzaile kopurua"
+                    placeholder="Sartu stock-a"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Imagen */}
+                {/* Deskribapena */}
+                <div className="col-span-2">
+                  <label className="block mb-1 text-gray-700">Deskribapena</label>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    placeholder="Sartu deskribapena"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                {/* Irudia */}
                 <div className="col-span-2">
                   <label className="block mb-1 text-gray-700">Irudia</label>
                   <input
@@ -151,24 +116,36 @@ function TxapelketaSortu() {
             </div>
           </div>
 
-          {/* Preview dinámico */}
+          {/* Preview dinamikoa */}
           <div className="w-full lg:w-1/3 px-4">
             <div className="sticky top-4">
-              <EventCard
-                title={formData.title || "Txapelketaren izenburua"}
-                location={formData.location || "Kokalekua"}
-                date={formData.date || "Data"}
-                time={formData.time || "Ordua"}
-                description={formData.description || "Deskribapena"}
-                price={formData.price || "0"}
-                participants={0} // Preview siempre muestra 0 participantes
-                maxParticipants={formData.maxParticipants || "0"}
-                image={
-                  formData.image ||
-                  "https://via.placeholder.com/150?text=Irudi+faltan"
-                }
-                participantImages={[]}
-              />
+              <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6">
+                <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                  {formData.name || "Produktuaren izena"}
+                </h2>
+                <p className="text-sm text-gray-600 mb-2">
+                  {formData.category || "Kategoria"}
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  {formData.description || "Deskribapena"}
+                </p>
+                <p className="text-sm text-gray-800 font-bold">
+                  {formData.price ? `${formData.price} €` : "Prezioa"}
+                </p>
+                <p className="text-sm text-gray-600">
+                  {formData.stock ? `${formData.stock} unitate` : "Stock-a"}
+                </p>
+                <div className="mt-4">
+                  <img
+                    src={
+                      formData.image ||
+                      "https://via.placeholder.com/150?text=Irudi+faltan"
+                    }
+                    alt="Produktua"
+                    className="w-full h-32 object-cover rounded-md"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -178,4 +155,4 @@ function TxapelketaSortu() {
   );
 }
 
-export default TxapelketaSortu;
+export default ProduktuSortu;

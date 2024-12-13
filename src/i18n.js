@@ -34,7 +34,8 @@ i18n
               "notLoggedInMessage" : "Not logged in? Check in now!",
             },
             "login":{
-              "password" : "password",
+              "email" : "Email",
+              "password" : "Password",
               "noAccount" : "Don't have an account?",
               "emailHolder" : "Enter email",
               "passHolder" : "Enter password",
@@ -62,7 +63,10 @@ i18n
               "nav6": "Products",
               "nav7": "Contact",
               "sidebar1" : "Profile",
-              "sidebar2" : "Chat",        
+              "sidebar2" : "Chat",
+              "navadmin1" : "Create Tournaments",
+              "navadmin3" : "Config Products",
+              "navadmin2" : "Create New Map"        
             },
             "partidak": {
               "header": "Public and private matches",
@@ -189,6 +193,7 @@ i18n
               "notLoggedInMessage" : "Ez zaude logeatuta? Logeatu orain!",
             },
             "login":{
+              "email" : "Emaila",
               "password" : "Pasahitza",
               "noAccount" : "Konturik ez?",
               "emailHolder" : "Sartu emaila",
@@ -216,7 +221,10 @@ i18n
               "nav6": "Produktuak",
               "nav7": "Kontaktua",
               "sidebar1" : "Profila",
-              "sidebar2" : "Txat-a"
+              "sidebar2" : "Txat-a",
+              "navadmin1" : "Txapelketak Sortu",
+              "navadmin3" : "Produktuak Kudeatu",
+              "navadmin2" : "Mapa Berria Sortu"   
             },
             "partidak": {
               "header": "Partida publiko eta pribatuak",

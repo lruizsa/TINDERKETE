@@ -37,7 +37,7 @@ function Login() {
     else if (email === adminEmail && password === adminPassword) {
       localStorage.setItem('isAdmin', 'true');
       localStorage.setItem('email', email);
-      navigate('/');
+      navigate('/hasieraadmin');
     }
     else if (email === oihanEmail && password === oihanPassword) {
       localStorage.setItem('isAdmin', 'false');

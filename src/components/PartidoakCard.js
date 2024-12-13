@@ -162,14 +162,14 @@ function PartidoakCard() {
               </div>
 
 
-              <hr className="my-2 border-gray-300" />
+              <hr className="my-2 border-gray-300 mx-auto" />
 
               {/* Jugadores y espacios libres */}
               <div className="flex items-center">
                 {reservation.players.map((player, idx) => (
                   <div
                     key={idx}
-                    className="flex flex-col items-center mr-2 text-center"
+                    className="flex flex-col items-center mr-2 text-center mx-auto"
                   >
                     <img
                       src={player.image}
@@ -185,7 +185,7 @@ function PartidoakCard() {
                 {[...Array(reservation.availableSpots)].map((_, idx) => (
                   <div
                     key={`libre-${idx}`}
-                    className="flex flex-col items-center text-center"
+                    className="flex flex-col items-center text-center mx-auto"
                   >
                     <img
                       src={libre}
