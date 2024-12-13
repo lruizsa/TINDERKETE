@@ -173,6 +173,18 @@ i18n
               "jaioterria" : "Place of birth",
               "telefonoa" : "Phone number",
               "gorde" : "Save"
+            },
+            "hasieraAdmin": {
+              "header" : "Application Management Control Panel",
+            },
+            "mapakSortu": {
+              "header" : "Map Creation Area",
+              "subHeader" : "In this area you can create maps of frontons and Trinquets.",
+              "izena" : "Name",
+              "mota" : "Type",
+              "iframe" : "Iframe",
+              "url" : "URL",
+              "bidali" : "Submit"
             }
           }
         },
@@ -331,6 +343,18 @@ i18n
               "jaioterria" : "Jaioterria",
               "telefonoa" : "Telefonoa",
               "gorde" : "Gorder"
+            },
+            "hasieraAdmin": {
+              "header" : "Aplikazioa Kudeatzeko Kontrol Panela",
+            },
+            "mapakSortu": {
+              "header" : "Mapak sortzeko gunea",
+              "subHeader" : "Gune honetan Frontoi eta Trinketeen mapak sor ditzakezu.",
+              "izena" : "Izena",
+              "mota" : "Mota",
+              "iframe" : "Iframe",
+              "url" : "URL",
+              "bidali" : "Bidali"
             }
           }
         }

@@ -38,8 +38,8 @@ function MapaSortu() {
       <NavbarAdmin />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">{t('mapak.createHeader')}</h1>
-          <p className="text-xl mt-2 text-gray-600">{t('mapak.createDescription')}</p>
+          <h1 className="text-3xl font-bold text-blue-600">{t('mapakSortu.header')}</h1>
+          <p className="text-xl mt-2 text-gray-600">{t('mapakSortu.subHeader')}</p>
         </div>
 
         {successMessage && (
@@ -51,7 +51,7 @@ function MapaSortu() {
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
-              {t('mapak.name')}
+              {t('mapakSortu.izena')}
             </label>
             <input
               type="text"
@@ -66,7 +66,7 @@ function MapaSortu() {
 
           <div className="mb-4">
             <label htmlFor="type" className="block text-gray-700 font-bold mb-2">
-              {t('mapak.type')}
+              {t('mapakSortu.mota')}
             </label>
             <select
               id="type"
@@ -83,7 +83,7 @@ function MapaSortu() {
 
           <div className="mb-4">
             <label htmlFor="iframe" className="block text-gray-700 font-bold mb-2">
-              {t('mapak.iframe')}
+              {t('mapakSortu.iframe')}
             </label>
             <textarea
               id="iframe"
@@ -98,7 +98,7 @@ function MapaSortu() {
 
           <div className="mb-4">
             <label htmlFor="url" className="block text-gray-700 font-bold mb-2">
-              {t('mapak.url')}
+              {t('mapakSortu.url')}
             </label>
             <input
               type="text"
@@ -115,7 +115,7 @@ function MapaSortu() {
               type="submit"
               className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
             >
-              {t('mapak.submit')}
+              {t('mapakSortu.bidali')}
             </button>
           </div>
         </form>

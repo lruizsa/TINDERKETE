@@ -1,53 +1,15 @@
 import React from "react";
 import NavbarAdmin from "./NavbarAdmin.js";
 import Footer from "./Footer.js";
-// import bat from "../images/LezoFrontoia.jpg";
-// import bi from "../images/Tinder-Emblem.png";
-// import hiru from "../images/urnietafrontoia.jpg";
-// import eskupilota from "../images/eskupilota.jpg";
-// import trinkete from "../images/trinkete.jpg";
-// import comingsoon from "../images/comingsoon.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import AOS from 'aos';
-import "aos/dist/aos.css";
-
-// import altuna from '../images/altuna.png';
-// import aldabe from '../images/aldabe.png';
-// import dario from '../images/dario.png';
-// import bikuna from '../images/bikuna.png';
-// import tenis from '../images/tenis.png';
-// import tenisneska from '../images/tenisneska.png';
-// import kirolaria from '../images/kirolaria.png';
-// import kirolarianeska from '../images/kirolarianeska.png';
-// import bikotea from '../images/Removal-512.png';
-// import bikoteneska from '../images/bikoteneska.png';
-// import bikotemutila from '../images/bikotemutila.png';
-// import pelotarihandia from '../images/pelotarihandia.png';
-// import zestapunta from '../images/zestapunta.png';
-// import bikotetenis from '../images/bikotetenis.png';
-// import bikote from '../images/bikotea.png';
-// import jaialai from '../images/jaialai.png';
-import palaikono from '../images/palaikono.png';
-import bikoteikono from '../images/bikoteikono.png';
-import tenispelota from '../images/tenispelota.png';
-import raketatenis from '../images/raketatenis.png';
-import jaialaipala from '../images/jaialaipala.png'
 import ezarpenak from '../images/ezarpenak.png';
 import ezarpenak2 from '../images/ezarpenak2.png'
 import ezarpenak3 from '../images/ezarpenak3.png';
 
 function Hasiera() {
-  const navigate = useNavigate();
   const { t } = useTranslation(); 
-
-  useEffect(() => {
-    AOS.init({
-      duration: 800, // Duración de la animación (en milisegundos)
-      once: true, // Animar solo una vez al hacer scroll
-    });
-  }, []);
 
   return (
     <div className="bg-gray-100">
@@ -66,7 +28,7 @@ function Hasiera() {
                 <span
                   className="bg-clip-text text-6xl text-transparent text-white"
                 >
-                  Aplikazioa Kudeatzeko Kontrol Panela
+                  {t('hasieraAdmin.header')}
                 </span>
               </h1>
             </div>

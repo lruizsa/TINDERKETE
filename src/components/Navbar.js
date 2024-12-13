@@ -13,10 +13,10 @@ import ane from '../images/ane.jpg';
 
 function Navbar() {
   const { t } = useTranslation();
-  const [menuOpen, setMenuOpen] = useState(false); // Estado del menú hamburguesa
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Estado del sidebar
-  const location = useLocation(); // Para saber la ruta activa
-  const navigate = useNavigate(); // Para redirigir al hacer logout
+  const [menuOpen, setMenuOpen] = useState(false); // hanburgesa menuaren egoera
+  const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar egoera
+  const location = useLocation(); // Path aktiboa jakiteko
+  const navigate = useNavigate(); // logout egiterakoan
 
   const getActiveClass = (path) => {
     return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
@@ -105,18 +105,7 @@ function Navbar() {
                 <img src={ane} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
                 <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Admin</h3>
               </p>
-
-              <hr />
-              <Link
-                to="/txapelketasortu"
-                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                onClick={toggleSidebar}
-              >
-                <div className="flex justify-start items-center">
-                  <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon" />
-                  <h4 className="mt-2">Ezarpenak</h4>
-                </div>
-              </Link>
+              
               <hr />
 
               {/* Logout */}

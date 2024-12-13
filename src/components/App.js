@@ -22,6 +22,9 @@ import React, { useState } from "react";
 
 function App() {
   
+  const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Erabiltzailea admin baldin bada funtzionalitate bat geihago dago
+
+
   return (
     <Router>
       {/* Rutas */}
@@ -31,8 +34,8 @@ function App() {
         <Route path="/erreserbak" element={<ErreserbakForm />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/txapelketak" element={<Txapelketak />} /> 
-        <Route path="/produktuak" element={<Produktuak />} /> 
-        <Route path="/" element={<Hasiera />} />
+        <Route path="/produktuak" element={<Produktuak />} />
+        <Route path="/" element={<Hasiera />}/>
         <Route path="/partidoakCard" element={<PartidoakCard />} />
         <Route path="/kontaktua" element={<Kontaktu />} />
         <Route path="/mapalista" element={<MapaLista />} />

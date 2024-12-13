@@ -28,27 +28,23 @@ import "aos/dist/aos.css";
 // import zestapunta from '../images/zestapunta.png';
 import bikotetenis from '../images/bikotetenis.png';
 import bikote from '../images/bikotea.png';
-import jaialai from '../images/jaialai.png';
 import palaikono from '../images/palaikono.png';
 import bikoteikono from '../images/bikoteikono.png';
 import tenispelota from '../images/tenispelota.png';
 import raketatenis from '../images/raketatenis.png';
-import jaialaipala from '../images/jaialaipala.png'
-
-
-
-
-
-
+import jaialaipala from '../images/jaialaipala.png';
+import bikoteaproba from '../images/bikoteaproba.png';
+import bikoteaproba2 from '../images/bikoteaproba2.png';
 
 function Hasiera() {
   const navigate = useNavigate();
   const { t } = useTranslation(); 
 
+
   useEffect(() => {
     AOS.init({
-      duration: 800, // Duración de la animación (en milisegundos)
-      once: true, // Animar solo una vez al hacer scroll
+      duration: 800, // Animazioaren iraupena (milisegundutan)
+      once: true, // Behin bakarrik egin scroll egiterakoan
     });
   }, []);
 
@@ -88,8 +84,8 @@ function Hasiera() {
             {/* Eskubiko irudia */}
             <div className="relative w-1/3 h-full flex justify-center items-center">
               <img
-                className="absolute right-[10%] top-[13%] sm-top-[3.5%] z-10 h-auto max-h-[100%] object-contain animate-fade-left"
-                src={bikote}
+                className="absolute right-[10%] top-[-10%] z-10 h-auto max-h-[110%] object-contain animate-fade-left"
+                src={bikoteaproba2}
                 alt="Bikotea"
                 fetchpriority="high"
               />
@@ -98,6 +94,7 @@ function Hasiera() {
         </header>
       </div>
 
+      {/* header azpian dauden ikonoak */}
       <section className="flex w-full relative bg-white text-white py-4 justify-around">
         <div className="bg-blue-200 rounded-full p-4 w-[8%] animate-fade-right">
         <img src={jaialaipala} />
@@ -215,7 +212,6 @@ function Hasiera() {
               className="w-full h-full object-cover"
             />
           </div>
-
         </div>
       </section>
       
