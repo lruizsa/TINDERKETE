@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import Register from './Erregistratu';
@@ -17,11 +18,16 @@ import NavbarAdmin from './NavbarAdmin';
 import HasieraAdmin from './HasieraAdmin';
 import MapaListaSortu from './MapaListaSortu';
 import ProduktuakSortu from './ProduktuakSortu';
-import React, { useState } from "react";
-
 
 function App() {
-  
+  // Verifica si es la primera vez que se abre la página
+  if (!localStorage.getItem('firstVisit')) {
+    // Elimina los ítems y marca que ya se abrió
+    localStorage.removeItem('isAdmin');
+    localStorage.removeItem('email');
+    localStorage.setItem('firstVisit', 'true');
+  }
+
   return (
     <Router>
       {/* Rutas */}

@@ -98,37 +98,37 @@ function Navbar() {
               </Link>
 
             </>
-          ) : isAdmin ? (
-            <>
-              {/* Si es admin */}
-              <p className="text-center mb-4">
-                <img src={ane} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Admin</h3>
-              </p>
+          // ) : isAdmin ? (
+            // <>
+            //   Si es admin
+            //   <p className="text-center mb-4">
+            //     <img src={ane} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+            //     <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Admin</h3>
+            //   </p>
 
-              <hr />
-              <Link
-                to="/txapelketasortu"
-                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                onClick={toggleSidebar}
-              >
-                <div className="flex justify-start items-center">
-                  <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon" />
-                  <h4 className="mt-2">Ezarpenak</h4>
-                </div>
-              </Link>
-              <hr />
+            //   <hr />
+            //   <Link
+            //     to="/txapelketasortu"
+            //     className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+            //     onClick={toggleSidebar}
+            //   >
+            //     <div className="flex justify-start items-center">
+            //       <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon" />
+            //       <h4 className="mt-2">Ezarpenak</h4>
+            //     </div>
+            //   </Link>
+            //   <hr />
 
-              {/* Logout */}
-              <Link
-                to="/login"
-                className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                onClick={handleLogout}
-              >
-                <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2" /><h4 className="mt-2">Logout</h4></div>
-              </Link>
+            //   {/* Logout */}
+            //   <Link
+            //     to="/login"
+            //     className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+            //     onClick={handleLogout}
+            //   >
+            //     <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2" /><h4 className="mt-2">Logout</h4></div>
+            //   </Link>
 
-            </>
+            // </>
           ) : (
             <>
               {/* Si no es Oihan ni Admin */}
