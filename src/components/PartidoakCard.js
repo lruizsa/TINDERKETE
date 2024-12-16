@@ -14,6 +14,7 @@ function PartidoakCard() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para verificar si el usuario está logueado
   const [showLoginMessage, setShowLoginMessage] = useState(false); // Estado para mostrar el mensaje de login
+  const [showPopup, setShowPopup] = useState(false); // Estado para mostrar el pop-up
 
   // Verificamos si hay un usuario logueado al cargar el componente
   useEffect(() => {
@@ -136,12 +137,21 @@ function PartidoakCard() {
       setShowLoginMessage(true); // Mostrar mensaje si no está logueado
     } else {
       setShowLoginMessage(false);
-      console.log("Usuario apuntado a la partida", reservation);
+      setShowPopup(true); // Mostrar pop-up si está logueado
     }
   };
 
   const handleLoginRedirect = () => {
     navigate("/login"); // Redirigir al login
+  };
+
+  const closePopup = () => {
+    setShowPopup(false); // Cerrar el pop-up
+  };
+
+  const handleCloseAndNavigate = () => {
+    closePopup(); // Cierra el pop-up
+    navigate("/erreserbak"); // Redirige a la página de registro
   };
 
   return (
@@ -202,7 +212,6 @@ function PartidoakCard() {
                 </p>
               </div>
 
-
               <hr className="my-2 border-gray-300 mx-auto" />
 
               {/* Jugadores y espacios libres */}
@@ -250,6 +259,22 @@ function PartidoakCard() {
           ))}
         </div>
       </div>
+
+      {/* Pop-up */}
+      {showPopup && (
+      <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-xl font-semibold text-gray-800">{t('partidak.popupHeader')}</h2>
+          <button
+            onClick={handleCloseAndNavigate} // Llamamos a la nueva función
+            className="w-full mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          >
+            {t('partidak.itxi')}
+          </button>
+        </div>
+      </div>
+    )}
+
       <Footer />
     </div>
   );

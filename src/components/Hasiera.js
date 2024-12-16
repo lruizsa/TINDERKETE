@@ -99,7 +99,7 @@ function Hasiera() {
       {/* header azpian dauden ikonoak */}
       <section className="flex w-full relative bg-white text-white py-3 justify-around">
   {/* Imagen 1 */}
-  <div className="bg-blue-200 rounded-full p-4 w-[15%] sm:w-[10%] lg:w-[8%] animate-fade-right">
+  <div className="bg-blue-200 rounded-full p-4 w-[15%] sm:w-[15%] lg:w-[8%] animate-fade-right">
     <img className="w-full h-auto object-contain" src={jaialaipala} alt="Jaialai Pala" />
   </div>
   

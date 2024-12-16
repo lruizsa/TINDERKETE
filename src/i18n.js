@@ -79,6 +79,8 @@ i18n
               "trinketea":"Trinquets",
               "minutu":"minutes",
               "apuntatu": "Sign up",
+              "popupHeader" : "Sign up for the game!",
+              "itxi" : "Close"
             },    
             "gutaz": {
               "main" : "Our aim is to encourage the practice of Basque sports by young people. Play on the fronton and trinquets easily, creating open or closed groups and booking places. Meet the big fans and start participating!",
@@ -254,7 +256,9 @@ i18n
               "trinketea":"Trinketea",
               "minutu":"minutu",
               "apuntatu": "Apuntatu",
-              "trinketeak":"Trinketeak",        
+              "trinketeak":"Trinketeak",  
+              "popupHeader" : "Partidan izena eman dezu!",
+              "itxi" : "Itxi"      
             },
             "gutaz": {
               "main" : "Gazteek euskal kirolak praktikatzearen ohitura sustatzea da gure helburua. Jolastu frontoian eta trinketean erraz, talde irekiak edo itxiak sortuz eta tokiak erreserbatuz. Ezagutu zale amorratuak eta hasi parte hartzen!",
@@ -297,7 +301,7 @@ i18n
               "iritziak" : "Bezeroen iritziak",
               "entrenatzaile" : "Oihan entrenatzailea",
               "pala" : "Pala",
-              "pelotak" : "Fronteniseko pelotak"
+              "pelotak" : "Fronteniseko pelotak",
             },
             "txapelketa":{
               "header" : "Frontoiak eta Trinketeak",

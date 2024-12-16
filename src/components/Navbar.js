@@ -298,7 +298,7 @@ function Navbar() {
 
 
           {/* Sidebar toggle */}
-          <button className="lg:block hidden" onClick={toggleSidebar}>
+          <button className="lg:block hidden ml-5" onClick={toggleSidebar}>
             <img
               src={logoImage}
               alt="1361728"
