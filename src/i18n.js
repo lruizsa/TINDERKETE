@@ -6,15 +6,15 @@ i18n
   .use(LanguageDetector) // Nabegatzailearen hizkuntza deteketatzen du
   .use(initReactI18next) // React-ekin bateratu
   .init({
-    fallbackLng: 'eu', // Idioma por defecto
-    lng: localStorage.getItem('language') || 'eu', // Idioma inicial desde localStorage o 'en'
+    fallbackLng: 'eu',
+    lng: localStorage.getItem('language') || 'eu',
     debug: true,
     interpolation: {
-      escapeValue: false, // React ya maneja esto
+      escapeValue: false,
     },
     detection: {
       order: ['cookie', 'localStorage', 'navigator'],
-      caches: ['cookie'], // Cookietan gordeko du hizkuntza
+      caches: ['cookie'],
     },
     resources: {
         en: {
@@ -39,7 +39,9 @@ i18n
               "emailHolder" : "Enter email",
               "passHolder" : "Enter password",
               "register" : "Register",
-              "email": "Email"
+              "email": "Email",
+              "emailRequired" : "You mast enter an email.",
+              "emailInvalid" : "You must enter an '@' sign at the email address."
               
             },
             "footer":{
@@ -211,7 +213,9 @@ i18n
               "emailHolder" : "Sartu emaila",
               "passHolder" : "Sartu pasahitza",
               "register" : "Erregistratu",
-              "email" : "Emaila"
+              "email" : "Emaila",
+              "emailRequired" : "Posta elektroniko bat sartu behar duzu.",
+              "emailInvalid" : "Posta elektronikoaren helbidean '@' zeinu bat sartu behar duzu."
             },
             "footer":{
               "ref" : "KONTAKTUA",
@@ -335,14 +339,14 @@ i18n
             },
             "profila": {
               "header" : "Profila",
-              "header2" : "Ikusi eta editatu zure erabiltzailearen inforamzioa.",
+              "header2" : "Ikusi eta editatu zure erabiltzailearen informazioa.",
               "izena" : "Izena",
               "abizena" : "Abizenak",
               "email" : "Email",
               "jaiotzedata" : "Jaiotze Data",
               "jaioterria" : "Jaioterria",
               "telefonoa" : "Telefonoa",
-              "gorde" : "Gorder"
+              "gorde" : "Gorde"
             },
             "hasieraAdmin": {
               "header" : "Aplikazioa Kudeatzeko Kontrol Panela",

@@ -7,7 +7,6 @@ import logoImage from '../images/1361728.png';
 import '../components/navar.css';
 import logotxuri from '../images/perfiltxuri.png';
 import logout from '../images/logout.png';
-import ezarpenak from '../images/ezarpenak.png';
 import { useTranslation } from "react-i18next";
 import ane from '../images/ane.jpg';
 
@@ -51,7 +50,7 @@ function Navbar() {
         className={`fixed inset-0 bg-black bg-opacity-50 ${sidebarOpen ? 'block' : 'hidden'}`}
         onClick={toggleSidebar}
       ></div>
-      <div className={`fixed top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform`}>
+      <div className={`fixed z-50 top-0 left-0 w-64 bg-gray-800 text-white h-full transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform`}>
         <div className="p-4">
 
           {/* Verificar si es Oihan */}
@@ -98,37 +97,6 @@ function Navbar() {
               </Link>
 
             </>
-          // ) : isAdmin ? (
-            // <>
-            //   Si es admin
-            //   <p className="text-center mb-4">
-            //     <img src={ane} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-            //     <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Admin</h3>
-            //   </p>
-
-            //   <hr />
-            //   <Link
-            //     to="/txapelketasortu"
-            //     className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            //     onClick={toggleSidebar}
-            //   >
-            //     <div className="flex justify-start items-center">
-            //       <img src={ezarpenak} className="w-8 h-7 mr-2" alt="admin-icon" />
-            //       <h4 className="mt-2">Ezarpenak</h4>
-            //     </div>
-            //   </Link>
-            //   <hr />
-
-            //   {/* Logout */}
-            //   <Link
-            //     to="/login"
-            //     className="text-center nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-            //     onClick={handleLogout}
-            //   >
-            //     <div className="flex justify-start items-center"><img src={logout} className="w-8 h-7 mr-2" /><h4 className="mt-2">Logout</h4></div>
-            //   </Link>
-
-            // </>
           ) : (
             <>
               {/* Si no es Oihan ni Admin */}
@@ -151,14 +119,15 @@ function Navbar() {
 
       {/* Navbar */}
       <nav className="bg-gray-800 text-white shadow-lg">
-        <div className="container mx-auto flex justify-between items-center p-4">
+        <div className="container mx-auto flex flex-wrap justify-center items-center p-4">
           {/* Logo */}
           <Link className="flex items-center" to="/">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-16 h-16 sm:w-16 sm:h-16 mr-2 flame-effect rounded-full object-contain"
-            />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-auto max-w-16 h-auto max-h-16 mr-2 flame-effect rounded-full object-contain"
+          />
+
           </Link>
           <h1 className="text-white font-bold text-3xl no-underline">Tinderkete</h1>
 
@@ -246,92 +215,94 @@ function Navbar() {
 
           {/* Hanburguesa menua pantaila txikitan */}
           <div
-            className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} absolute bg-gray-800 text-white shadow-lg p-4 top-full right-0 mt-2 w-48`}
-          >
-            <ul className="flex flex-col space-y-4">
-              <li className={`nav-item ${getActiveClass('/')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav1')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/erreserbak"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav2')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/txapelketak"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav3')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/PartidoakCard"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav4')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/MapaLista"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav5')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/produktuak')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/produktuak"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav6')}
-                </Link>
-              </li>
-              <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/kontaktua"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav7')}
-                </Link>
-              </li>
-              <li>
-                <button className="lg:block hidden" onClick={toggleSidebar}>
-                  <img
-                    src={logoImage}
-                    alt="1361728"
-                    className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
-                  />
-                </button>
-              </li>
+  className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} relative flex-row text-center text-white p-4 top-full mt-2 w-[100%] rounded-lg active:transition active:duration-700 active:ease-in-out`}
+>
+  <ul className="flex flex-col space-y-4">
+    <li className={`nav-item ${getActiveClass('/')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/"
+        onClick={closeMenu}
+      >
+        {t('nav.nav1')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/erreserbak"
+        onClick={closeMenu}
+      >
+        {t('nav.nav2')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/txapelketak"
+        onClick={closeMenu}
+      >
+        {t('nav.nav3')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/PartidoakCard"
+        onClick={closeMenu}
+      >
+        {t('nav.nav4')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/MapaLista"
+        onClick={closeMenu}
+      >
+        {t('nav.nav5')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/produktuak')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/produktuak"
+        onClick={closeMenu}
+      >
+        {t('nav.nav6')}
+      </Link>
+    </li>
+    <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
+      <Link
+        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+        to="/kontaktua"
+        onClick={closeMenu}
+      >
+        {t('nav.nav7')}
+      </Link>
+    </li>
+    <li>
+      <button
+        className=""
+        onClick={toggleSidebar} // Asegúrate de que este evento abra el sidebar
+      >
+        <img
+          src={logoImage}
+          alt="Perfil"
+          className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
+        />
+      </button>
+    </li>
+  </ul>
+</div>
 
-            </ul>
-
-          </div>
 
           {/* Sidebar toggle */}
           <button className="lg:block hidden" onClick={toggleSidebar}>
             <img
               src={logoImage}
               alt="1361728"
-              className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
+              className="w-auto max-w-12 h-auto max-h-12 rounded-full bg-amber-500 p-1 object-contain"
             />
           </button>
         </div>

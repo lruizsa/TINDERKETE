@@ -9,43 +9,53 @@ function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  // const predefinedEmail = 'oihanaginaga@gmail.com';
-  // const predefinedPassword = '1234';
+  const [emailError, setEmailError] = useState(''); // Para almacenar el error del correo
 
   const predefinedEmail = '';
   const predefinedPassword = '';
 
+  const handleEmailValidation = (value) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex básico para validar correos
+    if (!value) {
+      setEmailError(t('login.emailRequired')); // Mensaje cuando el campo está vacío
+    } else if (!emailRegex.test(value)) {
+      setEmailError(t('login.emailInvalid')); // Mensaje para formato incorrecto
+    } else {
+      setEmailError(''); // Sin errores si el correo es válido
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    handleEmailValidation(email); // Validar el correo antes de continuar
+
+    if (emailError) {
+      return; // Si hay errores, detener el envío
+    }
+
     const oihanEmail = 'oihanaginaga@gmail.com';
     const oihanPassword = '1234';
-  
     const adminEmail = 'admin@gmail.com';
     const adminPassword = 'admin123';
-  
+
     // Limpiar el localStorage al intentar iniciar sesión
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('email');
-  
+
     if (email === predefinedEmail && password === predefinedPassword) {
       localStorage.setItem('isAdmin', 'false');
       localStorage.setItem('email', '');
       navigate('/');
-    } 
-    else if (email === adminEmail && password === adminPassword) {
+    } else if (email === adminEmail && password === adminPassword) {
       localStorage.setItem('isAdmin', 'true');
       localStorage.setItem('email', email);
       navigate('/hasieraadmin');
-    }
-    else if (email === oihanEmail && password === oihanPassword) {
+    } else if (email === oihanEmail && password === oihanPassword) {
       localStorage.setItem('isAdmin', 'false');
       localStorage.setItem('email', 'oihanaginaga@gmail.com');
       navigate('/');
     }
   };
-  
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -64,19 +74,26 @@ function Login() {
           <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
 
           <form onSubmit={handleSubmit}>
+            {/* Campo de correo electrónico */}
             <div className="flex flex-col mb-4">
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('login.email')}</label>
               <input
                 type="email"
                 id="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  handleEmailValidation(e.target.value); // Validar en tiempo real
+                }}
                 placeholder={t('login.emailHolder')}
-                required
-                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className={`border p-2 rounded-md focus:outline-none focus:ring-2 ${
+                  emailError ? 'border-red-500 focus:ring-red-400' : 'border-gray-300 focus:ring-blue-400'
+                }`}
               />
+              {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
             </div>
 
+            {/* Campo de contraseña */}
             <div className="flex flex-col mb-6">
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">{t('login.password')}</label>
               <input
@@ -85,11 +102,11 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t('login.passHolder')}
-                required
                 className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
 
+            {/* Botón de enviar */}
             <div className="mb-4">
               <button
                 type="submit"
@@ -99,6 +116,7 @@ function Login() {
               </button>
             </div>
 
+            {/* Enlace de registro */}
             <div className="flex justify-center items-center mt-10">
               <p className="mr-2 text-sm text-gray-600">{t('login.noAccount')}</p>
               <button

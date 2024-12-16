@@ -55,63 +55,75 @@ function Hasiera() {
 
       {/* Main */}
      <div className="relative">
-        <header className="relative flex items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-800 h-[20vh] md:h-[65vh] lg:h-100vh">
-          <div className="absolute inset-0 flex justify-between items-center w-full">
-            {/* Ezkerreko irudia */}
-            <div className="relative w-1/3 h-full flex justify-center items-center">
-              <img
-                className="absolute left-[10%] z-10 h-auto max-h-[100%] object-contain animate-fade-right"
-                src={bikotetenis}
-                alt="Teniseko Bikotea"
-                fetchpriority="high"
-              />
-            </div>
+     <header className="relative flex flex-col items-center justify-center bg-gradient-to-r from-blue-400 to-indigo-800 min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[65vh] xl:min-h-[70vh]">
+  {/* Contenedor principal */}
+  <div className="absolute inset-0 flex flex-col sm:flex-row justify-between items-center w-full h-full">
+    {/* Imagen izquierda (oculta en móvil) */}
+    <div className="relative w-full sm:w-1/3 h-full flex justify-center items-center hidden sm:block">
+      <img
+        className="w-full h-full object-cover animate-fade-right"
+        src={bikotetenis}
+        alt="Teniseko Bikotea"
+        fetchpriority="high"
+      />
+    </div>
 
-            {/* Izenburua */}
-            <div className="relative z-20 text-center">
-              <h1 className="font-boxing text-3xl lg:text-5xl font-bold text-white animate-jump-in">
-                <span
-                  className="bg-clip-text text-6xl text-transparent bg-gradient-to-b from-white via-gray-300 to-white"
-                >
-                  MATCH, CHAT, WIN!
-                </span>
-              </h1>
-              <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white animate-jump-in mt-3">
-                  {t('gutaz.main')}
-                </p>
-            </div>
+    {/* Título y Subtítulo */}
+    <div className="relative z-20 text-center px-4 sm:px-0 flex flex-col justify-center items-center sm:mt-15 h-full">
+      <h1 className="font-boxing text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white animate-jump-in">
+        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-300 to-white">
+          MATCH, CHAT, WIN!
+        </span>
+      </h1>
+      <p className="text-sm sm:text-lg max-w-md sm:max-w-3xl mx-auto leading-relaxed text-white animate-jump-in mt-3">
+        {t('gutaz.main')}
+      </p>
+    </div>
 
-            {/* Eskubiko irudia */}
-            <div className="relative w-1/3 h-full flex justify-center items-center">
-              <img
-                className="absolute right-[10%] top-[-10%] z-10 h-auto max-h-[110%] object-contain animate-fade-left"
-                src={bikoteaproba2}
-                alt="Bikotea"
-                fetchpriority="high"
-              />
-            </div>
-          </div>
-        </header>
+    {/* Imagen derecha (oculta en móvil) */}
+    <div className="relative block w-full sm:w-1/3 h-full flex justify-center items-center hidden sm:block">
+      <img
+        className="w-full h-full object-cover animate-fade-left"
+        src={bikoteaproba2}
+        alt="Bikotea"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+</header>
+
+
+
       </div>
 
       {/* header azpian dauden ikonoak */}
-      <section className="flex w-full relative bg-white text-white py-4 justify-around">
-        <div className="bg-blue-200 rounded-full p-4 w-[8%] animate-fade-right">
-        <img src={jaialaipala} />
-        </div>
-        <div className="bg-blue-400 rounded-full p-4 w-[8%] animate-fade-right animate-delay-300">
-        <img src={palaikono} />
-        </div>
-        <div className="bg-blue-600 rounded-full p-4 w-[8%] animate-fade animate-delay-500">
-        <img className="rounded-full" src={bikoteikono} />
-        </div>
-        <div className="bg-blue-400 rounded-full p-4 w-[8%] animate-fade-left animate-delay-300">
-        <img src={tenispelota} />
-        </div>
-        <div className="bg-blue-200 rounded-full p-4 w-[8%] animate-fade-left">
-        <img src={raketatenis} />
-        </div>
-      </section>    
+      <section className="flex w-full relative bg-white text-white py-3 justify-around">
+  {/* Imagen 1 */}
+  <div className="bg-blue-200 rounded-full p-4 w-[15%] sm:w-[10%] lg:w-[8%] animate-fade-right">
+    <img className="w-full h-auto object-contain" src={jaialaipala} alt="Jaialai Pala" />
+  </div>
+  
+  {/* Imagen 2 */}
+  <div className="bg-blue-400 rounded-full p-4 w-[15%] sm:w-[15%] lg:w-[8%] animate-fade-right animate-delay-300">
+    <img className="w-full h-auto object-contain" src={palaikono} alt="Pala Ikono" />
+  </div>
+  
+  {/* Imagen 3 */}
+  <div className="bg-blue-600 rounded-full p-4 w-[15%] sm:w-[15%] lg:w-[8%] animate-fade animate-delay-500">
+    <img className="rounded-full w-full h-auto object-contain" src={bikoteikono} alt="Bikote Ikono" />
+  </div>
+  
+  {/* Imagen 4 */}
+  <div className="bg-blue-400 rounded-full p-4 w-[15%] sm:w-[15%] lg:w-[8%] animate-fade-left animate-delay-300">
+    <img className="w-full h-auto object-contain" src={tenispelota} alt="Tenis Pelota" />
+  </div>
+  
+  {/* Imagen 5 */}
+  <div className="bg-blue-200 rounded-full p-4 w-[15%] sm:w-[15%] lg:w-[8%] animate-fade-left">
+    <img className="w-full h-auto object-contain" src={raketatenis} alt="Raketa Tenis" />
+  </div>
+</section>
+
 
       {/* Section izenburu */}
       <section className="container mx-auto px-6 py-16" data-aos="fade-up">
