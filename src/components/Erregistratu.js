@@ -111,6 +111,18 @@ function Register() {
                 required
               />
             </div>
+            <div className="flex flex-col mb-4">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">{t('register.pasahitzaBaieztatu2')}</label>
+              <input
+                type="password"
+                className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={t('register.pasahitzaBaieztatu1')}
+                required
+              />
+            </div>
 
             <div className="flex flex-col mb-6">
               <label htmlFor="birthdate" className="block text-sm font-medium text-gray-700">{t('register.jaitozedata')}</label>

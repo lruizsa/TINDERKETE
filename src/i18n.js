@@ -141,7 +141,9 @@ i18n
               "pasahitzap" : "Write your password",
               "jaitozedata" : "Birth Date",
               "bidali" : "Register",
-              "kontua" : "Have an account?"
+              "kontua" : "Have an account?",
+              "pasahitzaBaieztatu1": "Confirm password",
+              "pasahitzaBaieztatu2": "Confirm password"
             },
             "txapelketa1": {
               "title" : "Fronton tournament!",
@@ -313,7 +315,9 @@ i18n
               "pasahitzap" : "Sartu pasahitza",
               "jaitozedata" : "Jaiotze Data",
               "bidali" : "Erregistratu",
-              "kontua" : "Kontu bat baduzu?"
+              "kontua" : "Kontu bat baduzu?",
+              "pasahitzaBaieztatu1": "Sartu berriro pasahitza",
+              "pasahitzaBaieztatu2": "Baieztatu pasahitza"
             },
             "txapelketa1": {
               "title" : "Frontoi Txapelketa!",
