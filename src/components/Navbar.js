@@ -133,6 +133,7 @@ function Navbar() {
       <nav className="bg-gray-800 text-white shadow-lg">
         <div className="container mx-auto flex justify-between items-center p-4">
           {/* Logo */}
+          {/*TODO: Irudia logeatua egon ezkero perfileko argazkia*/}
           <Link className="flex items-center" to="/">
             <img
               src={logo}

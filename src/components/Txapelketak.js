@@ -15,11 +15,22 @@ const Txapelketak = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true); // Para manejar el estado de carga
   const [error, setError] = useState(null); // Para manejar errores
+  const getImagePath = (imageName) => {
+    try {
+      // Usa require para cargar la imagen de forma dinámica
+      return require(`../images/${imageName}`);
+    } catch (err) {
+      console.error("Error al cargar la imagen:", err);
+      // Ruta alternativa si la imagen no existe
+      return require(`../images/comingsoon.jpg`);
+    }
+  };
 
   useEffect(() => {
     // Realiza la llamada a la API usando fetch
     const fetchEvents = async () => {
       try {
+          /* TODO: hosting api deiak ez localhostetik hartzeko*/
         const response = await fetch("http://localhost:8000/api/txapelketak"); // URL de la API
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
@@ -34,7 +45,7 @@ const Txapelketak = () => {
           participants: tournament.participants_count || 0,
           maxParticipants: tournament.max_participants || 0,
           price: tournament.price || 0,
-          image: tournament.image_url || "",
+          image: getImagePath(tournament.location.img || "comingsoon.png"),
           participantImages: [], // Si tienes imágenes de participantes
         }));
         setEvents(formattedEvents); // Actualiza el estado con los eventos
@@ -47,55 +58,6 @@ const Txapelketak = () => {
     };
     fetchEvents();
   }, [t]);
-  // const events = [
-  //   {
-  //     title: t('txapelketa1.title'),
-  //     location: t('txapelketa1.location'),
-  //     date: t('txapelketa1.date'),
-  //     time: "16:00",
-  //     description: t('txapelketa1.description'),
-  //     participants: 3,
-  //     maxParticipants: 24,
-  //     price: 20,
-  //     image: urnietafrontoiaImg, 
-  //     participantImages: [
-  //       agi,
-  //       p1,
-  //       p2,
-  //     ],
-  //   },
-  //   {
-  //     title: t('txapelketa2.title'),
-  //     location: t('txapelketa2.location'),
-  //     date: t('txapelketa2.date'),
-  //     time: "16:00",
-  //     description: t('txapelketa2.description'),
-  //     participants: 3,
-  //     maxParticipants: 32,
-  //     price: 15,
-  //     image: lezoFrontoiaImg,
-  //     participantImages: [
-  //       p1,
-  //       p2,
-  //       agi,
-  //     ],
-  //   },
-  //   {
-  //     title: t('txapelketa3.title'),
-  //     location: t('txapelketa3.location'),
-  //     date: t('txapelketa3.date'),
-  //     time: "16:00",
-  //     description: t('txapelketa3.description'),
-  //     participants: 1,
-  //     maxParticipants: 50,
-  //     price: 10,
-  //     image: zestoaFrontoiaImg,
-  //     participantImages: [
-  //       p2,
-  //     ],
-  //   },
-  // ];
-
 
   return (
     <div className="flex flex-col min-h-screen">
