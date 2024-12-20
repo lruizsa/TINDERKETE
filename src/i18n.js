@@ -201,7 +201,7 @@ i18n
               "description": "Erreserbak egiteko gunean partida pribatuak edo publikoak egin ditzakezu!",
               "sportType": "Zelai mota",
               "playerCount": "Jokalari kopurua",
-              "location": "Lokalekua",
+              "location": "Kokalekua",
               "time": "Ordua",
               "isPublic": "Publikoa egin",
               "submit": "Sartu",

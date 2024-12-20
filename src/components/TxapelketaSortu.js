@@ -103,8 +103,18 @@ function TxapelketaSortu() {
                   />
                 </div>
                 {/* Descripción */}
-                <div className="col-span-2">
-                  <label className="block mb-1 text-gray-700">Deskribapena</label>
+                <div className="col-span-2 md:col-span-1">
+                  <label className="block mb-1 text-gray-700">Deskribapena (EU)</label>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    placeholder="Sartu deskribapena"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+                <div className="col-span-2 md:col-span-1">
+                  <a href="https://www.euskadi.eus/traductor/" target="_blank" rel="noopener noreferrer"><label className="block mb-1 text-gray-700 no-underline cursor-pointer">Deskribapena (EN)</label></a>
                   <textarea
                     name="description"
                     value={formData.description}
