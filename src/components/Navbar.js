@@ -16,17 +16,74 @@ function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar egoera
   const location = useLocation(); // Path aktiboa jakiteko
   const navigate = useNavigate(); // logout egiterakoan
+  // const { t } = useTranslation();
+  // const [menuOpen, setMenuOpen] = useState(false); // hanburgesa menuaren egoera
+  // const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar egoera
+  // const location = useLocation(); // Path aktiboa jakiteko
+  // const navigate = useNavigate(); // logout egiterakoan
+
+  // const getActiveClass = (path) => {
+  //   return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
+  // };
+  // const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Erabiltzailea admin baldin bada funtzionalitate bat geihago dago
+  // const email = localStorage.getItem('email'); // Emaila berifikatzen du
+
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi
+  // };
+
+  // const closeMenu = () => {
+  //   setMenuOpen(false); // Hanburguesa menua itxi klik egitean link batean
+  // };
+
+  // const toggleSidebar = () => {
+  //   setSidebarOpen(!sidebarOpen); // Sidebar ireki itxi
+  // };
+
+  // const handleLogout = (e) => {
+  //   e.preventDefault();
+  //   localStorage.removeItem('email');
+  //   localStorage.removeItem('isAdmin');
+  //   navigate('/login'); // Hasierako horria
+  // };
+
+
+  const { t } = useTranslation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  //const email = localStorage.getItem("email"); // Obtener el email desde localStorage
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  // Verificar si se obtuvo el objeto y luego acceder a la propiedad 'admin'
+  if (user) {
+    console.log("Administraria da?: ", user.admin); // Mostrar el valor de la propiedad 'admin'
+  } else {
+    console.log("No se encontró el usuario en localStorage");
+  }
+  const navigate = useNavigate();
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const handleLogout = () => {
+    localStorage.removeItem("email");
+    localStorage.removeItem("token");
+    localStorage.removeItem("admin");
+    navigate("/login");
+  };
+
+   const toggleMenu = () => {
+     setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi
+   };
+
+   const closeMenu = () => {
+     setMenuOpen(false); // Hanburguesa menua itxi klik egitean link batean
+   };
 
   const getActiveClass = (path) => {
-    return location.pathname === path ? 'bg-amber-500 rounded-md text-white' : 'text-gray-300'; //Dagoen orrialdeko itxura
-  };
-  const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Erabiltzailea admin baldin bada funtzionalitate bat geihago dago
-  const email = localStorage.getItem('email'); // Emaila berifikatzen du
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Hanburguesa menua ireki itxi
+    return location.pathname === path ? "bg-gray-700 text-white" : "text-gray-400 hover:bg-gray-700";
   };
 
+<<<<<<< HEAD
   const closeMenu = () => {
     setMenuOpen(false); // Hanburguesa menua itxi klik egitean link batean
   };
@@ -58,6 +115,9 @@ function Navbar() {
   const changeLanguage = (event) => {
     setActiveLanguage(event.target.value); // activeLenguageren egoera aldatzen du
   };
+=======
+  
+>>>>>>> 79b41940c7224630eaa3aa23a504071732e3f6fe
 
   return (
     <div className="sticky top-0 z-50 shadow-lg">
@@ -71,11 +131,11 @@ function Navbar() {
         <div className="p-4">
 
           {/* Verificar si es Oihan */}
-          {email === 'oihanaginaga@gmail.com' ? (
+          {user.admin === '0' ? (
             <>
               <p className="text-center mb-4">
-                <img src={agi} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
-                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">Oaginaga23</h3>
+                <img src={user.image} alt="logo" className="mx-auto mb-2 w-18 h-18 object-contain rounded-full" />
+                <h3 className="border border-gray-200 p-2 rounded-full bg-gray-50 text-gray-700">{user.name}</h3>
               </p>
 
               <hr />
