@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import logo from '../images/logo.png';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 function Register() {
   const navigate = useNavigate();
@@ -16,12 +16,12 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (password !== passwordConfirmation) {
       alert('Pasahitzak ez dira bat etorri');
       return;
     }
-
+  
     const userData = {
       name: name,
       surname: lastName,
@@ -30,31 +30,34 @@ function Register() {
       password_confirmation: passwordConfirmation,
       birth_date: birthdate,
     };
-
+  
     try {
       console.log("bodu: "+JSON.stringify(userData));
-      const response = await fetch('http://localhost:8001/api/register', {
+  
+      const response = await fetch('http://localhost:8000/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
       });
-
-      const data = await response.json();
-      //console.log('kaixo'+data);
-
+  
+      const data = await response.json(); // Leer la respuesta solo una vez
+  
       if (response.ok) {
+        // Si la respuesta es exitosa
         alert('Erabiltzailea ongi sortu da.');
         navigate('/login');
       } else {
-        alert('Errorea: ' + JSON.stringify(data.Errorea));
+        // Si hubo un error
+        alert('Errorea: ' + (data?.message || 'Daturenbat gaizki sartu da'));
       }
     } catch (error) {
       console.error('Error:', error);
       alert('Errorea gertatu da');
     }
   };
+  
 
   const { t } = useTranslation();
 
