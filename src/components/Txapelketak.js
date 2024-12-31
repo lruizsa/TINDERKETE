@@ -46,7 +46,7 @@ const Txapelketak = () => {
           maxParticipants: tournament.max_participants || 0,
           price: tournament.price || 0,
           image: getImagePath(tournament.location.img || "comingsoon.png"),
-          participantImages: [], // Si tienes imágenes de participantes
+          participantImages: tournament.users.map(user => getImagePath(user.img)), // Si tienes imágenes de participantes
         }));
         setEvents(formattedEvents); // Actualiza el estado con los eventos
         setLoading(false);
