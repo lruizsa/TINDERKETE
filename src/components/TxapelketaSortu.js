@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import Nav from "./Navbar.js";
 import Footer from "./Footer.js";
+import axios from 'axios';
 
 function TxapelketaSortu() {
   const [formData, setFormData] = useState({
@@ -12,9 +13,33 @@ function TxapelketaSortu() {
     description: "",
     price: "",
     maxParticipants: "",
-    image: "",
-    participantImages: [],
   });
+
+  const [tournamentCreated, setTournamentCreated] = useState(null); // Estado para el torneo creado
+  const [error, setError] = useState(""); // Estado para errores
+  const [locations, setLocations] = useState([]); // Estado para guardar las ubicaciones
+
+  // Realizamos la solicitud a la API para obtener las ubicaciones
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/lokalekuak/');
+        const result = await response.json();
+
+        // Verificamos si 'result.data' es un arreglo
+        if (result.success && Array.isArray(result.data)) {
+          setLocations(result.data); // Asignamos las ubicaciones al estado
+        } else {
+          console.error('La respuesta de la API no contiene un arreglo de ubicaciones:', result);
+        }
+      } catch (error) {
+        console.error('Error fetching locations:', error);
+      }
+    };
+
+    fetchLocations(); // Llamamos a la función para obtener las ubicaciones
+  }, []);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,24 +49,29 @@ function TxapelketaSortu() {
     });
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setFormData((prev) => ({
-        ...prev,
-        image: imageUrl,
-      }));
-    }
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Evita el comportamiento por defecto del formulario
 
-  const handleParticipantImagesUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const uploadedImages = files.map((file) => URL.createObjectURL(file));
-    setFormData((prev) => ({
-      ...prev,
-      participantImages: uploadedImages,
-    }));
+    const tournamentData = {
+      title: formData.title,
+      location_id: parseInt(formData.location), // location_id si se refiere a un ID
+      date: formData.date,
+      time: formData.time,
+      description: formData.description,
+      price: parseFloat(formData.price),
+      max_participants: parseInt(formData.maxParticipants),
+    };
+
+    try {
+      const response = await axios.post("http://localhost:8000/api/txapelketak", tournamentData);
+
+      console.log("Response:", response.data);
+      setTournamentCreated(response.data.data);
+      setError(""); // Limpia cualquier error previo
+    } catch (error) {
+      setError(error.response?.data?.message || "Error al enviar los datos a la API");
+      console.error("Error:", error.response?.data || error.message);
+    }
   };
 
   return (
@@ -55,7 +85,7 @@ function TxapelketaSortu() {
           {/* Formulario */}
           <div className="w-full lg:w-2/3 px-4 mb-8">
             <div className="bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden p-6 h-full">
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
                 {/* Título */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block mb-1 text-gray-700">Izenburua</label>
@@ -68,7 +98,7 @@ function TxapelketaSortu() {
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Localización */}
+                {/* Localización (Datalist) */}
                 <div className="col-span-2 md:col-span-1">
                   <label className="block mb-1 text-gray-700">Kokalekua</label>
                   <input
@@ -77,8 +107,14 @@ function TxapelketaSortu() {
                     value={formData.location}
                     onChange={handleInputChange}
                     placeholder="Sartu kokalekua"
+                    list="locations-list" // Asociamos este input al datalist
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
+                  <datalist id="locations-list">
+                    {locations.map((location) => (
+                      <option key={location.id} value={location.id}>{location.name}</option>
+                    ))}
+                  </datalist>
                 </div>
                 {/* Fecha */}
                 <div className="col-span-2 md:col-span-1">
@@ -137,17 +173,23 @@ function TxapelketaSortu() {
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>
-                {/* Imagen */}
-                <div className="col-span-2">
-                  <label className="block mb-1 text-gray-700">Irudia</label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
+                >Sortu
+                </button>
               </form>
+              {/* Mensaje de error o éxito */}
+              {tournamentCreated && (
+                <div className="mt-4 text-center text-green-500">
+                  Tournament created: {tournamentCreated.title}
+                </div>
+              )}
+              {error && (
+                <div className="mt-4 text-center text-red-500">
+                  {error}
+                </div>
+              )}
             </div>
           </div>
 
@@ -156,7 +198,7 @@ function TxapelketaSortu() {
             <div className="sticky top-4">
               <EventCard
                 title={formData.title || "Txapelketaren izenburua"}
-                location={formData.location || "Kokalekua"}
+                location={locations.find(loc => loc.id.toString() === formData.location)?.name || "Kokalekua"}
                 date={formData.date || "Data"}
                 time={formData.time || "Ordua"}
                 description={formData.description || "Deskribapena"}
