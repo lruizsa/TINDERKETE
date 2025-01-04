@@ -31,13 +31,13 @@ const Txapelketak = () => {
     const fetchEvents = async () => {
       try {
           /* TODO: hosting api deiak ez localhostetik hartzeko*/
-        const response = await fetch("http://localhost:8000/api/txapelketak"); // URL de la API
+        const response = await fetch("http://localhost:8000/api/txapelketak-with-users"); // URL de la API
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
         const result = await response.json(); // Convierte la respuesta a JSON
         const formattedEvents = result.data.map(tournament => ({
-          title: tournament.name, // Ajustar según la API
+          title: tournament.title, // Ajustar según la API
           location: tournament.location.name,
           date: tournament.date,
           time: tournament.time || "16:00",

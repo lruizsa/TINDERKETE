@@ -13,6 +13,8 @@ import PerfilaIkusi from './PerfilaIkusi';
 import Kontaktu from './Kontaktuacomp';
 import MapaLista from './MapaLista';
 import TxapelketaSortu from './TxapelketaSortu';
+import TxapelketakAdmin from './TxapelketakAdmin';
+import TxapelketaEditatu from './TxapelketaEditatu';
 
 import React, { useState } from "react";
 
@@ -34,7 +36,9 @@ function App() {
         <Route path="/kontaktua" element={<Kontaktu />} />
         <Route path="/mapalista" element={<MapaLista />} />
         <Route path="/txapelketasortu" element={<TxapelketaSortu />} />  
-        <Route path="/perfila" element={<PerfilaIkusi />} />  
+        <Route path="/perfila" element={<PerfilaIkusi />} /> 
+        <Route path="/txapelketakAdmin" element={<TxapelketakAdmin />} /> 
+        <Route path="/txapelketakAdmin/edit/:id" element={<TxapelketaEditatu />} />
       </Routes>
     </Router>
   );
