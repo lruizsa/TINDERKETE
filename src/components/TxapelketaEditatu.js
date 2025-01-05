@@ -1,3 +1,4 @@
+// Resto de las importaciones
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import Nav from "./Navbar.js";
@@ -28,7 +29,7 @@ function TxapelketaEditatu() {
                 const tournament = response.data.data;
                 setFormData({
                     title: tournament.title,
-                    location: tournament.location.name,
+                    location: tournament.location.id.toString(), // Usamos el ID como valor del formulario
                     date: tournament.date,
                     time: tournament.time,
                     description: tournament.description,
@@ -41,8 +42,20 @@ function TxapelketaEditatu() {
             }
         };
 
+        const fetchLocations = async () => {
+            try {
+                const response = await axios.get("http://localhost:8000/api/lokalekuak");
+                setLocations(response.data.data); 
+            } catch (err) {
+                console.error("Error fetching locations:", err);
+                setError("No se pudieron cargar las ubicaciones.");
+            }
+        };
+
+        fetchLocations();
         fetchTournament();
     }, [id]);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -57,7 +70,7 @@ function TxapelketaEditatu() {
 
         const updatedTournament = {
             title: formData.title,
-            location_id: parseInt(formData.location),
+            location_id: parseInt(formData.location), 
             date: formData.date,
             time: formData.time,
             description: formData.description,
@@ -105,14 +118,12 @@ function TxapelketaEditatu() {
                                         value={formData.location}
                                         onChange={handleInputChange}
                                         list="locations-list"
-                                        placeholder="Sartu kokalekua"
+                                        placeholder="Aukeratu kokalekua"
                                         className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     />
                                     <datalist id="locations-list">
                                         {locations.map((location) => (
-                                            <option key={location.id} value={location.id}>
-                                                {location.name}
-                                            </option>
+                                            <option key={location.id} value={location.id}>{location.name}</option>
                                         ))}
                                     </datalist>
                                 </div>
