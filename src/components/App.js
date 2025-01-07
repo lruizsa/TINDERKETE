@@ -18,6 +18,11 @@ import NavbarAdmin from './NavbarAdmin';
 import HasieraAdmin from './HasieraAdmin';
 import MapaListaSortu from './MapaListaSortu';
 import ProduktuakSortu from './ProduktuakSortu';
+import ErabiltzaileakAdmin from './ErabiltzaileakAdmin';
+import ErabiltzaileakEditatu from './ErabiltzaileakEditatu';
+
+
+
 
 function App() {
   // Verifica si es la primera vez que se abre la página
@@ -48,6 +53,8 @@ function App() {
         <Route path="/hasieraadmin" element={<HasieraAdmin />} />  
         <Route path="/mapalistasortu" element={<MapaListaSortu />} />  
         <Route path="/produktuaksortu" element={<ProduktuakSortu />} />  
+        <Route path="/erabiltzaileakAdmin" element={<ErabiltzaileakAdmin />} />  
+        <Route path="/erabiltzaileakEditatu/:id" element={<ErabiltzaileakEditatu />} />  
       </Routes>
     </Router>
   );

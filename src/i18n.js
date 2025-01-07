@@ -41,7 +41,9 @@ i18n
               "register" : "Register",
               "email": "Email",
               "emailRequired" : "You mast enter an email.",
-              "emailInvalid" : "You must enter an '@' sign at the email address."
+              "emailInvalid" : "You must enter an '@' sign at the email address.",
+              "loginTitle": "Login",
+              "loginButton": "Enter"
               
             },
             "footer":{
@@ -222,7 +224,9 @@ i18n
               "register" : "Erregistratu",
               "email" : "Emaila",
               "emailRequired" : "Posta elektroniko bat sartu behar duzu.",
-              "emailInvalid" : "Posta elektronikoaren helbidean '@' zeinu bat sartu behar duzu."
+              "emailInvalid" : "Posta elektronikoaren helbidean '@' zeinu bat sartu behar duzu.",
+              "loginTitle": "Login",
+              "loginButton": "Sartu"
             },
             "footer":{
               "ref" : "KONTAKTUA",
