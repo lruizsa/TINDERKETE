@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
 import agi from '../images/agi.png';
@@ -9,8 +9,13 @@ import logotxuri from '../images/perfiltxuri.png';
 import logout from '../images/logout.png';
 import { useTranslation } from "react-i18next";
 import ane from '../images/ane.jpg';
+import '../i18n'; // i18n konfigurazioa
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false); // hanburgesa menuaren egoera
+  const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar egoera
+  const location = useLocation(); // Path aktiboa jakiteko
+  const navigate = useNavigate(); // logout egiterakoan
   // const { t } = useTranslation();
   // const [menuOpen, setMenuOpen] = useState(false); // hanburgesa menuaren egoera
   // const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar egoera
@@ -43,10 +48,6 @@ function Navbar() {
   // };
 
 
-  const { t } = useTranslation();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
   //const email = localStorage.getItem("email"); // Obtener el email desde localStorage
   const user = JSON.parse(localStorage.getItem('user'));
 
@@ -56,7 +57,6 @@ function Navbar() {
   } else {
     console.log("No se encontró el usuario en localStorage");
   }
-  const navigate = useNavigate();
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   const handleLogout = () => {
@@ -78,7 +78,25 @@ function Navbar() {
     return location.pathname === path ? "bg-gray-700 text-white" : "text-gray-400 hover:bg-gray-700";
   };
 
-  
+
+ 
+  const { t, i18n } = useTranslation(); // useTranslationen hooka erabiltzen du t eta i18n-ra konektatzeko
+
+  // Hizkuntzaren estatu ofiziala, localStorage-etik hartzen du
+  const [activeLanguage, setActiveLanguage] = useState(
+    localStorage.getItem('language') || i18n.language
+  );
+
+  // useEffect hizkuntza aldatzeko
+  useEffect(() => {
+    i18n.changeLanguage(activeLanguage); // i18n hizkuntza aldatzen du
+    localStorage.setItem('language', activeLanguage); // Hizkuntza localstoragen gordetzen du
+  }, [activeLanguage]);
+
+  // Hizkuntza aldatzeko funtzioa
+  const changeLanguage = (event) => {
+    setActiveLanguage(event.target.value); // activeLenguageren egoera aldatzen du
+  };
 
   return (
     <div className="sticky top-0 z-50 shadow-lg">
@@ -160,11 +178,11 @@ function Navbar() {
         <div className="container mx-auto flex flex-wrap justify-center items-center p-4">
           {/* Logo */}
           <Link className="flex items-center" to="/">
-          <img
-            src={logo}
-            alt="logo"
-            className="w-auto max-w-16 h-auto max-h-16 mr-2 flame-effect rounded-full object-contain"
-          />
+            <img
+              src={logo}
+              alt="logo"
+              className="w-auto max-w-16 h-auto max-h-16 mr-2 flame-effect rounded-full object-contain"
+            />
 
           </Link>
           <h1 className="text-white font-bold text-3xl no-underline">Tinderkete</h1>
@@ -181,10 +199,21 @@ function Navbar() {
               </svg>
             </button>
           </div>
+          <div className="text-center lg:hidden">
+            <select
+              id="language-select"
+              value={activeLanguage}
+              onChange={changeLanguage}
+              className="p-1 bg-blue-600 rounded-lg"
+            >
+              <option value="en">EN</option>
+              <option value="eu">EU</option>
+            </select>
+          </div>
 
           {/* Pantaila handitako navbar */}
           <div className="hidden lg:flex space-x-6 mt-3">
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-4 items-center">
               <li className={`nav-item ${getActiveClass('/')}`}>
                 <Link
                   className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
@@ -230,15 +259,6 @@ function Navbar() {
                   {t('nav.nav5')}
                 </Link>
               </li>
-              <li className={`nav-item ${getActiveClass('/produktuak')}`}>
-                <Link
-                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
-                  to="/produktuak"
-                  onClick={closeMenu}
-                >
-                  {t('nav.nav6')}
-                </Link>
-              </li>
               <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
                 <Link
                   className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
@@ -248,93 +268,104 @@ function Navbar() {
                   {t('nav.nav7')}
                 </Link>
               </li>
+              <li>
+                <div className="text-center my-4 items-center">
+                  <select
+                    id="language-select"
+                    value={activeLanguage}
+                    onChange={changeLanguage}
+                    className="p-1 bg-blue-600 rounded-lg"
+                  >
+                    <option value="en">English</option>
+                    <option value="eu">Euskara</option>
+                  </select>
+                </div>
+              </li>
             </ul>
           </div>
 
           {/* Hanburguesa menua pantaila txikitan */}
+  
           <div
-  className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} relative flex-row text-center text-white p-4 top-full mt-2 w-[100%] rounded-lg active:transition active:duration-700 active:ease-in-out`}
->
-  <ul className="flex flex-col space-y-4">
-    <li className={`nav-item ${getActiveClass('/')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/"
-        onClick={closeMenu}
-      >
-        {t('nav.nav1')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/erreserbak"
-        onClick={closeMenu}
-      >
-        {t('nav.nav2')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/txapelketak"
-        onClick={closeMenu}
-      >
-        {t('nav.nav3')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/PartidoakCard"
-        onClick={closeMenu}
-      >
-        {t('nav.nav4')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/MapaLista"
-        onClick={closeMenu}
-      >
-        {t('nav.nav5')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/produktuak')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/produktuak"
-        onClick={closeMenu}
-      >
-        {t('nav.nav6')}
-      </Link>
-    </li>
-    <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
-      <Link
-        className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
-        to="/kontaktua"
-        onClick={closeMenu}
-      >
-        {t('nav.nav7')}
-      </Link>
-    </li>
-    <li>
-      <button
-        className=""
-        onClick={toggleSidebar} // Asegúrate de que este evento abra el sidebar
-      >
-        <img
-          src={logoImage}
-          alt="Perfil"
-          className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
-        />
-      </button>
-    </li>
-  </ul>
-</div>
-
-
+            className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} relative flex-row text-center text-white p-4 top-full mt-2 w-[100%] rounded-lg active:transition active:duration-700 active:ease-in-out`}>
+            <ul className="flex flex-col space-y-4">
+              <li className={`nav-item ${getActiveClass('/')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav1')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/erreserbak')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/erreserbak"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav2')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/txapelketak')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/txapelketak"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav3')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/PartidoakCard')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/PartidoakCard"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav4')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/MapaLista')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/MapaLista"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav5')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/produktuak')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/produktuak"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav6')}
+                </Link>
+              </li>
+              <li className={`nav-item ${getActiveClass('/kontaktua')}`}>
+                <Link
+                  className="nav-link text-white p-2 hover:bg-gray-700 rounded-md"
+                  to="/kontaktua"
+                  onClick={closeMenu}
+                >
+                  {t('nav.nav7')}
+                </Link>
+              </li>
+              <li>
+                <button
+                  className=""
+                  onClick={toggleSidebar} // Asegúrate de que este evento abra el sidebar
+                >
+                  <img
+                    src={logoImage}
+                    alt="Perfil"
+                    className="w-12 h-12 rounded-full bg-amber-500 p-1 object-contain"
+                  />
+                </button>
+              </li>
+            </ul>
+          </div>
           {/* Sidebar toggle */}
           <button className="lg:block hidden ml-5" onClick={toggleSidebar}>
             <img
@@ -342,9 +373,10 @@ function Navbar() {
               alt="1361728"
               className="w-auto max-w-12 h-auto max-h-12 rounded-full bg-amber-500 p-1 object-contain"
             />
-          </button>
+          </button> 
         </div>
       </nav>
+
     </div>
   );
 }

@@ -207,8 +207,8 @@ function PartidoakCard() {
                   {reservation.sport === "Frontoia"
                     ? t('partidak.frontoia')
                     : reservation.sport === "Trinketea"
-                    ? t('partidak.trinketea')
-                    : reservation.sport}
+                      ? t('partidak.trinketea')
+                      : reservation.sport}
                 </p>
               </div>
 
@@ -262,18 +262,18 @@ function PartidoakCard() {
 
       {/* Pop-up */}
       {showPopup && (
-      <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-semibold text-gray-800">{t('partidak.popupHeader')}</h2>
-          <button
-            onClick={handleCloseAndNavigate} // Llamamos a la nueva función
-            className="w-full mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-          >
-            {t('partidak.itxi')}
-          </button>
-        </div>
-      </div>
-    )}
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold text-gray-800">{t('partidak.popupHeader')}</h2>
+            <button
+              onClick={handleCloseAndNavigate} // Llamamos a la nueva función
+              className="w-full mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+            >
+              {t('partidak.itxi')}
+            </button>
+          </div>
+          </div>
+      )}
 
       <Footer />
     </div>

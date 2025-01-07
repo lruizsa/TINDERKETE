@@ -149,7 +149,7 @@ function Erreserbak() {
                     <p className="text-gray-600">{reservation.playerCount} {t('erreserbak.playerCount')}</p>
                     <p className="text-gray-600">{reservation.location} - {reservation.time}</p>
                     <p className="text-gray-700">
-                      {reservation.isPublic ? t('erreserbakpublic') : t('erreserbakprivate')}
+                      {reservation.isPublic ? t('erreserbak.public') : t('erreserbak.private')}
                     </p>
                   </li>
                 ))}
