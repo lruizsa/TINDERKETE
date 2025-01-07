@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // Asegúrate de incluir archivos JSX/TSX
+    "./src/**/*.{html,js,jsx,ts,tsx}", 
   ],
   theme: {
     extend: {},
   },
   plugins: [
-    require('tailwindcss-animated'), // Asegúrate de que el plugin esté aquí
+    require('tailwindcss-animated'), 
   ],
 };

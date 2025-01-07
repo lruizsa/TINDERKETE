@@ -20,8 +20,7 @@ import MapaListaSortu from './MapaListaSortu';
 import ProduktuakSortu from './ProduktuakSortu';
 import ErabiltzaileakAdmin from './ErabiltzaileakAdmin';
 import ErabiltzaileakEditatu from './ErabiltzaileakEditatu';
-
-
+import Txapelketakkudeatu from './TxapelketakKudeatu';
 
 
 function App() {
@@ -55,6 +54,7 @@ function App() {
         <Route path="/produktuaksortu" element={<ProduktuakSortu />} />  
         <Route path="/erabiltzaileakAdmin" element={<ErabiltzaileakAdmin />} />  
         <Route path="/erabiltzaileakEditatu/:id" element={<ErabiltzaileakEditatu />} />  
+        <Route path="/txapelketakkudeatu" element={<Txapelketakkudeatu />} /> 
       </Routes>
     </Router>
   );
