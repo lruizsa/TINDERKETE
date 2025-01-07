@@ -87,47 +87,50 @@ const Txapelketak = () => {
     navigate("/login");  // Redirigir a la página de login
   };
 
-  return (
-    <div className="flex flex-col min-h-screen"> 
-      <Nav />
-      
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-blue-600">{t('txapelketa.header')}</h1>
-          <p className="text-xl mt-2 text-gray-600">{t('txapelketa.header2')}</p>
-        </div>
-
-        {/* Mostrar mensaje si no está logueado */}
-        {showLoginMessage && !isLoggedIn && (
-          <div className="text-center text-red-600 mb-6">
-            <p>{t('erreserbak.notLoggedInMessage')}</p>
-            <button
-              onClick={handleLoginRedirect}
-              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-200"
-            >
-              Login
-            </button>
+    return (
+      <div className="flex flex-col min-h-screen">
+        <Nav />
+        <div className="container mx-auto flex-grow px-4 py-8">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-blue-600">Txapelketak</h1>
+            <p className="text-xl mt-2 text-gray-600">Descubre los torneos disponibles.</p>
           </div>
-        )}
-
-        {/* Eventos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((event, index) => (
-            <div key={index} className="col-span-1">
-              <div 
-                className="cursor-pointer"
-                onClick={handleEventClick}  // Acción de hacer clic en el evento
-              >
-                <EventCard {...event} />
+  
+          {/* Renderizamos la lista de eventos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {events.map((event, index) => (
+              <div key={index} className="col-span-1">
+                <EventCard 
+                  {...event}
+                  onButtonClick={() => handleEventClick(event)} // Pasamos la lógica de clic al botón
+                />
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
+            ))}
+          </div>
+  
+          {/* Mostrar popup si el usuario no está logueado */}
+          {showLoginMessage && (
+            <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                  <div className="animate-jump-in">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                      <div className="text-center text-red-600 mb-4 text-lg">
+                        <p>{t('erreserbak.notLoggedInMessage')}</p>
+                        <button
+                          onClick={handleLoginRedirect}
+                          className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-200"
+                        >
+                          Login
+                        </button>
+                      </div>
+                    </div>
+                  </div>
 
-      <Footer />
-    </div>
-  );
+                </div>
+          )}
+        </div>
+        <Footer />
+      </div>
+    );
 };
 
 export default Txapelketak;

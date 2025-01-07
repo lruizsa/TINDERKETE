@@ -1,5 +1,5 @@
-import React from 'react';
 import { useTranslation } from "react-i18next";
+
 
 function EventCard({
   title,
@@ -12,6 +12,7 @@ function EventCard({
   maxParticipants,
   image,
   participantImages,
+  onButtonClick, // Nueva prop para manejar clics en el botón
 }) {
   const { t } = useTranslation();
 
@@ -58,7 +59,10 @@ function EventCard({
         </div>
 
         {/* Botón de inscripción */}
-        <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+        <button
+          className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+          onClick={onButtonClick} // Llamamos a la función pasada como prop
+        >
           {t('eventcard.apuntatu')}
         </button>
       </div>

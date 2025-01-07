@@ -42,8 +42,8 @@ function Erreserbak() {
     setReservations([...reservations, newReservation]);
   };
 
-  const handleLogin = () => {
-    navigate("/login");  // Redirigimos a la página de login
+  const handleLoginRedirect = () => {
+    navigate("/login"); // Redirigir al login
   };
 
   return (
@@ -125,14 +125,21 @@ function Erreserbak() {
 
               {/* Mostrar mensaje si el usuario no está logueado */}
               {showLoginMessage && !isLoggedIn && (
-                <div className="mt-4 text-center text-red-600">
-                  <p>{t('erreserbak.notLoggedInMessage')}</p>
-                  <button
-                    onClick={handleLogin}
-                    className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-200"
-                  >
-                    Login
-                  </button>
+                <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                  <div className="animate-jump-in">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                      <div className="text-center text-red-600 mb-4 text-lg">
+                        <p>{t('erreserbak.notLoggedInMessage')}</p>
+                        <button
+                          onClick={handleLoginRedirect}
+                          className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-200"
+                        >
+                          Login
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               )}
             </div>
@@ -149,7 +156,7 @@ function Erreserbak() {
                     <p className="text-gray-600">{reservation.playerCount} {t('erreserbak.playerCount')}</p>
                     <p className="text-gray-600">{reservation.location} - {reservation.time}</p>
                     <p className="text-gray-700">
-                      {reservation.isPublic ? t('erreserbakpublic') : t('erreserbakprivate')}
+                      {reservation.isPublic ? t('erreserbak.public') : t('erreserbak.private')}
                     </p>
                   </li>
                 ))}
