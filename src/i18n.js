@@ -69,7 +69,7 @@ i18n
               "sidebar1" : "Profile",
               "sidebar2" : "Chat",
               "navadmin1" : "Create Tournaments",
-              "navadmin3" : "Config Products",
+              "navadmin3" : "Users",
               "navadmin2" : "Create New Map"        
             },
             "partidak": {
@@ -251,7 +251,7 @@ i18n
               "sidebar1" : "Profila",
               "sidebar2" : "Txat-a",
               "navadmin1" : "Txapelketak Sortu",
-              "navadmin3" : "Produktuak Kudeatu",
+              "navadmin3" : "Erabiltzaileak",
               "navadmin2" : "Mapa Berria Sortu"   
             },
             "partidak": {

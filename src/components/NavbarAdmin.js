@@ -122,6 +122,15 @@ function Navbar() {
                   {t('nav.navadmin2')}
                 </Link>
               </li>
+              <li className={`nav-item ${getActiveClass('/ErabiltzaileakAdmin')}`}>
+                <Link
+                  className="nav-link text-white py-2 px-4 hover:bg-gray-700 rounded-md"
+                  to="/erabiltzaileakAdmin"
+                  onClick={closeMenu}
+                >
+                  {t('nav.navadmin3')}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -148,6 +157,7 @@ function Navbar() {
                   {t('nav.navadmin2')}
                 </Link>
               </li>
+              
               <li>
                 <button className="" onClick={toggleSidebar}>
                   <img
